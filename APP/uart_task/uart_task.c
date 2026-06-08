@@ -22,10 +22,15 @@ void StartUsartTask(void *argument)
 	jdy_handle.p_mesh_submode->mesh_init(&jdy_handle);
 
 
+	dtu_inst(&my_4g_dtu, &dtu_time_config);
+
 	/* Infinite loop */
 	for (;;)
 	{
 		osDelay(50);
+
+
+	my_4g_dtu.parser_fun(&my_4g_dtu,dtu_rx_buffer);
 
 
 	Protocol_Parse(&ring_rx_DMA_buf, &proto_data);

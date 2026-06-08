@@ -9,6 +9,7 @@
 .\build\HAL\.obj\APP\imu_task\imu_task.o
 .\build\HAL\.obj\APP\uart_task\uart_callback.o
 .\build\HAL\.obj\APP\uart_task\uart_task.o
+.\build\HAL\.obj\BSP\4G_DTU\bsp_4g.o
 .\build\HAL\.obj\BSP\Encoder\Encoder.o
 .\build\HAL\.obj\BSP\Motor_GPIO\Motor_GPIO.o
 .\build\HAL\.obj\BSP\VOFA+\Vofa+.o

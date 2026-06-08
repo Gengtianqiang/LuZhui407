@@ -577,8 +577,8 @@ void StateMachine_Init(void)
     // Set initial state to idle
     g_state_machine.current_state = STATE_IDLE;
     // Initialize target coordinate 3
-    g_state_machine.coor3.x = 2.0;
-    g_state_machine.coor3.y = 2.0;
+    g_state_machine.coor3.x = my_4g_dtu.point.x;
+    g_state_machine.coor3.y = my_4g_dtu.point.y;
     g_state_machine.last_distance_coor3 = 0;
     g_state_machine.distance_coor3 = 0;
 }

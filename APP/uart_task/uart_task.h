@@ -12,6 +12,7 @@
 #include "twr_control.h"
 #include "jdy_driver.h"
 #include "mesh_mode.h"
+#include "bsp_4g.h"
 
 #define RECEIVE_USART1_BUFFER 128
 #define Transmit_USART1_BUFFER 128

@@ -2,6 +2,7 @@
 #include <math.h>
 #include <stdint.h>
 #include <stdbool.h>
+#include "bsp_4g.h"
 
 extern TIM_HandleTypeDef htim8;
 
@@ -317,7 +318,7 @@ void Motor_Stop_Loop(void)
         Buzzer_Start_Once(100);
         return;
     }
-    if (isEnable == false)
+    if (isEnable == false||my_4g_dtu.stop_flag == 1)
     {
         Motor_Pwm_Stop();
         Motor_Instance.pwm_running = false;

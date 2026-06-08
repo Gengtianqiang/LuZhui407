@@ -34,6 +34,7 @@
 #include "semphr.h"
 #include "control.h"
 #include "math.h"
+#include "bsp_4g.h"
 //******************************** Includes *********************************//
 
 /**

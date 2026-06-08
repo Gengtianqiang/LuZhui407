@@ -1,7 +1,7 @@
 #include "uart_callback.h"
 #include "jdy_driver.h"
 #include "Vofa.h"
-
+#include "bsp_4g.h"
 
 Forward myForward = {0};
 
@@ -47,8 +47,8 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
   }
 
   if (huart->Instance == UART5)
-  {    //twr
-    
+  {    
+    my_4g_dtu.rx_flag = 1; 
     RingByteBuffer_pushBuffer(&ring5_rx_DMA_buf, u5_ring_DMA_buffer, received);
     HAL_UARTEx_ReceiveToIdle_DMA(&huart5, u5_ring_DMA_buffer, RXUART5_BUFFER);
    }

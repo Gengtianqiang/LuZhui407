@@ -45,7 +45,8 @@
         "BSP/jdy28m_geng",
         "BSP/jdy28m",
         ".cmsis/include",
-        "MDK-ARM/RTE/_HAL"
+        "MDK-ARM/RTE/_HAL",
+        "BSP/4G_DTU"
     ],
     "libDirs": [],
     "defines": [
@@ -64,6 +65,7 @@
         "APP/imu_task/imu_task.c",
         "APP/uart_task/uart_callback.c",
         "APP/uart_task/uart_task.c",
+        "BSP/4G_DTU/bsp_4g.c",
         "BSP/Encoder/Encoder.c",
         "BSP/Motor_GPIO/Motor_GPIO.c",
         "BSP/VOFA+/Vofa+.c",

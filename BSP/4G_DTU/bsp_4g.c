@@ -41,6 +41,7 @@ DTU_t my_4g_dtu;                                 /* DTU driver instance | DTUÇı¶
  */
 dtu_status_t dtu_send_callback(uint8_t* buf, uint16_t len) {
     HAL_UART_Transmit_DMA(&huart5, buf, len);
+    return DTU_OK;
 }
 
 /**
@@ -58,42 +59,42 @@ dtu_status_t dtu_ack(DTU_t* const self) {
     case MSG_4G_BATTERY:                         /* Battery level response | µçÁ¿ĞÅÏ¢ÏìÓ¦ */
         memset(ack_buf, 0, sizeof(ack_buf));
         sprintf((char*)ack_buf, "Battery level is %.1fv\n",Volt);
-        self->send_fun(ack_buf, strlen((char*)ack_buf));
+        self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
         break;
     case MSG_4G_PITCH_ANGLE:                     /* Pitch angle response | ¸©Ñö½ÇĞÅÏ¢ÏìÓ¦ */
         memset(ack_buf, 0, sizeof(ack_buf));
         sprintf((char*)ack_buf, "Pitch angle is %.1f\n",myimu.euler.pitch);
-        self->send_fun(ack_buf, strlen((char*)ack_buf));
+        self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
         break;
     case MSG_4G_ALARM_START:                     /* Alarm start response | ±¨¾¯ĞÅÏ¢ÏìÓ¦ */
         memset(ack_buf, 0, sizeof(ack_buf));
     self->buzzer_flag += 1;
     if(self->buzzer_flag==2)self->buzzer_flag = 0;
         sprintf((char*)ack_buf, "Alarm %s\n", self->buzzer_flag ? "ON" : "OFF");
-        self->send_fun(ack_buf, strlen((char*)ack_buf));
+        self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
         break;
     case MSG_4G_ONEKEY_STOP:                     /* One-key stop response | Ò»¼üÍ£Ö¹ĞÅÏ¢ÏìÓ¦ */
         self->stop_flag += 1;
         if(self->stop_flag==2)self->stop_flag = 0;
         memset(ack_buf, 0, sizeof(ack_buf));
         sprintf((char*)ack_buf, "One-key stop %s\n", self->stop_flag ? "Activated" : "Deactivated");
-        self->send_fun(ack_buf, strlen((char*)ack_buf));
+        self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
         break;
     case MSG_4G_ONEKEY_START:                    /* One-key start response | Ò»¼ü³ö·¢ĞÅÏ¢ÏìÓ¦ */
         memset(ack_buf, 0, sizeof(ack_buf));
         sprintf((char*)ack_buf, "One-key start received.\n");
-        self->send_fun(ack_buf, strlen((char*)ack_buf));
+        self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
         break;
     case MSG_4G_ONEKEY_RETURN:                   /* One-key return response | Ò»¼ü·µ»ØĞÅÏ¢ÏìÓ¦ */
         self->return_flag = 1;
         memset(ack_buf, 0, sizeof(ack_buf));
         sprintf((char*)ack_buf, "One-key return received.\n");
-        self->send_fun(ack_buf, strlen((char*)ack_buf));
+        self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
         break;
     case MSG_4G_SET_XY:                          /* Set XY response | ÉèÖÃXY×ø±êĞÅÏ¢ÏìÓ¦ */
         memset(ack_buf, 0, sizeof(ack_buf));
         sprintf((char*)ack_buf, "Set XY coordinates received.\n");
-        self->send_fun(ack_buf, strlen((char*)ack_buf));
+        self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
         break;
     default:
         break;
@@ -105,29 +106,27 @@ dtu_status_t dtu_ack(DTU_t* const self) {
 }
 
 /**
- * @brief CRC8 calculation function | CRC8Ğ£Ñé¼ÆËãº¯Êı
- * @details Calculate CRC8 checksum for data verification | ¼ÆËãCRC8Ğ£ÑéÖµÓÃÓÚÊı¾İÑéÖ¤
- * @param[in] data : Pointer to data buffer | Ö¸ÏòÊı¾İ»º³åÇøµÄÖ¸Õë
- * @param[in] len  : Data length | Êı¾İ³¤¶È
- * @return uint8_t : CRC8 checksum result | CRC8Ğ£Ñé½á¹û
- * @note Polynomial: 0x07, Initial value: 0x00 | ¶àÏîÊ½: 0x07, ³õÊ¼Öµ: 0x00
+ * @brief OS delay function wrapper | OSÑÓÊ±º¯Êı·â×°
+ * @details Provide OS-based delay implementation for DTU driver | ÎªDTUÇı¶¯Ìá¹©»ùÓÚOSµÄÑÓÊ±ÊµÏÖ
+ * @param[in] ms : Delay time in milliseconds | ÑÓÊ±Ê±¼ä£¨ºÁÃë£©
  */
-uint8_t CRC8_Calc(uint8_t *data, uint16_t len)
+void __my_delay_ms(uint32_t ms)
 {
-    uint8_t crc = 0x00;
-    while(len--)
-    {
-        crc ^= *data++;
-        for(uint8_t i=0; i<8; i++)
-        {
-            if(crc & 0x80)
-                crc = (crc << 1) ^ 0x07;
-            else
-                crc <<= 1;
-        }
-    }
-    return crc;
+    osDelay(ms);
 }
+
+/**
+ * @brief Get system tick count function | »ñÈ¡ÏµÍ³tick¼ÆÊıº¯Êı
+ * @details Provide system tick count for DTU driver timeout calculation | ÎªDTUÇı¶¯Ìá¹©ÏµÍ³tick¼ÆÊıÓÃÓÚ³¬Ê±¼ÆËã
+ * @return uint32_t : System tick count | ÏµÍ³tick¼ÆÊıÖµ
+ */
+uint32_t __my_GetTick(void)
+{
+    return xTaskGetTickCount();
+}
+
+
+
 
 /**
  * @brief DTU frame parser function | DTUÖ¡½âÎöº¯Êı
@@ -231,25 +230,6 @@ dtu_status_t dtu_parser(DTU_t* const self, uint8_t* buf) {
 
 }
 
-/**
- * @brief OS delay function wrapper | OSÑÓÊ±º¯Êı·â×°
- * @details Provide OS-based delay implementation for DTU driver | ÎªDTUÇı¶¯Ìá¹©»ùÓÚOSµÄÑÓÊ±ÊµÏÖ
- * @param[in] ms : Delay time in milliseconds | ÑÓÊ±Ê±¼ä£¨ºÁÃë£©
- */
-void __my_delay_ms(uint32_t ms)
-{
-    osDelay(ms);
-}
-
-/**
- * @brief Get system tick count function | »ñÈ¡ÏµÍ³tick¼ÆÊıº¯Êı
- * @details Provide system tick count for DTU driver timeout calculation | ÎªDTUÇı¶¯Ìá¹©ÏµÍ³tick¼ÆÊıÓÃÓÚ³¬Ê±¼ÆËã
- * @return uint32_t : System tick count | ÏµÍ³tick¼ÆÊıÖµ
- */
-uint32_t __my_GetTick(void)
-{
-    return xTaskGetTickCount();
-}
 
 /**
  * @brief Read data from ring buffer to a regular array | ´Ó»·ĞÎ»º³åÇøÈ¡Êı¾İµ½ÆÕÍ¨Êı×é
@@ -275,6 +255,32 @@ uint8_t dtu_get_data_from_ringbuf(RingByteBuffer *ring, uint8_t* buf)
     RingByteBuffer_popBuffer(ring, buf, avail);
 
     return 1;
+}
+
+
+/**
+ * @brief CRC8 calculation function | CRC8Ğ£Ñé¼ÆËãº¯Êı
+ * @details Calculate CRC8 checksum for data verification | ¼ÆËãCRC8Ğ£ÑéÖµÓÃÓÚÊı¾İÑéÖ¤
+ * @param[in] data : Pointer to data buffer | Ö¸ÏòÊı¾İ»º³åÇøµÄÖ¸Õë
+ * @param[in] len  : Data length | Êı¾İ³¤¶È
+ * @return uint8_t : CRC8 checksum result | CRC8Ğ£Ñé½á¹û
+ * @note Polynomial: 0x07, Initial value: 0x00 | ¶àÏîÊ½: 0x07, ³õÊ¼Öµ: 0x00
+ */
+uint8_t CRC8_Calc(uint8_t *data, uint16_t len)
+{
+    uint8_t crc = 0x00;
+    while(len--)
+    {
+        crc ^= *data++;
+        for(uint8_t i=0; i<8; i++)
+        {
+            if(crc & 0x80)
+                crc = (crc << 1) ^ 0x07;
+            else
+                crc <<= 1;
+        }
+    }
+    return crc;
 }
 
 /**

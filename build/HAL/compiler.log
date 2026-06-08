@@ -3,7 +3,7 @@
 Compiler Full Name: Component: ARM Compiler 5.06 update 6 (build 750)
 Compiler Version: 5.06
 Builder Mode: Incremental
-The amount of C files: 0
+The amount of C files: 1
 The amount of C++ files: 0
 The amount of Asm files: 0
 
@@ -13,7 +13,28 @@ The amount of Asm files: 0
 
 >>> cc
 
-
+"APP/uart_task/uart_task.h", line 20: Warning:  #47-D: incompatible redefinition of macro "RING_BUFFER_SIZE"  (declared at line 9 of "BSP/jdy28m/forward.h")
+  #define RING_BUFFER_SIZE 128
+          ^
+".\APP\balance_task\twr_control.c", line 224: Warning:  #1035-D: single-precision operand implicitly converted to double-precision
+      hsm->coor3.angle = 180 - acosf(cos_theta) * (180.0f / 3.1415);
+                                                   ^
+".\APP\balance_task\twr_control.c", line 419: Warning:  #1035-D: single-precision operand implicitly converted to double-precision
+          Move_Z = Line_Track_PD_Ctrl(ref_line, res->x, res->y) * 0.6
+                   ^
+".\APP\balance_task\twr_control.c", line 420: Warning:  #1035-D: single-precision operand implicitly converted to double-precision
+                  + Yaw_PD_Ctrl(myimu.euler_yaw_Cali, hsm->coor2.angle) * 0.4;
+                    ^
+".\APP\balance_task\twr_control.c", line 496: Warning:  #223-D: function "pdoa_follow" declared implicitly
+      pdoa_follow(&proto_data);
+      ^
+".\APP\balance_task\twr_control.c", line 400: Warning:  #177-D: function "StateMachine_RotateWaitHandler"  was declared but never referenced
+  static void StateMachine_RotateWaitHandler(StateMachine_Handle_t *hsm,BracketContent *res)
+              ^
+".\APP\balance_task\twr_control.c", line 462: Warning:  #177-D: function "StateMachine_MoveToTargetHandler"  was declared but never referenced
+  static void StateMachine_MoveToTargetHandler(StateMachine_Handle_t *hsm, BracketContent *res)
+              ^
+.\APP\balance_task\twr_control.c: 7 warnings, 0 errors
 
 >>> ld
 

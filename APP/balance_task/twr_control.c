@@ -256,13 +256,13 @@ static void StateMachine_IdleHandler(StateMachine_Handle_t *hsm,BracketContent *
     begin_timecounter ++;
     if(begin_timecounter>1000) {
         // Check trigger signal, TWR data valid
-        if(1 && bracket_data.twr_status) {
+        if(my_4g_dtu.start_flag && bracket_data.twr_status) {
             // Switch to peripheral check state
             hsm->current_state = STATE_PERIPHERAL_CHECK;
 
             // Record the first coordinate point
-            hsm->coor1.x = res->x;
-            hsm->coor1.y = res->y;
+            hsm->coor1.x = my_4g_dtu.point.x;
+            hsm->coor1.y = my_4g_dtu.point.y;
         }
     }
 }

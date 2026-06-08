@@ -3,7 +3,7 @@
 Compiler Full Name: Component: ARM Compiler 5.06 update 6 (build 750)
 Compiler Version: 5.06
 Builder Mode: Incremental
-The amount of C files: 10
+The amount of C files: 7
 The amount of C++ files: 0
 The amount of Asm files: 0
 
@@ -16,83 +16,13 @@ The amount of Asm files: 0
 "APP/uart_task/uart_task.h", line 20: Warning:  #47-D: incompatible redefinition of macro "RING_BUFFER_SIZE"  (declared at line 9 of "BSP/jdy28m/forward.h")
   #define RING_BUFFER_SIZE 128
           ^
-".\APP\balance_task\twr_control.c", line 258: Warning:  #1035-D: single-precision operand implicitly converted to double-precision
-          Move_Z = Line_Track_PD_Ctrl(ref_line, res->x, res->y) * 0.6
-                   ^
-".\APP\balance_task\twr_control.c", line 259: Warning:  #1035-D: single-precision operand implicitly converted to double-precision
-                  + Yaw_PD_Ctrl(myimu.euler_yaw_Cali, hsm->coor2.angle) * 0.4;
-                    ^
-".\APP\balance_task\twr_control.c", line 335: Warning:  #223-D: function "pdoa_follow" declared implicitly
-      pdoa_follow(&proto_data);
-      ^
-".\APP\balance_task\twr_control.c", line 494: Warning:  #1035-D: single-precision operand implicitly converted to double-precision
-      hsm->coor3.angle = 180 - acosf(cos_theta) * (180.0f / 3.1415);
-                                                   ^
-".\APP\balance_task\twr_control.c", line 239: Warning:  #177-D: function "StateMachine_RotateWaitHandler"  was declared but never referenced
-  static void StateMachine_RotateWaitHandler(StateMachine_Handle_t *hsm,BracketContent *res)
-              ^
-".\APP\balance_task\twr_control.c", line 301: Warning:  #177-D: function "StateMachine_MoveToTargetHandler"  was declared but never referenced
-  static void StateMachine_MoveToTargetHandler(StateMachine_Handle_t *hsm, BracketContent *res)
-              ^
-.\APP\balance_task\twr_control.c: 7 warnings, 0 errors
-"APP/uart_task/uart_task.h", line 20: Warning:  #47-D: incompatible redefinition of macro "RING_BUFFER_SIZE"  (declared at line 9 of "BSP/jdy28m/forward.h")
-  #define RING_BUFFER_SIZE 128
-          ^
-".\APP\balance_task\balance.c", line 37: Warning:  #223-D: function "Behind_Car_Loop" declared implicitly
-  		 Behind_Car_Loop();
-  		 ^
-.\APP\balance_task\balance.c: 2 warnings, 0 errors
-"APP/uart_task/uart_task.h", line 20: Warning:  #47-D: incompatible redefinition of macro "RING_BUFFER_SIZE"  (declared at line 9 of "BSP/jdy28m/forward.h")
-  #define RING_BUFFER_SIZE 128
-          ^
-.\APP\balance_task\pdoa_control.c: 1 warning, 0 errors
-"APP/uart_task/uart_task.h", line 20: Warning:  #47-D: incompatible redefinition of macro "RING_BUFFER_SIZE"  (declared at line 9 of "BSP/jdy28m/forward.h")
-  #define RING_BUFFER_SIZE 128
-          ^
-.\APP\bg_task\bg_task.c: 1 warning, 0 errors
-"APP/uart_task/uart_task.h", line 20: Warning:  #47-D: incompatible redefinition of macro "RING_BUFFER_SIZE"  (declared at line 9 of "BSP/jdy28m/forward.h")
-  #define RING_BUFFER_SIZE 128
-          ^
-".\APP\uart_task\uart_callback.c", line 26: Warning:  #223-D: function "JDY_func_it" declared implicitly
-      JDY_func_it(&jdy_handle, uart4_dma_rx_buffer, received);
-      ^
-.\APP\uart_task\uart_callback.c: 2 warnings, 0 errors
-".\APP\uart_task\uart_task.h", line 20: Warning:  #47-D: incompatible redefinition of macro "RING_BUFFER_SIZE"  (declared at line 9 of "BSP/jdy28m/forward.h")
-  #define RING_BUFFER_SIZE 128
-          ^
-.\APP\uart_task\uart_task.c: 1 warning, 0 errors
-"APP/uart_task/uart_task.h", line 20: Warning:  #47-D: incompatible redefinition of macro "RING_BUFFER_SIZE"  (declared at line 9 of "BSP/jdy28m/forward.h")
-  #define RING_BUFFER_SIZE 128
-          ^
-".\BSP\4G_DTU\bsp_4g.c", line 231: Warning:  #940-D: missing return statement at end of non-void function "dtu_parser" 
-  }
-  ^
-.\BSP\4G_DTU\bsp_4g.c: 2 warnings, 0 errors
-"APP/uart_task/uart_task.h", line 20: Warning:  #47-D: incompatible redefinition of macro "RING_BUFFER_SIZE"  (declared at line 9 of "BSP/jdy28m/forward.h")
-  #define RING_BUFFER_SIZE 128
-          ^
-.\BSP\jdy28m_geng\mesh_mode.c: 1 warning, 0 errors
-"APP/uart_task/uart_task.h", line 20: Warning:  #47-D: incompatible redefinition of macro "RING_BUFFER_SIZE"  (declared at line 9 of "BSP/jdy28m/forward.h")
-  #define RING_BUFFER_SIZE 128
-          ^
-.\BSP\motor\motor.c: 1 warning, 0 errors
-"APP/uart_task/uart_task.h", line 20: Warning:  #47-D: incompatible redefinition of macro "RING_BUFFER_SIZE"  (declared at line 9 of "BSP\jdy28m/forward.h")
-  #define RING_BUFFER_SIZE 128
-          ^
-".\Core\Src\System_Init.c", line 30: Warning:  #223-D: function "UART_Init" declared implicitly
-  	UART_Init();
-  	^
-".\Core\Src\System_Init.c", line 63: Warning:  #223-D: function "StateMachine_Init" declared implicitly
-  	StateMachine_Init();
-  	^
-".\Core\Src\System_Init.c", line 45: Warning:  #177-D: label "ICM_INIT_HOP"  was declared but never referenced
-   ICM_INIT_HOP:
-   ^
-.\Core\Src\System_Init.c: 4 warnings, 0 errors
+".\APP\balance_task\pdoa_control.c", line 144: Error:  #136: struct "<unnamed>"  has no field "uart_sem"
+  	if (1 == osSemaphoreGetCount(g_state_machine.uart_sem))
+  	                                             ^
+.\APP\balance_task\pdoa_control.c: 1 warning, 1 error
 
 >>> ld
 
-Program Size: Code=74976 RO-data=15488 RW-data=992 ZI-data=27944  
 
 
 >>> postbuild

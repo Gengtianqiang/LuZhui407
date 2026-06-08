@@ -378,3 +378,4 @@ dtu_status_t dtu_init(DTU_t* const self)
 
     return DTU_OK;
 }
+

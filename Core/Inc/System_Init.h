@@ -7,7 +7,7 @@
 
 
 // #define AHAND_CAR
-#define MIDDLE_CAR
+// #define MIDDLE_CAR
 #define BEHIND_CAR
 
 #define MIDDLE_CAR_ID 1

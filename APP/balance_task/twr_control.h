@@ -104,7 +104,9 @@ typedef struct {
     uint8_t                    imu_status;                    /* IMU status (1=normal, 0=abnormal) | IMU状态 */
     float                 target_distance;                 /* Distance to target (unit: cm) | 到终点的距离(cm) */
     osSemaphoreId_t             start_sem;             /* Start command semaphore | 启动命令信号量 */
-    osSemaphoreId_t              uart_sem;             
+    uint8_t                    ahand_flag;      
+    uint8_t                   middle_flag;
+    uint8_t                   behind_flag;       
 	uint16_t                 time_counter;					        /* Timing counter | 启动定时计数信号量 */
     uint32_t               TWR_Time_count;				          /* Timing counter | 定时计数器 */
 	coordinate                      coor1;					              /* Three-point coordinate 1 | 三点坐标1 */

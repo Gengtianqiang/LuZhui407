@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../BSP;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;../HARDWARE/Encoder;../HARDWARE/Motor_GPIO;../APP/balance_task;../APP/bg_task;../APP/imu_task;../APP/uart_task;../BSP/battery;../BSP/buzzer;../BSP/Encoder;../BSP/icm20948/app;../BSP/icm20948/lib;../BSP/led;../BSP/motor;../BSP/Motor_GPIO;../BSP/sleep;../BSP/timer;../BSP/util;../BSP/VOFA+;../BSP/icm20948/lib/include;../BSP/jdy28m_geng;../BSP/jdy28m</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../BSP;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;../HARDWARE/Encoder;../HARDWARE/Motor_GPIO;../APP/balance_task;../APP/bg_task;../APP/imu_task;../APP/uart_task;../BSP/battery;../BSP/buzzer;../BSP/Encoder;../BSP/icm20948/app;../BSP/icm20948/lib;../BSP/led;../BSP/motor;../BSP/Motor_GPIO;../BSP/sleep;../BSP/timer;../BSP/util;../BSP/VOFA+;../BSP/icm20948/lib/include;../BSP/jdy28m_geng;../BSP/jdy28m;..\BSP\4G_DTU</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1692,6 +1692,16 @@
               <FileName>startup_stm32f407xx.s</FileName>
               <FileType>2</FileType>
               <FilePath>startup_stm32f407xx.s</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>BSP/DTU_4G</GroupName>
+          <Files>
+            <File>
+              <FileName>bsp_4g.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BSP\4G_DTU\bsp_4g.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -166,7 +166,7 @@ void Behind_Car_Loop()
 void Middle_Car_Loop()
 {
 
-	if (1 == osSemaphoreGetCount(g_state_machine.uart_sem))
+	if (g_state_machine.middle_flag == 1)
 	{
 		if (Behind_back_time <= 500)
 		{

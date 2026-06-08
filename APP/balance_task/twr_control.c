@@ -287,7 +287,6 @@ static void StateMachine_LineTrackingHandler(StateMachine_Handle_t *hsm, Bracket
         Move_Z = 0;
         Move_X = 0;
         hsm->current_state = STATE_FINISHED;
-        osSemaphoreRelease (hsm->uart_sem);
         Buzzer_Start_Once(10);
     }
 }
@@ -315,10 +314,16 @@ static void StateMachine_FinishedHandler(StateMachine_Handle_t *hsm,BracketConte
     // static uint16_t finish_time = 0;
     // finish_time ++;
 		Buzzer_Start_Once(10);
+
+        if(my_4g_dtu.return_flag==1) {
+
+
+            hsm->ahand_flag = 1;
+        }
 //    //测试
 //    osSemaphoreAcquire (hsm->uart_sem,0);
     //准备与串口任务通信：向后车和中间车发送返回信号
-    if(0==osSemaphoreGetCount(hsm->uart_sem)) {
+    if(hsm->ahand_flag == 1) {
         hsm->current_state = STATE_PDOA;
         
     }
@@ -570,7 +575,7 @@ void StateMachine_Init(void)
     // ---------------------- RTOS Resources ----------------------
     // Create start semaphore
     g_state_machine.start_sem = osSemaphoreNew(1U, 0U, NULL);
-    g_state_machine.uart_sem  = osSemaphoreNew(1U, 0U, NULL);
+
     // Initialize time counter
     g_state_machine.time_counter = 0;
     // Create static mutex
@@ -584,4 +589,8 @@ void StateMachine_Init(void)
     g_state_machine.coor3.y = my_4g_dtu.point.y;
     g_state_machine.last_distance_coor3 = 0;
     g_state_machine.distance_coor3 = 0;
+
+    g_state_machine.ahand_flag = 0;
+    g_state_machine.middle_flag = 0;
+    g_state_machine.behind_flag = 0;
 }

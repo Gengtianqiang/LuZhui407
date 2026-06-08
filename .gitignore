@@ -1,0 +1,47 @@
+# ==================== IDE 相关文件 ====================
+# VSCode 全部配置/缓存
+.vscode/
+*.code-workspace
+
+# STM32 插件/库缓存
+.cmsis
+.eide
+.pack
+
+# ==================== Keil MDK 编译/临时文件 ====================
+th_-hal.si4project/
+MDK-ARM/HAL/
+MDK-ARM/*.uvguix.*
+MDK-ARM/*.build_log.htm
+MDK-ARM/Listings/
+MDK-ARM/Objects/
+
+# ==================== 编译中间文件/输出文件 ====================
+*.o
+*.d
+*.axf
+*.map
+*.lst
+*.bak
+*.crf
+*.htm
+*.dep
+*.iex
+*.tra
+*.lnp
+*.bin
+
+# ==================== 系统自动生成垃圾文件（必加） ====================
+.DS_Store
+Thumbs.db
+
+# ==================== CubeMX 临时文件 ====================
+.mxproject
+
+# ==================== 例外规则：必须保留的核心工程文件 ====================
+# 不忽略 Keil 工程主文件
+!MDK-ARM/*.uvprojx
+# 不忽略 Keil 配置文件
+!MDK-ARM/*.uvoptx
+# 不忽略汇编源码文件
+!MDK-ARM/*.s

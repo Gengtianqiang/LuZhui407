@@ -1,0 +1,188 @@
+#include "pdoa_control.h"
+
+Control_State Current_State = STATE_Detection_IDLE;
+
+PID_Controller heading_pid = {
+	.kp = 1.2f,	 // 比例增益 - 需要调试
+	.ki = 0.01f, // 积分增益 - 需要调试
+	.kd = 0.2f,	 // 微分增益 - 需要调试
+	.integral = 0.0f,
+	.prev_error = 0.0f,
+	.integral_limit = 50.0f, // 积分限幅
+	.output_limit = 80.0f	 // 输出限幅
+};
+
+float speed_weight = 10;
+float R_D_ratio = 1.00f;
+extern Control_State Current_State;
+void pdoa_follow(ProtocolData *pdoa_data)
+{
+	if (true == pdoa_data->PdoaisAvailable)
+	{
+		if (pdoa_data->aoa_deg > 60)
+		{
+			pdoa_data->aoa_deg = 60;
+		}
+		if (pdoa_data->aoa_deg < -60)
+		{
+			pdoa_data->aoa_deg = -60;
+		}
+		int pn = 0;
+#ifdef AHAND_CAR
+		pn = -1;
+#endif
+
+#ifdef BEHIND_CAR
+		if(pdoa_data==&retuen_proto_data)
+			pn = -1;
+		else 
+			pn = 1;
+#endif
+		float angle_error = angle_error = pdoa_data->aoa_deg;
+
+		float Horizontal_Distance = pdoa_data->distance_cm * 1.0f / 100;
+
+		switch (Current_State)
+		{
+		case STATE_Detection_IDLE:
+			if (fabs(angle_error) < 15.0f)
+			{
+				Current_State = STATE_Straight;
+			}
+			else
+			{
+				Current_State = STATE_Turn;
+			}
+			break;
+
+		case STATE_Stop:
+			Motor_Pwm_Stop();
+			Current_State = STATE_Detection_IDLE;
+			break;
+
+		case STATE_Turn:
+			/*直接将基站的AOA角度接收作为误差数据偏移*/
+			if (fabs(angle_error) > 15.0f) /*误差偏移，转向更平滑*/
+			{
+				float pid_output = pid_update(&heading_pid, angle_error, 1);
+				if (fabs(pid_output) < 5.0f)
+//					if (fabs(pid_output) < 5.0f)
+				{
+					pid_output = 0;
+				}
+				
+				differential_drive_control(pid_output, 0);
+			}
+			else
+			{
+				Current_State = STATE_Detection_IDLE;
+				heading_pid.integral = 0; // 积分项归0--防止下次转弯值过大
+			}
+			break;
+
+		case STATE_Straight:
+			if (Horizontal_Distance > 7.0f)
+			{
+				/*高速档（仅水平时生效）*/
+				float speed = 2 * GaoSu_Speed * speed_weight * pn;
+//				Set_Pwm(speed, speed, speed, speed);
+				Set_Pwm(0, 0, 0, 0);
+				Current_State = STATE_Detection_IDLE;
+				// printf("水平→高速档，水平距离=%.2fm，速度=%.1f\r\n", Horizontal_Distance, speed);
+			}
+			else if (Horizontal_Distance > 3.5f && Horizontal_Distance < 7.0f)
+			{
+				/*中速档*/
+				float speed = 2 * ZhongSu_Speed * speed_weight * pn;
+				Set_Pwm(speed, speed, speed, speed);
+				Current_State = STATE_Detection_IDLE;
+				// printf("水平→中速档，水平距离=%.2fm，速度=%.1f\r\n", Horizontal_Distance, speed);
+			}
+			else if (Horizontal_Distance > 1.0f && Horizontal_Distance < 3.5f)
+			{
+				/*低速档*/
+				float speed = 2 * DiSu_Speed * speed_weight * pn;
+				Set_Pwm(speed, speed, speed, speed);
+				Current_State = STATE_Detection_IDLE;
+				// printf("水平→低速档，水平距离=%.2fm，速度=%.1f\r\n", Horizontal_Distance, speed);
+			}
+			else if (Horizontal_Distance > 0.2f && Horizontal_Distance < 1.0f)
+			{
+				/*停车档*/
+				Motor_Pwm_Stop();
+				Current_State = STATE_Detection_IDLE;
+				// printf("水平→倒车档，水平距离=%.2fm，速度=%.1f\r\n", Horizontal_Distance, speed);
+			}
+			else if (Horizontal_Distance < 0.2f)
+			{
+				/*倒车档*/
+				Motor_Pwm_Stop();
+				Current_State = STATE_Detection_IDLE;
+
+				// printf("水平→倒车档，水平距离=%.2fm，速度=%.1f\r\n", Horizontal_Distance, speed);
+			}
+
+			break;
+		case STATE_Back:
+
+			Current_State = STATE_Straight;
+			break;
+		default:
+			break;
+		}
+	}
+	else
+	{
+		Motor_Pwm_Stop();
+	}
+}
+
+static uint32_t Behind_back_time = 0;
+void Behind_Car_Loop()
+{
+
+	if (1 == osSemaphoreGetCount(g_state_machine.uart_sem))
+	{
+		if (Behind_back_time <= 500)
+		{
+			Move_X = 0;
+			Move_Z = 0;
+			Drive_Motor(Move_X, 0.0f, Move_Z);
+			Motor_Task_Loop();
+			Behind_back_time++;
+			Buzzer_Start_Once(10);
+		}
+		else
+		{
+			pdoa_follow(&retuen_proto_data);
+		}
+	}
+	else
+		pdoa_follow(&proto_data);
+}
+
+
+
+void Middle_Car_Loop()
+{
+
+	if (1 == osSemaphoreGetCount(g_state_machine.uart_sem))
+	{
+		if (Behind_back_time <= 500)
+		{
+			Move_X = 0;
+			Move_Z = 0;
+			Drive_Motor(Move_X, 0.0f, Move_Z);
+			Motor_Task_Loop();
+			Behind_back_time++;
+			Buzzer_Start_Once(10);
+		}
+		else
+		{
+			pdoa_follow(&retuen_proto_data);
+		}
+	}
+	else
+		pdoa_follow(&proto_data);
+}
+

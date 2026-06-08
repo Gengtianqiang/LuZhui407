@@ -79,167 +79,6 @@ float YAW_KD             = 0.0f;   /* Yaw angle differential coefficient | Æ«º½½
 float MAX_YAW_Z_SPEED    = 0.2f;    /* Maximum yaw correction speed | Æ«º½½Ç¾ÀÆ«×î´ó×ªÏòËÙ¶È */
 float YAW_OFFSET_THRESH  = 5.0f;    /* Yaw angle dead zone (degree) | Æ«º½½ÇËÀÇøãÐÖµ£¨¶È£© */
 
-/************************ TWR Positioning State Machine Tool Functions ************************/
-/**
- * @brief Initialize reference line from start to target | ³õÊ¼»¯Æðµãµ½ÖÕµãµÄ²Î¿¼Ö±Ïß
- * @param[in] hsm   : Pointer to state machine handle | ×´Ì¬»ú¾ä±úÖ¸Õë
- * @param[in] line  : Pointer to line parameter structure | Ö±Ïß²ÎÊý½á¹¹ÌåÖ¸Õë
- * @return bool     : Initialization result (true=success) | ³õÊ¼»¯½á¹û
- */
-bool line_param_init(StateMachine_Handle_t *hsm, LineParam_t *line)
-{
-    if(hsm == NULL || line == NULL) return false;
-    float x1 = hsm->coor2.x, y1 = hsm->coor2.y;
-    float x3 = hsm->coor3.x, y3 = hsm->coor3.y;
-
-    line->A = y3 - y1;
-    line->B = x1 - x3;
-    line->C = x3*y1 - x1*y3;
-    line->norm = sqrtf(line->A*line->A + line->B*line->B);
-
-    // Avoid zero line length (start point = target point)
-    if(line->norm < 0.01f) return false;
-    return true;
-}
-
-/**
- * @brief Calculate signed offset from current point to reference line | ¼ÆËãµ±Ç°µãµ½²Î¿¼ÏßµÄ´ø·ûºÅÆ«ÀëÁ¿
- * @param[in] line  : Pointer to line parameter structure | Ö±Ïß²ÎÊý½á¹¹ÌåÖ¸Õë
- * @param[in] x     : Current X coordinate | µ±Ç°X×ø±ê
- * @param[in] y     : Current Y coordinate | µ±Ç°Y×ø±ê
- * @return float    : Signed offset value | ´ø·ûºÅÆ«ÀëÁ¿
- */
-float calc_line_offset(LineParam_t *line, float x, float y)
-{
-    if(line == NULL) return 0.0f;
-    // Signed offset: sign indicates direction, absolute value indicates distance
-    return (line->A * x + line->B * y + line->C) / line->norm;
-}
-
-/**
- * @brief Yaw angle PD controller | Æ«º½½ÇPD¿ØÖÆÆ÷
- * @param[in] curr_yaw   : Current yaw angle | µ±Ç°Æ«º½½Ç
- * @param[in] target_yaw : Target yaw angle | Ä¿±êÆ«º½½Ç
- * @return float         : PD controller output | PD¿ØÖÆÆ÷Êä³öÖµ
- */
-float curr_yaw_error        = 0.0f;               /* Current yaw error | Õ±Ç°Æ«Ú½Þ‡Ï³Ó® */
-float Yaw_PD_Ctrl(float curr_yaw, float target_yaw)
-{
-    static float last_yaw_error = 0.0f;               /* Last yaw error | ÉÏÒ»´ÎÆ«º½½ÇÎó²î */
-    
-    float pd_output             = 0.0f;               /* PD output | PD¿ØÖÆÆ÷Êä³ö */
-
-    // 1. Calculate current error
-    curr_yaw_error = curr_yaw - target_yaw;
-
-    if(curr_yaw_error<=-180) curr_yaw_error += 360;
-    if(curr_yaw_error>= 180) curr_yaw_error -= 360;
-
-    // 2. PD correction only when error exceeds threshold
-    if(fabs(curr_yaw_error) > YAW_OFFSET_THRESH)
-    {
-        // 3. PD control formula
-        pd_output = YAW_KP * curr_yaw_error + YAW_KD * (curr_yaw_error - last_yaw_error);
-        
-        // 4. Speed limit
-        pd_output = (pd_output > MAX_YAW_Z_SPEED)  ?  MAX_YAW_Z_SPEED : pd_output;
-        pd_output = (pd_output < -MAX_YAW_Z_SPEED) ? -MAX_YAW_Z_SPEED : pd_output;
-    }
-    else
-    {
-        pd_output = 0.0f;
-    }
-
-    // 5. Update last error
-    last_yaw_error = curr_yaw_error;
-    return -pd_output;
-}
-
-/**
- * @brief Line tracking PD controller | Ïß¸ú×ÙPD¿ØÖÆÆ÷
- * @param[in] line    : Pointer to reference line | ²Î¿¼Ö±ÏßÖ¸Õë
- * @param[in] curr_x  : Current X coordinate | µ±Ç°X×ø±ê
- * @param[in] curr_y  : Current Y coordinate | µ±Ç°Y×ø±ê
- * @return float      : PD controller output | PD¿ØÖÆÆ÷Êä³öÖµ
- */
-float Line_Track_PD_Ctrl(LineParam_t *line, float curr_x, float curr_y)
-{
-    static float last_offset = 0.0f;   /* Last offset value | ÉÏÒ»´ÎÆ«ÀëÁ¿ */
-    float curr_offset = calc_line_offset(line, curr_x, curr_y);
-    float pd_output = 0.0f;
-
-    // Correction only when offset exceeds threshold
-    if(fabs(curr_offset) > OFFSET_THRESH)
-    {
-        // PD control formula
-        pd_output = TRACK_KP * curr_offset + TRACK_KD * (curr_offset - last_offset);
-        // Speed limit
-        pd_output = (pd_output > MAX_Z_SPEED) ? MAX_Z_SPEED : pd_output;
-        pd_output = (pd_output < -MAX_Z_SPEED) ? -MAX_Z_SPEED : pd_output;
-    }
-    else
-    {
-        pd_output = 0.0f;
-    }
-
-    last_offset = curr_offset;
-    return pd_output;
-}
-
-/**
- * @brief Calculate angle and position with three points | Èýµã×ø±ê¼ÆËã½Ç¶ÈÓëÎ»ÖÃ¹ØÏµ
- * @param[in] hsm   : Pointer to state machine handle | ×´Ì¬»ú¾ä±úÖ¸Õë
- * @return bool     : Calculation result (true=success) | ¼ÆËã½á¹û
- */
-static bool calc_angle2_and_position(StateMachine_Handle_t *hsm)
-{
-
-    /* 1. check */
-    if (hsm == NULL) return false;
-
-    /* 2. Get three coordinate points */
-    float x1 = hsm->coor1.x, y1 = hsm->coor1.y;
-    float x2 = hsm->coor2.x, y2 = hsm->coor2.y;
-    float x3 = hsm->coor3.x, y3 = hsm->coor3.y;
-
-    /* 3. Calculate vectors v21 and v23 */
-    float v21_x = x1 - x2;
-    float v21_y = y1 - y2;
-    float v23_x = x3 - x2;
-    float v23_y = y3 - y2;
-
-    /* 4. Vector length check */
-    float len_v21 = sqrtf(v21_x*v21_x + v21_y*v21_y);
-    float len_v23 = sqrtf(v23_x*v23_x + v23_y*v23_y);
-    if (len_v21 < 1e-6f || len_v23 < 1e-6f) {
-        hsm->current_state = STATE_ERROR;
-        return false;
-    }
-
-    /* 5. Calculate vector angle (Law of Cosines) */
-    float dot_product = v21_x*v23_x + v21_y*v23_y;
-    float cos_theta = dot_product / (len_v21 * len_v23);
-    // Limit cos range to avoid precision errors
-    cos_theta = (cos_theta > 1.0f) ? 1.0f : (cos_theta < -1.0f) ? -1.0f : cos_theta;
-    hsm->coor3.angle = 180 - acosf(cos_theta) * (180.0f / 3.1415);
-
-    /* 6. Judge middle point position (UP/DOWN) */
-    float v13_x = x3 - x1;
-    float v13_y = y3 - y1;
-    float v12_x = x2 - x1;
-    float v12_y = y2 - y1;
-    
-    float cross_product = v13_x * v12_y - v13_y * v12_x;
-    if (cross_product > 1e-6f) {
-        hsm->middle_state = UP;
-    } else if (cross_product < -1e-6f) {
-        hsm->middle_state = DOWN;
-    } else {
-        hsm->middle_state = Error;
-    }
-
-    return true;
-}
 
 /************************ State Machine Handler Functions (Core Logic) ************************/
 /**
@@ -508,6 +347,170 @@ static void StateMachine_ErrorHandler(StateMachine_Handle_t *hsm,BracketContent 
     Buzzer_Start_Once(10);
     Move_X = 0.0;
 }
+
+
+/************************ TWR Positioning State Machine Tool Functions ************************/
+/**
+ * @brief Initialize reference line from start to target | ³õÊ¼»¯Æðµãµ½ÖÕµãµÄ²Î¿¼Ö±Ïß
+ * @param[in] hsm   : Pointer to state machine handle | ×´Ì¬»ú¾ä±úÖ¸Õë
+ * @param[in] line  : Pointer to line parameter structure | Ö±Ïß²ÎÊý½á¹¹ÌåÖ¸Õë
+ * @return bool     : Initialization result (true=success) | ³õÊ¼»¯½á¹û
+ */
+bool line_param_init(StateMachine_Handle_t *hsm, LineParam_t *line)
+{
+    if(hsm == NULL || line == NULL) return false;
+    float x1 = hsm->coor2.x, y1 = hsm->coor2.y;
+    float x3 = hsm->coor3.x, y3 = hsm->coor3.y;
+
+    line->A = y3 - y1;
+    line->B = x1 - x3;
+    line->C = x3*y1 - x1*y3;
+    line->norm = sqrtf(line->A*line->A + line->B*line->B);
+
+    // Avoid zero line length (start point = target point)
+    if(line->norm < 0.01f) return false;
+    return true;
+}
+
+/**
+ * @brief Calculate signed offset from current point to reference line | ¼ÆËãµ±Ç°µãµ½²Î¿¼ÏßµÄ´ø·ûºÅÆ«ÀëÁ¿
+ * @param[in] line  : Pointer to line parameter structure | Ö±Ïß²ÎÊý½á¹¹ÌåÖ¸Õë
+ * @param[in] x     : Current X coordinate | µ±Ç°X×ø±ê
+ * @param[in] y     : Current Y coordinate | µ±Ç°Y×ø±ê
+ * @return float    : Signed offset value | ´ø·ûºÅÆ«ÀëÁ¿
+ */
+float calc_line_offset(LineParam_t *line, float x, float y)
+{
+    if(line == NULL) return 0.0f;
+    // Signed offset: sign indicates direction, absolute value indicates distance
+    return (line->A * x + line->B * y + line->C) / line->norm;
+}
+
+/**
+ * @brief Yaw angle PD controller | Æ«º½½ÇPD¿ØÖÆÆ÷
+ * @param[in] curr_yaw   : Current yaw angle | µ±Ç°Æ«º½½Ç
+ * @param[in] target_yaw : Target yaw angle | Ä¿±êÆ«º½½Ç
+ * @return float         : PD controller output | PD¿ØÖÆÆ÷Êä³öÖµ
+ */
+float curr_yaw_error        = 0.0f;               /* Current yaw error | Õ±Ç°Æ«Ú½Þ‡Ï³Ó® */
+float Yaw_PD_Ctrl(float curr_yaw, float target_yaw)
+{
+    static float last_yaw_error = 0.0f;               /* Last yaw error | ÉÏÒ»´ÎÆ«º½½ÇÎó²î */
+    
+    float pd_output             = 0.0f;               /* PD output | PD¿ØÖÆÆ÷Êä³ö */
+
+    // 1. Calculate current error
+    curr_yaw_error = curr_yaw - target_yaw;
+
+    if(curr_yaw_error<=-180) curr_yaw_error += 360;
+    if(curr_yaw_error>= 180) curr_yaw_error -= 360;
+
+    // 2. PD correction only when error exceeds threshold
+    if(fabs(curr_yaw_error) > YAW_OFFSET_THRESH)
+    {
+        // 3. PD control formula
+        pd_output = YAW_KP * curr_yaw_error + YAW_KD * (curr_yaw_error - last_yaw_error);
+        
+        // 4. Speed limit
+        pd_output = (pd_output > MAX_YAW_Z_SPEED)  ?  MAX_YAW_Z_SPEED : pd_output;
+        pd_output = (pd_output < -MAX_YAW_Z_SPEED) ? -MAX_YAW_Z_SPEED : pd_output;
+    }
+    else
+    {
+        pd_output = 0.0f;
+    }
+
+    // 5. Update last error
+    last_yaw_error = curr_yaw_error;
+    return -pd_output;
+}
+
+/**
+ * @brief Line tracking PD controller | Ïß¸ú×ÙPD¿ØÖÆÆ÷
+ * @param[in] line    : Pointer to reference line | ²Î¿¼Ö±ÏßÖ¸Õë
+ * @param[in] curr_x  : Current X coordinate | µ±Ç°X×ø±ê
+ * @param[in] curr_y  : Current Y coordinate | µ±Ç°Y×ø±ê
+ * @return float      : PD controller output | PD¿ØÖÆÆ÷Êä³öÖµ
+ */
+float Line_Track_PD_Ctrl(LineParam_t *line, float curr_x, float curr_y)
+{
+    static float last_offset = 0.0f;   /* Last offset value | ÉÏÒ»´ÎÆ«ÀëÁ¿ */
+    float curr_offset = calc_line_offset(line, curr_x, curr_y);
+    float pd_output = 0.0f;
+
+    // Correction only when offset exceeds threshold
+    if(fabs(curr_offset) > OFFSET_THRESH)
+    {
+        // PD control formula
+        pd_output = TRACK_KP * curr_offset + TRACK_KD * (curr_offset - last_offset);
+        // Speed limit
+        pd_output = (pd_output > MAX_Z_SPEED) ? MAX_Z_SPEED : pd_output;
+        pd_output = (pd_output < -MAX_Z_SPEED) ? -MAX_Z_SPEED : pd_output;
+    }
+    else
+    {
+        pd_output = 0.0f;
+    }
+
+    last_offset = curr_offset;
+    return pd_output;
+}
+
+/**
+ * @brief Calculate angle and position with three points | Èýµã×ø±ê¼ÆËã½Ç¶ÈÓëÎ»ÖÃ¹ØÏµ
+ * @param[in] hsm   : Pointer to state machine handle | ×´Ì¬»ú¾ä±úÖ¸Õë
+ * @return bool     : Calculation result (true=success) | ¼ÆËã½á¹û
+ */
+static bool calc_angle2_and_position(StateMachine_Handle_t *hsm)
+{
+
+    /* 1. check */
+    if (hsm == NULL) return false;
+
+    /* 2. Get three coordinate points */
+    float x1 = hsm->coor1.x, y1 = hsm->coor1.y;
+    float x2 = hsm->coor2.x, y2 = hsm->coor2.y;
+    float x3 = hsm->coor3.x, y3 = hsm->coor3.y;
+
+    /* 3. Calculate vectors v21 and v23 */
+    float v21_x = x1 - x2;
+    float v21_y = y1 - y2;
+    float v23_x = x3 - x2;
+    float v23_y = y3 - y2;
+
+    /* 4. Vector length check */
+    float len_v21 = sqrtf(v21_x*v21_x + v21_y*v21_y);
+    float len_v23 = sqrtf(v23_x*v23_x + v23_y*v23_y);
+    if (len_v21 < 1e-6f || len_v23 < 1e-6f) {
+        hsm->current_state = STATE_ERROR;
+        return false;
+    }
+
+    /* 5. Calculate vector angle (Law of Cosines) */
+    float dot_product = v21_x*v23_x + v21_y*v23_y;
+    float cos_theta = dot_product / (len_v21 * len_v23);
+    // Limit cos range to avoid precision errors
+    cos_theta = (cos_theta > 1.0f) ? 1.0f : (cos_theta < -1.0f) ? -1.0f : cos_theta;
+    hsm->coor3.angle = 180 - acosf(cos_theta) * (180.0f / 3.1415);
+
+    /* 6. Judge middle point position (UP/DOWN) */
+    float v13_x = x3 - x1;
+    float v13_y = y3 - y1;
+    float v12_x = x2 - x1;
+    float v12_y = y2 - y1;
+    
+    float cross_product = v13_x * v12_y - v13_y * v12_x;
+    if (cross_product > 1e-6f) {
+        hsm->middle_state = UP;
+    } else if (cross_product < -1e-6f) {
+        hsm->middle_state = DOWN;
+    } else {
+        hsm->middle_state = Error;
+    }
+
+    return true;
+}
+
 
 /************************ TWR State Machine Main Loop ************************/
 /**

@@ -140,6 +140,10 @@ void differential_drive_control(float pid_output, float base_speed);
  * @return None
  */
 void StateMachine_Loop(StateMachine_Handle_t *argument,BracketContent *result);
+bool line_param_init(StateMachine_Handle_t *hsm, LineParam_t *line);
+float Yaw_PD_Ctrl(float curr_yaw, float target_yaw);
+static bool calc_angle2_and_position(StateMachine_Handle_t *hsm);
+float Line_Track_PD_Ctrl(LineParam_t *line, float curr_x, float curr_y);
 
 //******************************** Defines **********************************//
 #endif /* TWR_CONTRAL_H */

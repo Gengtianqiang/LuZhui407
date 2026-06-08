@@ -137,6 +137,7 @@ Section Cross References
     twr_control.o(i.StateMachine_FinishedHandler) refers to control.o(.data) for Move_X
     twr_control.o(i.StateMachine_IdleHandler) refers to cmsis_os2.o(i.osSemaphoreRelease) for osSemaphoreRelease
     twr_control.o(i.StateMachine_IdleHandler) refers to twr_control.o(.data) for begin_timecounter
+    twr_control.o(i.StateMachine_IdleHandler) refers to bsp_4g.o(.bss) for my_4g_dtu
     twr_control.o(i.StateMachine_IdleHandler) refers to Parser.o(.bss) for bracket_data
     twr_control.o(i.StateMachine_Init) refers to cmsis_os2.o(i.osSemaphoreNew) for osSemaphoreNew
     twr_control.o(i.StateMachine_Init) refers to queue.o(i.xQueueCreateMutexStatic) for xQueueCreateMutexStatic
@@ -3125,7 +3126,7 @@ Removing Unused input sections from the image.
     Removing twr_control.o(i.SpeedP_Update), (80 bytes).
     Removing twr_control.o(i.StateMachine_ErrorHandler), (32 bytes).
     Removing twr_control.o(i.StateMachine_FinishedHandler), (44 bytes).
-    Removing twr_control.o(i.StateMachine_IdleHandler), (72 bytes).
+    Removing twr_control.o(i.StateMachine_IdleHandler), (84 bytes).
     Removing twr_control.o(i.StateMachine_ImuCheckHandler), (6 bytes).
     Removing twr_control.o(i.StateMachine_LineTrackingHandler), (392 bytes).
     Removing twr_control.o(i.StateMachine_Loop), (176 bytes).
@@ -4151,7 +4152,7 @@ Removing Unused input sections from the image.
     Removing dfltui.o(.text), (26 bytes).
     Removing dneg.o(.text), (6 bytes).
 
-1097 unused section(s) (total 123793 bytes) removed from the image.
+1097 unused section(s) (total 123805 bytes) removed from the image.
 
 ==============================================================================
 

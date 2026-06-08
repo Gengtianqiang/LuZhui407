@@ -1141,3 +1141,74 @@ These source files will be recompiled
 [2026-06-08 21:18:59]	[done]
 	build successfully !
 
+[2026-06-08 21:37:49]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.c': source file has been changed.
+
+[2026-06-08 21:37:49]	compilation failed at : "c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.c", exit code: 1
+command: 
+  "d:\Keil_5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I. -ICore/Inc -IDrivers/STM32F4xx_HAL_Driver/Inc -IDrivers/STM32F4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32F4xx/Include -IDrivers/CMSIS/Include -IBSP -IMiddlewares/Third_Party/FreeRTOS/Source/include -IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -IMiddlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -IHARDWARE/Encoder -IHARDWARE/Motor_GPIO -IAPP/balance_task -IAPP/bg_task -IAPP/imu_task -IAPP/uart_task -IBSP/battery -IBSP/buzzer -IBSP/Encoder -IBSP/icm20948/app -IBSP/icm20948/lib -IBSP/led -IBSP/motor -IBSP/Motor_GPIO -IBSP/sleep -IBSP/timer -IBSP/util -IBSP/VOFA+ -IBSP/icm20948/lib/include -IBSP/jdy28m_geng -IBSP/jdy28m -I.cmsis/include -IMDK-ARM/RTE/_HAL -IBSP/4G_DTU -D"USE_HAL_DRIVER" -D"STM32F407xx" --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O0 -Otime --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\HAL\.obj\APP\balance_task\twr_control.o --no_depend_system_headers --depend .\build\HAL\.obj\APP\balance_task\twr_control.d .\APP\balance_task\twr_control.c
+   at unify_builder.Program.Main(String[] args_)
+---
+"APP/uart_task/uart_task.h", line 20: Warning:  #47-D: incompatible redefinition of macro "RING_BUFFER_SIZE"  (declared at line 9 of "BSP/jdy28m/forward.h")
+  #define RING_BUFFER_SIZE 128
+          ^
+".\APP\balance_task\twr_control.c", line 149: Warning:  #223-D: function "calc_angle2_and_position" declared implicitly
+          if(calc_angle2_and_position (hsm));
+             ^
+".\APP\balance_task\twr_control.c", line 213: Warning:  #223-D: function "line_param_init" declared implicitly
+              if(line_param_init(hsm, &g_ref_line))
+                 ^
+".\APP\balance_task\twr_control.c", line 258: Warning:  #223-D: function "Line_Track_PD_Ctrl" declared implicitly
+          Move_Z = Line_Track_PD_Ctrl(ref_line, res->x, res->y) * 0.6
+                   ^
+".\APP\balance_task\twr_control.c", line 259: Warning:  #223-D: function "Yaw_PD_Ctrl" declared implicitly
+                  + Yaw_PD_Ctrl(myimu.euler_yaw_Cali, hsm->coor2.angle) * 0.4;
+                    ^
+".\APP\balance_task\twr_control.c", line 335: Warning:  #223-D: function "pdoa_follow" declared implicitly
+      pdoa_follow(&proto_data);
+      ^
+".\APP\balance_task\twr_control.c", line 359: Error:  #159: declaration is incompatible with previous "line_param_init"  (declared at line 213)
+  bool line_param_init(StateMachine_Handle_t *hsm, LineParam_t *line)
+       ^
+".\APP\balance_task\twr_control.c", line 396: Error:  #159: declaration is incompatible with previous "Yaw_PD_Ctrl"  (declared at line 259)
+  float Yaw_PD_Ctrl(float curr_yaw, float target_yaw)
+        ^
+".\APP\balance_task\twr_control.c", line 435: Error:  #159: declaration is incompatible with previous "Line_Track_PD_Ctrl"  (declared at line 258)
+  float Line_Track_PD_Ctrl(LineParam_t *line, float curr_x, float curr_y)
+        ^
+".\APP\balance_task\twr_control.c", line 464: Error:  #159: declaration is incompatible with previous "calc_angle2_and_position"  (declared at line 149)
+  static bool calc_angle2_and_position(StateMachine_Handle_t *hsm)
+              ^
+".\APP\balance_task\twr_control.c", line 494: Warning:  #1035-D: single-precision operand implicitly converted to double-precision
+      hsm->coor3.angle = 180 - acosf(cos_theta) * (180.0f / 3.1415);
+                                                   ^
+".\APP\balance_task\twr_control.c", line 239: Warning:  #177-D: function "StateMachine_RotateWaitHandler"  was declared but never referenced
+  static void StateMachine_RotateWaitHandler(StateMachine_Handle_t *hsm,BracketContent *res)
+              ^
+".\APP\balance_task\twr_control.c", line 301: Warning:  #177-D: function "StateMachine_MoveToTargetHandler"  was declared but never referenced
+  static void StateMachine_MoveToTargetHandler(StateMachine_Handle_t *hsm, BracketContent *res)
+              ^
+".\APP\balance_task\twr_control.c", line 464: Warning:  #177-D: function "calc_angle2_and_position"  was declared but never referenced
+  static bool calc_angle2_and_position(StateMachine_Handle_t *hsm)
+              ^
+.\APP\balance_task\twr_control.c: 10 warnings, 4 errors
+
+[2026-06-08 21:39:26]	[info] incremental build: 10 source files changed
+These source files will be recompiled
+---
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.c': source file has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.h' has been changed.
+
+[2026-06-08 21:39:28]	[done]
+	build successfully !
+

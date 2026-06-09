@@ -696,7 +696,7 @@ jdy_status_t jdy_task(Jdy_t *const self, mesh_datasend_pkt_t *pkt, ProtocolData 
 /*头车就位后向一号中间车发送前进信号，*/    
 /*头车接收到4G返回信号后向所有中间车发送返回信号，*/    
 #ifdef AHAND_CAR
-    g_state_machine.ahand_flag = ;
+    g_state_machine.ahand_flag = 3;
     if (1 == g_state_machine.ahand_flag)
     {
         pkt->to_maddr = 0x0002U; // user  //select_node_M()
@@ -739,7 +739,9 @@ jdy_status_t jdy_task(Jdy_t *const self, mesh_datasend_pkt_t *pkt, ProtocolData 
     if (3 == self->p_mesh_submode->p_parser->recv_pkt.L) car_id_2 = 1;
     if (4 == self->p_mesh_submode->p_parser->recv_pkt.L) car_id_3 = 1;
 
-    if(car_id_2&&car_id_3) {
+    if(car_id_2) {
+
+        JDY_DEBUG_OUT("return\r\n");
         g_state_machine.behind_flag = 1;
     }
 

@@ -748,7 +748,7 @@ Section Cross References
     jdy_driver.o(i.moving_average_filter_LinearAccX) refers to jdy_driver.o(.bss) for acc_buffer
     jdy_driver.o(i.moving_average_filter_LinearAccX) refers to jdy_driver.o(.data) for acc_index
     jdy_driver.o(i.my_GetTick) refers to tasks.o(i.xTaskGetTickCount) for xTaskGetTickCount
-    jdy_driver.o(i.my_delay_ms) refers to cmsis_os2.o(i.osDelay) for osDelay
+    jdy_driver.o(i.my_delay_ms) refers to stm32f4xx_hal.o(i.HAL_Delay) for HAL_Delay
     jdy_driver.o(i.my_mesh_init) refers to mesh_mode.o(i.JDY_func_init) for JDY_func_init
     jdy_driver.o(i.my_send_callback) refers to Vofa.o(i.Vofa_Printf) for Vofa_Printf
     jdy_driver.o(i.my_send_callback) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical

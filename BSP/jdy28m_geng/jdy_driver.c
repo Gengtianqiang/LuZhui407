@@ -111,7 +111,8 @@ void my_custom_function(Jdy_t *const self)
 void my_delay_ms(uint32_t ms)
 {
     // 用户需在实例化时提供具体的OS延时函数实现
-    osDelay( ms);
+    // osDelay( ms);
+    HAL_Delay(ms);
 }
 
 /**

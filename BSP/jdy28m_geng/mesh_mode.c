@@ -125,6 +125,7 @@ jdy_status_t JDY_func_it(Jdy_t *const self, uint8_t *ble_datarev_buff, uint16_t 
             jdy_uart_recv[i] = byte;
         }
         self->p_mesh_submode->state = handling;
+
     }
     /*************3. Handling waiting state data**************/
 
@@ -138,24 +139,68 @@ jdy_status_t JDY_func_it(Jdy_t *const self, uint8_t *ble_datarev_buff, uint16_t 
  * @param[in] cmd  : Pointer to AT command string | 指向AT指令字符串的指针
  * @return jdy_status_t : Operation status (JDY_OK for success) | 操作状态（JDY_OK表示成功）
  */
-jdy_status_t dev_OK(Jdy_t *const self, const char *cmd)
-{
-    jdy_status_t ret = JDY_OK;
+// jdy_status_t dev_OK(Jdy_t *const self, const char *cmd)
+// {
+//     jdy_status_t ret = JDY_OK;
 
-    /*************1. Checking current state**************/
-    if (self->p_mesh_submode->state != idle)
-    {
-        ret = JDY_ERROR;
-        return ret;
-    }
-    /*************1. Checking current state**************/
+//     /*************1. Checking current state**************/
+//     if (self->p_mesh_submode->state != idle)
+//     {
+//         ret = JDY_ERROR;
+//         return ret;
+//     }
+//     /*************1. Checking current state**************/
 
-    /*************2. Sending AT command**************/
-    self->p_tx->done_cb(self, (uint8_t *)cmd, strlen(cmd));
-    /*************2. Sending AT command**************/
+//     /*************2. Sending AT command**************/
+//     self->p_tx->done_cb(self, (uint8_t *)cmd, strlen(cmd));
+//     /*************2. Sending AT command**************/
 
-    return ret;
-}
+//     return ret;
+// }
+
+
+  jdy_status_t dev_OK(Jdy_t *const self, const char *cmd)
+  {
+      jdy_status_t ret = JDY_OK;      uint32_t k;
+      /*************1. Checking current state**************/
+      if (self->p_mesh_submode->state != idle)
+      {
+          ret = JDY_ERROR;
+          return ret;
+      }
+      /*************1. Checking current state**************/
+
+      /*************2. Sending AT command**************/
+      self->p_mesh_submode->state = waiting;
+      self->p_tx->done_cb(self, (uint8_t *)cmd, strlen(cmd));
+      /*************2. Sending AT command**************/
+
+      /*************3. Waiting for response**************/
+      k = self->p_time->getSysTickCnt();
+      while (self->p_mesh_submode->state == waiting)
+      {
+          if ((self->p_time->getSysTickCnt() - k) > JDY_UART_TIMEOUT)
+          {
+              self->p_mesh_submode->state = idle;
+              ret = JDY_ERRORTIMEOUT;
+  #ifdef JDY_DEBUG
+              JDY_DEBUG_OUT("dev_OK timeout: %s\n", cmd);
+  #endif
+              return ret;
+          }
+      }
+
+      if (self->p_mesh_submode->state == handling)
+      {
+          self->p_mesh_submode->state = idle;
+  #ifdef JDY_DEBUG
+          JDY_DEBUG_OUT("dev_OK cmd: %s -> %s\n", cmd, jdy_uart_recv);
+  #endif
+      }
+      /*************3. Waiting for response**************/
+
+      return ret;
+  }
 
 /**
  * @brief Send JDY AT command and wait for response | 发送有响应的JDY AT指令
@@ -225,12 +270,13 @@ jdy_status_t dev_query(Jdy_t *const self, const char *cmd, char *dest)
 
 #ifdef JDY_DEBUG
         JDY_DEBUG_OUT("Query result: %s\n", dest);
+
 #endif
 
         ret = JDY_OK;
         return ret;
     }
-    /*************4. Handling response data**************/
+/*************4. Handling response data**************//*************4. Handling response data**************/
 
     return ret;
 }
@@ -245,12 +291,13 @@ jdy_status_t dev_query(Jdy_t *const self, const char *cmd, char *dest)
 jdy_status_t dev_init(Jdy_t *const self)
 {
     // 实测，100ms延时是必须的
+    self->p_time->my_delay(1000);
     dev_OK(self, "AT\r\n");
-    self->p_time->my_delay(100);
-    // dev_OK(self, "AT+DEFAULT\r\n"); // 默认，很关键
-    // self->p_time->my_delay(100);
+    self->p_time->my_delay(1000);
+    dev_OK(self, "AT+DEFAULT\r\n"); // 默认，很关键
+    self->p_time->my_delay(1000);
     dev_OK(self, "AT+RESET\r\n");
-    self->p_time->my_delay(500); // 实测，300ms延时是必须的
+    self->p_time->my_delay(1000); // 实测，300ms延时是必须的
 
     dev_OK(self, "AT\r\n");
     self->p_time->my_delay(100);
@@ -290,15 +337,7 @@ jdy_status_t JDY_func_init(Jdy_t *const self)
     /*************2. Initializing JDY-28M basic parameters**************/
 
     /*************3. Querying MAC and MADDR**************/
-    dev_OK(self, "AT\r\n");
-    self->p_time->my_delay(100);
-    dev_query(self, "AT+MAC\r\n", self->p_mesh_submode->MAC);
-#ifdef JDY_DEBUG
-    JDY_DEBUG_OUT("MAC: %s\n", self->p_mesh_submode->MAC);
-#endif
-    self->p_time->my_delay(200);
-    dev_query(self, "AT+MADDR\r\n", self->p_mesh_submode->MADDR);
-    self->p_time->my_delay(200);
+
     /*************3. Querying MAC and MADDR**************/
 
     /*************4. Configuring MESH NETID**************/
@@ -311,13 +350,24 @@ jdy_status_t JDY_func_init(Jdy_t *const self)
     self->p_time->my_delay(200);
     res = dev_OK(self, MESH_MADDR);
     self->p_time->my_delay(200);
-    // while (JDY_ERROR == res)
-    // {
-    //     res = dev_OK(self, MESH_MADDR);
-    //     self->p_time->my_delay(300);
-    // }
+    while (JDY_ERROR == res)
+    {
+        res = dev_OK(self, MESH_MADDR);
+ #ifdef JDY_DEBUG
+    JDY_DEBUG_OUT("Error: Failed to set MESH MADDR, retrying...\n");
+#endif
+        self->p_time->my_delay(300);
+    }
     /*************4. Configuring MESH NETID**************/
-
+        dev_OK(self, "AT\r\n");
+    self->p_time->my_delay(100);
+    dev_query(self, "AT+MAC\r\n", self->p_mesh_submode->MAC);
+#ifdef JDY_DEBUG
+    JDY_DEBUG_OUT("MAC: %s\n", self->p_mesh_submode->MAC);
+#endif
+    self->p_time->my_delay(200);
+    dev_query(self, "AT+MADDR\r\n", self->p_mesh_submode->MADDR);
+    self->p_time->my_delay(200);
     /*************5. Resetting JDY-28M and marking initialization complete**************/
     dev_OK(self, "AT+RESET\r\n");
     self->p_time->my_delay(1000);
@@ -646,6 +696,7 @@ jdy_status_t jdy_task(Jdy_t *const self, mesh_datasend_pkt_t *pkt, ProtocolData 
 /*头车就位后向一号中间车发送前进信号，*/    
 /*头车接收到4G返回信号后向所有中间车发送返回信号，*/    
 #ifdef AHAND_CAR
+    g_state_machine.ahand_flag = ;
     if (1 == g_state_machine.ahand_flag)
     {
         pkt->to_maddr = 0x0002U; // user  //select_node_M()
@@ -662,16 +713,16 @@ jdy_status_t jdy_task(Jdy_t *const self, mesh_datasend_pkt_t *pkt, ProtocolData 
         //向所有中间车发送返回指令
     }else if (3 == g_state_machine.ahand_flag)
     {
-        static uint8_t car_id = 0;
-        car_id++; 
+        // static uint8_t car_id = 0;
+        // car_id++; 
 
-        if(car_id==0) {
+        // if(car_id==0) {
             pkt->to_maddr = 0x0002U; // user  //select_node_M()
-        }else if(car_id==1) {
-            pkt->to_maddr = 0x0003U; // user  //select_node_M()
-        }else {
-            car_id=0;
-        }
+        // }else if(car_id==1) {
+        //     pkt->to_maddr = 0x0003U; // user  //select_node_M()
+        // }else {
+        //     car_id=0;
+        // }
 
         
         pkt->L = 2;
@@ -721,6 +772,8 @@ jdy_status_t jdy_task(Jdy_t *const self, mesh_datasend_pkt_t *pkt, ProtocolData 
 
     }else if (2 == self->p_mesh_submode->p_parser->recv_pkt.L)
     {
+
+        JDY_DEBUG_OUT("return\r\n");
         g_state_machine.middle_flag = 2;
         pkt->to_maddr = 0x0004U; // user  //select_node_M()
         pkt->L = 3;

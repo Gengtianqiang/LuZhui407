@@ -3,7 +3,7 @@
 Compiler Full Name: Component: ARM Compiler 5.06 update 6 (build 750)
 Compiler Version: 5.06
 Builder Mode: Incremental
-The amount of C files: 2
+The amount of C files: 1
 The amount of C++ files: 0
 The amount of Asm files: 0
 
@@ -13,24 +13,20 @@ The amount of Asm files: 0
 
 >>> cc
 
-"APP/uart_task/uart_task.h", line 20: Warning:  #47-D: incompatible redefinition of macro "RING_BUFFER_SIZE"  (declared at line 9 of "BSP/jdy28m/forward.h")
-  #define RING_BUFFER_SIZE 128
-          ^
-".\APP\balance_task\pdoa_control.c", line 35: Warning:  #14-D: extra text after expected end of preprocessing directive
-  #ifdef BEHIND_CAR || MIDDLE_CAR_FIRST|| MIDDLE_CAR
-                    ^
-".\APP\balance_task\pdoa_control.c", line 140: Warning:  #177-D: variable "Behind_back_time"  was declared but never referenced
-  static uint32_t Behind_back_time = 0;
-                  ^
-.\APP\balance_task\pdoa_control.c: 3 warnings, 0 errors
-".\APP\uart_task\uart_task.h", line 20: Warning:  #47-D: incompatible redefinition of macro "RING_BUFFER_SIZE"  (declared at line 9 of "BSP/jdy28m/forward.h")
-  #define RING_BUFFER_SIZE 128
-          ^
-.\APP\uart_task\uart_task.c: 1 warning, 0 errors
+".\BSP\jdy28m_geng\jdy_driver.c", line 37: Warning:  #223-D: function "JDY_func_init" declared implicitly
+      return JDY_func_init(self);
+             ^
+".\BSP\jdy28m_geng\jdy_driver.c", line 37: Warning:  #188-D: enumerated type mixed with another type
+      return JDY_func_init(self);
+             ^
+".\BSP\jdy28m_geng\jdy_driver.c", line 222: Warning:  #188-D: enumerated type mixed with another type
+  Jdy_t jdy_handle = {0};
+                      ^
+.\BSP\jdy28m_geng\jdy_driver.c: 3 warnings, 0 errors
 
 >>> ld
 
-Program Size: Code=80200 RO-data=15652 RW-data=1104 ZI-data=27944  
+Program Size: Code=71864 RO-data=15488 RW-data=916 ZI-data=27948  
 
 
 >>> postbuild

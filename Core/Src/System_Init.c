@@ -62,6 +62,8 @@ void systemInit(void)
 	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_SET);
 	StateMachine_Init();
 	
+
+
 }
 
 bool uwb_set_state() {

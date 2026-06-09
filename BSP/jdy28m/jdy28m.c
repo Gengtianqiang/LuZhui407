@@ -46,8 +46,8 @@ void JDY_Task_Init(JDY_t *self, enum ForwardData_Key on_off)
     HAL_Delay(1);
     JDY_SendCmd("AT+ROLE2\r\n"); // 设置组网类型 (2:mesh)
     HAL_Delay(1);
-    JDY_SendCmd(MESH_NETID); // 设置组网ID
-    HAL_Delay(1);
+//    JDY_SendCmd(MESH_NETID); // 设置组网ID
+//    HAL_Delay(1);
     JDY_SendCmd("AT+RESET\r\n");
     // HAL_Delay(250);
 }

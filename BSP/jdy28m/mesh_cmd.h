@@ -37,7 +37,7 @@
 
 
 /* define */
-#define     MESH_NETID      "AT+NETID0A19132E,6\r\n"
+//#define     MESH_NETID      "AT+NETID0A19132E,6\r\n"
 
 #define MESH_FUNC_FIND_NODE_TIMEOUT  4000u
 #define MESH_SENDDATA_TIME_INTERVAL  100u

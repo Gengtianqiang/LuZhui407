@@ -12,12 +12,12 @@ void StartUsartTask(void *argument)
 {
 	/* USER CODE BEGIN StartUsartTask */
 	
-    jdy_inst(&jdy_handle,
-		    &mesh_config,
-			&tx_config,
-			&rx_config,
-			&time_config,
-			&function_config);
+	jdy_inst(&jdy_handle,
+    &mesh_config,
+    &tx_config,
+    &rx_config,
+    &time_config,
+    &function_config);
 
 	jdy_handle.p_mesh_submode->mesh_init(&jdy_handle);
 

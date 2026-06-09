@@ -742,3 +742,20 @@ These source files will be recompiled
 [2026-06-09 13:23:40]	[done]
 	build successfully !
 
+[2026-06-09 14:34:39]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\pdoa_control.c': source file has been changed.
+
+[2026-06-09 14:34:40]	[done]
+	build successfully !
+
+[2026-06-09 14:41:48]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\pdoa_control.c': source file has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_task.c': source file has been changed.
+
+[2026-06-09 14:41:50]	[done]
+	build successfully !
+

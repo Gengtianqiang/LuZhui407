@@ -30,7 +30,7 @@ void StartUsartTask(void *argument)
 		osDelay(50);
 
 
-	my_4g_dtu.parser_fun(&my_4g_dtu,dtu_rx_buffer);
+	
 
 
 	Protocol_Parse(&ring_rx_DMA_buf, &proto_data);
@@ -38,6 +38,9 @@ void StartUsartTask(void *argument)
 
 
 #ifdef AHAND_CAR
+
+	my_4g_dtu.parser_fun(&my_4g_dtu,dtu_rx_buffer);
+
  	if (ParseTwrProtocol(&ring3_rx_DMA_buf, &bracket_data))
  	{
  			bracket_data.twr_status = (ParseBracketContentToFloats(&bracket_data));

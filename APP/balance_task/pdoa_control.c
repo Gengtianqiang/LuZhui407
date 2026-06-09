@@ -32,13 +32,13 @@ void pdoa_follow(ProtocolData *pdoa_data)
 		pn = -1;
 #endif
 
-#ifdef BEHIND_CAR
+#ifdef BEHIND_CAR || MIDDLE_CAR_FIRST|| MIDDLE_CAR
 		if(pdoa_data==&retuen_proto_data)
 			pn = -1;
 		else 
 			pn = 1;
 #endif
-		float angle_error = angle_error = pdoa_data->aoa_deg;
+		float angle_error =  pdoa_data->aoa_deg;
 
 		float Horizontal_Distance = pdoa_data->distance_cm * 1.0f / 100;
 

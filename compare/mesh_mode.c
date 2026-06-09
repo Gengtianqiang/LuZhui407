@@ -247,8 +247,8 @@ jdy_status_t dev_init(Jdy_t *const self)
     // 实测，100ms延时是必须的
     dev_OK(self, "AT\r\n");
     self->p_time->my_delay(100);
-    // dev_OK(self, "AT+DEFAULT\r\n"); // 默认，很关键
-    // self->p_time->my_delay(100);
+    dev_OK(self, "AT+DEFAULT\r\n"); // 默认，很关键
+    self->p_time->my_delay(100);
     dev_OK(self, "AT+RESET\r\n");
     self->p_time->my_delay(500); // 实测，300ms延时是必须的
 
@@ -309,13 +309,11 @@ jdy_status_t JDY_func_init(Jdy_t *const self)
     // 设置组网ID号 全部一样
     res = dev_OK(self, MESH_NETID);
     self->p_time->my_delay(200);
-    res = dev_OK(self, MESH_MADDR);
-    self->p_time->my_delay(200);
-    // while (JDY_ERROR == res)
-    // {
-    //     res = dev_OK(self, MESH_MADDR);
-    //     self->p_time->my_delay(300);
-    // }
+    while (JDY_ERROR == res)
+    {
+        res = dev_OK(self, MESH_NETID);
+        self->p_time->my_delay(300);
+    }
     /*************4. Configuring MESH NETID**************/
 
     /*************5. Resetting JDY-28M and marking initialization complete**************/
@@ -636,19 +634,15 @@ float uint8_to_float(uint8_t input_u8, int use_round)
 float ceshi_angle = 0;
 int ceshi_distance = 0;
 extern StateMachine_Handle_t g_state_machine;
-/*MADDR : 0x0001U 0x0002U 0x0003U 0x0004U */
 jdy_status_t jdy_task(Jdy_t *const self, mesh_datasend_pkt_t *pkt, ProtocolData *data)
 {
     jdy_status_t res;
 
     self->p_mesh_submode->p_parser->pf_mesh_datarecv_handler(self, &ringBuffer4);
-
-/*头车就位后向一号中间车发送前进信号，*/    
-/*头车接收到4G返回信号后向所有中间车发送返回信号，*/    
 #ifdef AHAND_CAR
-    if (1 == g_state_machine.ahand_flag)
+    if (1 == osSemaphoreGetCount(g_state_machine.uart_sem))
     {
-        pkt->to_maddr = 0x0002U; // user  //select_node_M()
+        pkt->to_maddr = 0xFFFFU; // user  //select_node_M()
         pkt->L = 1;
         pkt->R = 1;
         pkt->valid = 0x01; // user  //key
@@ -656,75 +650,20 @@ jdy_status_t jdy_task(Jdy_t *const self, mesh_datasend_pkt_t *pkt, ProtocolData 
 
         if (2 == self->p_mesh_submode->p_parser->recv_pkt.L)
         {
-            g_state_machine.ahand_flag = 2;
+            // 释放信号量，不阻塞
+            osSemaphoreAcquire(g_state_machine.uart_sem, 0);
             Buzzer_Start_Once(100);
         }
-        //向所有中间车发送返回指令
-    }else if (3 == g_state_machine.ahand_flag)
-    {
-        static uint8_t car_id = 0;
-        car_id++; 
-
-        if(car_id==0) {
-            pkt->to_maddr = 0x0002U; // user  //select_node_M()
-        }else if(car_id==1) {
-            pkt->to_maddr = 0x0003U; // user  //select_node_M()
-        }else {
-            car_id=0;
-        }
-
-        
-        pkt->L = 2;
-        pkt->R = 2;
-        pkt->valid = 0x01; // user  //key
-        res = jdy_handle.p_mesh_submode->p_parser->pf_mesh_datasend_handler(self, pkt);
-
     }
 #endif
-/*后车接收到所有中间车返回信号后返回*/
+
 #ifdef BEHIND_CAR
-
-    static uint8_t car_id_2=0,car_id_3=0;
-    if (3 == self->p_mesh_submode->p_parser->recv_pkt.L) car_id_2 = 1;
-    if (4 == self->p_mesh_submode->p_parser->recv_pkt.L) car_id_3 = 1;
-
-    if(car_id_2&&car_id_3) {
-        g_state_machine.behind_flag = 1;
-    }
-
-
-#endif
-
-
-
-/*所有中间车接收到头车返回信号后集体向后车发送返回信号*/  
-#ifdef MIDDLE_CAR
-    if (2 == self->p_mesh_submode->p_parser->recv_pkt.L)
-    {
-        
-        g_state_machine.middle_flag = 1;
-        pkt->to_maddr = 0x0004U; // user  //select_node_M()
-        pkt->L = 4;
-        pkt->R = 4;
-        pkt->valid = 0x01; // user  //key
-        res = jdy_handle.p_mesh_submode->p_parser->pf_mesh_datasend_handler(self, pkt);
-    }
-
-#endif
-
- /*一号中间车接收到头车前进信号后前进*/ 
-#ifdef MIDDLE_CAR_FIRST
     if (1 == self->p_mesh_submode->p_parser->recv_pkt.L)
     {
-        
-        g_state_machine.middle_flag = 1;
-
-    }else if (2 == self->p_mesh_submode->p_parser->recv_pkt.L)
-    {
-        g_state_machine.middle_flag = 2;
-        pkt->to_maddr = 0x0004U; // user  //select_node_M()
-        pkt->L = 3;
-        pkt->R = 3;
+        osSemaphoreRelease(g_state_machine.uart_sem);
+        pkt->to_maddr = 0xFFFFU; // user  //select_node_M()
+        pkt->L = 2;
+        pkt->R = 2;
         pkt->valid = 0x01; // user  //key
         res = jdy_handle.p_mesh_submode->p_parser->pf_mesh_datasend_handler(self, pkt);
     }

@@ -10,7 +10,7 @@ float A_Encoder, B_Encoder, C_Encoder, D_Encoder;
 uint8_t text_buffer[] = {0x01, 0x02, 0x03, 0x04};
 extern mesh_datasend_pkt_t my_mesh_send_pkt;
 
-
+#define TIME_IO
 
 void StartBalanceTask(void *argument)
 {
@@ -19,12 +19,6 @@ void StartBalanceTask(void *argument)
 #endif
 #ifdef BEHIND_CAR
 	JDY_DEBUG_OUT("the behand car is begin!");
-#endif
-#ifdef MIDDLE_CAR
-	JDY_DEBUG_OUT("the middle car is begin!");
-#endif
-#ifdef MIDDLE_CAR_FIRST
-	JDY_DEBUG_OUT("the middle car first is begin!");
 #endif
 
 	for (;;)
@@ -42,13 +36,7 @@ void StartBalanceTask(void *argument)
 #ifdef BEHIND_CAR
 		 Behind_Car_Loop();
 		// pdoa_follow(&retuen_proto_data);
-		// pdoa_follow(&proto_data);
-#endif
-
-#ifdef MIDDLE_CAR || MIDDLE_CAR_FIRST
-		 Middle_Car_Loop();
-		// pdoa_follow(&retuen_proto_data);
-		// pdoa_follow(&proto_data);
+//		pdoa_follow(&proto_data);
 #endif
 
 		Motor_Stop_Loop();

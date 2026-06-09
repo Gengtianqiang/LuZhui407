@@ -3,7 +3,7 @@
 Compiler Full Name: Component: ARM Compiler 5.06 update 6 (build 750)
 Compiler Version: 5.06
 Builder Mode: Incremental
-The amount of C files: 7
+The amount of C files: 1
 The amount of C++ files: 0
 The amount of Asm files: 0
 
@@ -16,13 +16,14 @@ The amount of Asm files: 0
 "APP/uart_task/uart_task.h", line 20: Warning:  #47-D: incompatible redefinition of macro "RING_BUFFER_SIZE"  (declared at line 9 of "BSP/jdy28m/forward.h")
   #define RING_BUFFER_SIZE 128
           ^
-".\APP\balance_task\pdoa_control.c", line 144: Error:  #136: struct "<unnamed>"  has no field "uart_sem"
-  	if (1 == osSemaphoreGetCount(g_state_machine.uart_sem))
-  	                                             ^
-.\APP\balance_task\pdoa_control.c: 1 warning, 1 error
+".\BSP\4G_DTU\bsp_4g.c", line 266: Warning:  #940-D: missing return statement at end of non-void function "dtu_parser" 
+  }
+  ^
+.\BSP\4G_DTU\bsp_4g.c: 2 warnings, 0 errors
 
 >>> ld
 
+Program Size: Code=80200 RO-data=15652 RW-data=1104 ZI-data=27944  
 
 
 >>> postbuild

@@ -140,34 +140,23 @@ void pdoa_follow(ProtocolData *pdoa_data)
 static uint32_t Behind_back_time = 0;
 void Behind_Car_Loop()
 {
-	if(1==g_state_machine.behind_flag)
-		pdoa_follow(&retuen_proto_data);
-	else {
-		pdoa_follow(&proto_data);
+
+	if (1 == osSemaphoreGetCount(g_state_machine.uart_sem))
+	{
+		if (Behind_back_time <= 500)
+		{
+			Move_X = 0;
+			Move_Z = 0;
+			Drive_Motor(Move_X, 0.0f, Move_Z);
+			Motor_Task_Loop();
+			Behind_back_time++;
+			Buzzer_Start_Once(10);
+		}
+		else
+		{
+			pdoa_follow(&retuen_proto_data);
+		}
 	}
-}
-
-
-
-void Middle_Car_Loop()
-{
-
-
-#ifdef MIDDLE_CAR
-	if(g_state_machine.middle_flag!=2)
-		pdoa_follow(&proto_data);
 	else
-		pdoa_follow(&retuen_proto_data);
-
-#endif
-
-#ifdef MIDDLE_CAR_FIRST
-	if(g_state_machine.middle_flag == 1)
 		pdoa_follow(&proto_data);
-	else if(g_state_machine.middle_flag == 2) {
-		pdoa_follow(&retuen_proto_data);
-	}
-#endif
-
 }
-

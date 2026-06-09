@@ -92,9 +92,12 @@ dtu_status_t dtu_ack(DTU_t* const self) {
         self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
         break;
     case MSG_4G_SET_XY:                          /* Set XY response | 设置XY坐标信息响应 */
+        
+                // dtu_reast_titk = self->p_time->getSysTickCnt();
         memset(ack_buf, 0, sizeof(ack_buf));
-        sprintf((char*)ack_buf, "Set XY coordinates received.\n");
+        sprintf((char*)ack_buf, "+++");
         self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
+
         break;
     default:
         break;
@@ -113,6 +116,9 @@ dtu_status_t dtu_ack(DTU_t* const self) {
 void __my_delay_ms(uint32_t ms)
 {
     osDelay(ms);
+
+  
+        
 }
 
 /**
@@ -122,7 +128,9 @@ void __my_delay_ms(uint32_t ms)
  */
 uint32_t __my_GetTick(void)
 {
+
     return xTaskGetTickCount();
+    
 }
 
 
@@ -205,7 +213,11 @@ uint8_t DTU_ParseFrame(DTU_t* const self,uint8_t *buf,uint16_t len)
  * @param[in] buf  : Pointer to temporary buffer for parsing | 指向用于解析的临时缓冲区
  * @return dtu_status_t : Operation status | 操作状态
  */
+uint32_t dtu_reast_titk = 0;
 dtu_status_t dtu_parser(DTU_t* const self, uint8_t* buf) {
+
+    
+
    if(my_4g_dtu.rx_flag==1) {
         if(dtu_get_data_from_ringbuf(&ring5_rx_DMA_buf, buf)) {
         }else {
@@ -213,7 +225,9 @@ dtu_status_t dtu_parser(DTU_t* const self, uint8_t* buf) {
             DTU_DEBUG_OUT("No data received from ring buffer.\n");
 #endif
         }
-
+#ifdef DTU_DEBUG
+            DTU_DEBUG_OUT("Data received from ring buffer: %s \n", (char*)buf);
+#endif
         uint16_t ring_len = strlen((char*)buf);
         if(DTU_ParseFrame(self, buf , ring_len)) {
 #ifdef DTU_DEBUG
@@ -225,7 +239,28 @@ dtu_status_t dtu_parser(DTU_t* const self, uint8_t* buf) {
 #endif
         }
 
-    my_4g_dtu.rx_flag=0;
+        memset(buf, 0, ring_len); // Clear buffer after parsing | 解析后清空缓冲区
+        dtu_reast_titk = self->p_time->getSysTickCnt();
+        my_4g_dtu.rx_flag=0;
+   }
+
+   //超过五分钟无问答，直接重启
+   if(self->p_time->getSysTickCnt()-dtu_reast_titk>300000){
+        memset(ack_buf, 0, sizeof(ack_buf));
+        sprintf((char*)ack_buf, "+++");
+        self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
+        self->p_time->my_delay(500);
+        memset(ack_buf, 0, sizeof(ack_buf));
+        sprintf((char*)ack_buf, "atk");
+        self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
+        self->p_time->my_delay(500);
+        memset(ack_buf, 0, sizeof(ack_buf));
+        sprintf((char*)ack_buf, "AT+PWR\r\n");
+        self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
+        self->p_time->my_delay(500);
+
+        self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
+        dtu_reast_titk = self->p_time->getSysTickCnt();
    }
 
 }

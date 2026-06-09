@@ -67,22 +67,6 @@
  * @details Pre-configured AT command for setting MESH network ID | 预配置的MESH组网ID设置AT指令
  */
 #define MESH_NETID "AT+NETID0A19132E,6\r\n"
-
-#ifdef AHAND_CAR
-#define MESH_MADDR "AT+MADDR0001\r\n"
-#endif
-
-#ifdef MIDDLE_CAR_FIRST
-#define MESH_MADDR "AT+MADDR0002\r\n"
-#endif
-
-#ifdef MIDDLE_CAR
-#define MESH_MADDR "AT+MADDR0003\r\n"
-#endif
-
-#ifdef BEHIND_CAR
-#define MESH_MADDR "AT+MADDR0004\r\n"
-#endif
 //******************************** Defines **********************************//
 
 //******************************** External Declarations ********************//

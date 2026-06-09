@@ -256,8 +256,8 @@ jdy_status_t dev_init(Jdy_t *const self)
     self->p_time->my_delay(100);
     dev_OK(self, "AT+ROLE2\r\n");
     self->p_time->my_delay(100);
-    dev_OK(self, "AT+ALED0\r\n");
-    self->p_time->my_delay(100);
+    // dev_OK(self, "AT+ALED0\r\n");
+    // self->p_time->my_delay(100);
     dev_OK(self, "AT+ENLOG0\r\n");
     self->p_time->my_delay(100);
 
@@ -688,7 +688,7 @@ jdy_status_t jdy_task(Jdy_t *const self, mesh_datasend_pkt_t *pkt, ProtocolData 
     if (3 == self->p_mesh_submode->p_parser->recv_pkt.L) car_id_2 = 1;
     if (4 == self->p_mesh_submode->p_parser->recv_pkt.L) car_id_3 = 1;
 
-    if(car_id_2&&car_id_3) {
+    if(car_id_2) {
         g_state_machine.behind_flag = 1;
     }
 

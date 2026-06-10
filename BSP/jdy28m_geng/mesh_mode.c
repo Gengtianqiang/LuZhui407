@@ -247,8 +247,8 @@ jdy_status_t dev_init(Jdy_t *const self)
     // 实测，100ms延时是必须的
     dev_OK(self, "AT\r\n");
     self->p_time->my_delay(100);
-    // dev_OK(self, "AT+DEFAULT\r\n"); // 默认，很关键
-    // self->p_time->my_delay(100);
+    dev_OK(self, "AT+DEFAULT\r\n"); // 默认，很关键
+    self->p_time->my_delay(100);
     dev_OK(self, "AT+RESET\r\n");
     self->p_time->my_delay(500); // 实测，300ms延时是必须的
 
@@ -718,6 +718,7 @@ jdy_status_t jdy_task(Jdy_t *const self, mesh_datasend_pkt_t *pkt, ProtocolData 
     {
         
         g_state_machine.middle_flag = 1;
+        
 
     }else if (2 == self->p_mesh_submode->p_parser->recv_pkt.L)
     {

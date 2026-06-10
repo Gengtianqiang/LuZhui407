@@ -45,7 +45,7 @@ void StartBalanceTask(void *argument)
 		// pdoa_follow(&proto_data);
 #endif
 
-#ifdef MIDDLE_CAR || MIDDLE_CAR_FIRST
+#ifdef  MIDDLE_CAR_FIRST
 		 Middle_Car_Loop();
 		// pdoa_follow(&retuen_proto_data);
 		// pdoa_follow(&proto_data);

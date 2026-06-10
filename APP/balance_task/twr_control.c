@@ -97,11 +97,11 @@ static void StateMachine_IdleHandler(StateMachine_Handle_t *hsm,BracketContent *
         // Check trigger signal, TWR data valid
         if(my_4g_dtu.start_flag && bracket_data.twr_status) {
             // Switch to peripheral check state
-            hsm->current_state = STATE_PERIPHERAL_CHECK;
+            hsm->current_state = STATE_FINISHED;
 
             // Record the first coordinate point
-            hsm->coor1.x = my_4g_dtu.point.x;
-            hsm->coor1.y = my_4g_dtu.point.y;
+            hsm->coor1.x = res->x;
+            hsm->coor1.y = res->y;
         }
     }
 }

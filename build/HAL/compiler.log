@@ -20,7 +20,7 @@ The amount of Asm files: 0
 
 >>> ld
 
-Program Size: Code=80172 RO-data=15648 RW-data=1104 ZI-data=27944  
+Program Size: Code=72360 RO-data=15488 RW-data=992 ZI-data=27944  
 
 
 >>> postbuild

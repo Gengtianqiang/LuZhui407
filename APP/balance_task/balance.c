@@ -30,31 +30,7 @@ void StartBalanceTask(void *argument)
 	for (;;)
 	{
 		osDelay(10);
-#ifdef TIME_IO
-		HAL_GPIO_WritePin(DEBUG_IO_GPIO_Port, DEBUG_IO_Pin, GPIO_PIN_SET);
-#endif
 
-#ifdef AHAND_CAR
-		StateMachine_Loop(&g_state_machine, &bracket_data);
-		// pdoa_follow(&proto_data);
-#endif
 
-#ifdef BEHIND_CAR
-		 Behind_Car_Loop();
-		// pdoa_follow(&retuen_proto_data);
-		// pdoa_follow(&proto_data);
-#endif
-
-#ifdef MIDDLE_CAR || MIDDLE_CAR_FIRST
-		 Middle_Car_Loop();
-		// pdoa_follow(&retuen_proto_data);
-		// pdoa_follow(&proto_data);
-#endif
-
-		Motor_Stop_Loop();
-
-#ifdef TIME_IO
-		HAL_GPIO_WritePin(DEBUG_IO_GPIO_Port, DEBUG_IO_Pin, GPIO_PIN_RESET);
-#endif
 	}
 }

@@ -110,7 +110,7 @@ jdy_status_t JDY_func_it(Jdy_t *const self, uint8_t *ble_datarev_buff, uint16_t 
     /*************2. Checking MESH initialization status**************/
     if (JDY_INIT == self->p_mesh_submode->mash_init_flag)
     {
-        res = JDY_ERROR;
+        res = JDY_OK;
         RingByteBuffer_pushBuffer(&ringBuffer4, ble_datarev_buff, received);
         return res;
     }

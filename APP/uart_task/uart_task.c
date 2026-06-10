@@ -21,7 +21,6 @@ void StartUsartTask(void *argument)
 
 	jdy_handle.p_mesh_submode->mesh_init(&jdy_handle);
 
-
 	dtu_inst(&my_4g_dtu, &dtu_time_config);
 
 	/* Infinite loop */
@@ -30,26 +29,6 @@ void StartUsartTask(void *argument)
 		osDelay(50);
 
 
-	
-
-
-	Protocol_Parse(&ring_rx_DMA_buf, &proto_data);
-
-
-
-#ifdef AHAND_CAR
-
-	my_4g_dtu.parser_fun(&my_4g_dtu,dtu_rx_buffer);
-
- 	if (ParseTwrProtocol(&ring3_rx_DMA_buf, &bracket_data))
- 	{
- 			bracket_data.twr_status = (ParseBracketContentToFloats(&bracket_data));
- 	}
-#endif
-
-#ifdef BEHIND_CAR
-		Protocol_Parse(&ring3_rx_DMA_buf, &retuen_proto_data);
-#endif
 
 
  	if(JDY_OK==jdy_task(&jdy_handle, &my_mesh_send_pkt,&proto_data)) {
@@ -57,9 +36,6 @@ void StartUsartTask(void *argument)
  		my_mesh_send_pkt.valid = 1;
 
  	}else my_mesh_send_pkt.valid = 0;
-
-
-	
 
 	}
 	/* USER CODE END StartUsartTask */

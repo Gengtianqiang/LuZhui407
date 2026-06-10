@@ -2,6 +2,7 @@
 #include "jdy_driver.h"
 #include "Vofa.h"
 #include "bsp_4g.h"
+#include "mesh_mode.h"
 
 Forward myForward = {0};
 

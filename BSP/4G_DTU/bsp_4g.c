@@ -27,7 +27,7 @@
  * @details Define DTU driver instance and receive buffer | 定义DTU驱动实例和接收缓冲区
  */
 //******************************** Defines **********************************//
-uint8_t dtu_rx_buffer[DTU_RX_BUFFER_SIZE] = {0}; /* UART5 receive buffer | UART5接收缓冲区 */
+uint8_t dtu_rx_buffer[DTU_RX_BUFFER_SIZE] = {0}; /* receive buffer | 接收缓冲区 */
 
 DTU_t my_4g_dtu;                                 /* DTU driver instance | DTU驱动实例 */
 //******************************** Defines **********************************//

@@ -119,6 +119,7 @@ jdy_status_t JDY_func_it(Jdy_t *const self, uint8_t *ble_datarev_buff, uint16_t 
     /*************3. Handling waiting state data**************/
     if (self->p_mesh_submode->state == waiting)
     {
+        memset(jdy_uart_recv, 0, JDY_UART_MAX_SIZE);
         for (int i = 0; i < received; i++)
         {
             uint8_t byte = ble_datarev_buff[i];
@@ -296,17 +297,17 @@ jdy_status_t dev_init(Jdy_t *const self)
     self->p_time->my_delay(1000);
     dev_OK(self, "AT+DEFAULT\r\n"); // 默认，很关键
     self->p_time->my_delay(1000);
-    dev_OK(self, "AT+RESET\r\n");
-    self->p_time->my_delay(1000); // 实测，300ms延时是必须的
+    // dev_OK(self, "AT+RESET\r\n");
+    // self->p_time->my_delay(1000); // 实测，300ms延时是必须的
 
-    dev_OK(self, "AT\r\n");
-    self->p_time->my_delay(100);
+    // dev_OK(self, "AT\r\n");
+    // self->p_time->my_delay(1000);
     dev_OK(self, "AT+ROLE2\r\n");
-    self->p_time->my_delay(100);
+    self->p_time->my_delay(1000);
     dev_OK(self, "AT+ALED0\r\n");
-    self->p_time->my_delay(100);
+    self->p_time->my_delay(1000);
     dev_OK(self, "AT+ENLOG0\r\n");
-    self->p_time->my_delay(100);
+    self->p_time->my_delay(1000);
 
     return JDY_OK;
 }

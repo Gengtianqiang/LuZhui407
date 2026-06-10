@@ -852,3 +852,132 @@ These source files will be recompiled
 [2026-06-10 11:15:49]	[done]
 	build successfully !
 
+[2026-06-10 22:02:49]	[info] incremental build: 32 source files changed
+These source files will be recompiled
+---
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\balance.c': source file has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\filter.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m\mesh_cmd.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.c': source file has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_callback.c': source file has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_task.c': source file has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.c': source file has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m\jdy28m.c': source file has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m\response.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m\mesh_cmd.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m\transmit.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m\mesh_cmd.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': source file has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': source file has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\led\led.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\System_Init.c': source file has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\main.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+
+[2026-06-10 22:02:52]	[done]
+	build successfully !
+
+[2026-06-10 22:04:25]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': source file has been changed.
+
+[2026-06-10 22:04:26]	[done]
+	build successfully !
+
+[2026-06-10 22:07:49]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': source file has been changed.
+
+[2026-06-10 22:07:50]	[done]
+	build successfully !
+
+[2026-06-10 22:07:57]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': source file has been changed.
+
+[2026-06-10 22:07:58]	[done]
+	build successfully !
+
+[2026-06-10 22:14:39]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_task.c': source file has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': source file has been changed.
+
+[2026-06-10 22:14:39]	compilation failed at : "c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_task.c", exit code: 1
+command: 
+  "d:\Keil_5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I. -ICore/Inc -IDrivers/STM32F4xx_HAL_Driver/Inc -IDrivers/STM32F4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32F4xx/Include -IDrivers/CMSIS/Include -IBSP -IMiddlewares/Third_Party/FreeRTOS/Source/include -IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -IMiddlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -IHARDWARE/Encoder -IHARDWARE/Motor_GPIO -IAPP/balance_task -IAPP/bg_task -IAPP/imu_task -IAPP/uart_task -IBSP/battery -IBSP/buzzer -IBSP/Encoder -IBSP/icm20948/app -IBSP/icm20948/lib -IBSP/led -IBSP/motor -IBSP/Motor_GPIO -IBSP/sleep -IBSP/timer -IBSP/util -IBSP/VOFA+ -IBSP/icm20948/lib/include -IBSP/jdy28m_geng -IBSP/jdy28m -I.cmsis/include -IMDK-ARM/RTE/_HAL -IBSP/4G_DTU -D"USE_HAL_DRIVER" -D"STM32F407xx" --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O0 -Otime --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\HAL\.obj\APP\uart_task\uart_task.o --no_depend_system_headers --depend .\build\HAL\.obj\APP\uart_task\uart_task.d .\APP\uart_task\uart_task.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\APP\uart_task\uart_task.h", line 20: Warning:  #47-D: incompatible redefinition of macro "RING_BUFFER_SIZE"  (declared at line 9 of "BSP/jdy28m/forward.h")
+  #define RING_BUFFER_SIZE 128
+          ^
+".\APP\uart_task\uart_task.c", line 32: Error:  #29: expected an expression
+  		if() {
+  		   ^
+.\APP\uart_task\uart_task.c: 1 warning, 1 error
+
+[2026-06-10 22:14:54]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_task.c': source file has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': source file has been changed.
+
+[2026-06-10 22:14:54]	compilation failed at : "c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_task.c", exit code: 1
+command: 
+  "d:\Keil_5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I. -ICore/Inc -IDrivers/STM32F4xx_HAL_Driver/Inc -IDrivers/STM32F4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32F4xx/Include -IDrivers/CMSIS/Include -IBSP -IMiddlewares/Third_Party/FreeRTOS/Source/include -IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -IMiddlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -IHARDWARE/Encoder -IHARDWARE/Motor_GPIO -IAPP/balance_task -IAPP/bg_task -IAPP/imu_task -IAPP/uart_task -IBSP/battery -IBSP/buzzer -IBSP/Encoder -IBSP/icm20948/app -IBSP/icm20948/lib -IBSP/led -IBSP/motor -IBSP/Motor_GPIO -IBSP/sleep -IBSP/timer -IBSP/util -IBSP/VOFA+ -IBSP/icm20948/lib/include -IBSP/jdy28m_geng -IBSP/jdy28m -I.cmsis/include -IMDK-ARM/RTE/_HAL -IBSP/4G_DTU -D"USE_HAL_DRIVER" -D"STM32F407xx" --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O0 -Otime --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\HAL\.obj\APP\uart_task\uart_task.o --no_depend_system_headers --depend .\build\HAL\.obj\APP\uart_task\uart_task.d .\APP\uart_task\uart_task.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\APP\uart_task\uart_task.h", line 20: Warning:  #47-D: incompatible redefinition of macro "RING_BUFFER_SIZE"  (declared at line 9 of "BSP/jdy28m/forward.h")
+  #define RING_BUFFER_SIZE 128
+          ^
+".\APP\uart_task\uart_task.c", line 32: Error:  #29: expected an expression
+  		if() {
+  		   ^
+.\APP\uart_task\uart_task.c: 1 warning, 1 error
+
+[2026-06-10 22:15:05]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_task.c': source file has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': source file has been changed.
+
+[2026-06-10 22:15:06]	[done]
+	build successfully !
+
+[2026-06-10 22:23:49]	[info] incremental build: 12 source files changed
+These source files will be recompiled
+---
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.h' has been changed.
+
+[2026-06-10 22:23:51]	[done]
+	build successfully !
+

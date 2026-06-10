@@ -48,7 +48,7 @@
  * @brief JDY UART timeout | JDY串口超时时间
  * @details Timeout for JDY AT command query (40ms) | JDY AT指令查询超时时间（40毫秒）
  */
-#define JDY_UART_TIMEOUT 40
+#define JDY_UART_TIMEOUT 100
 
 /**
  * @brief MESH data send array size | MESH数据发送数组大小

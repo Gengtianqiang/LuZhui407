@@ -98,7 +98,8 @@ static void StateMachine_IdleHandler(StateMachine_Handle_t *hsm,BracketContent *
         if(my_4g_dtu.start_flag && bracket_data.twr_status) {
             // Switch to peripheral check state
             hsm->current_state = STATE_FINISHED;
-
+            hsm->ahand_flag = 1;
+            
             // Record the first coordinate point
             hsm->coor1.x = res->x;
             hsm->coor1.y = res->y;
@@ -277,8 +278,8 @@ static void StateMachine_LineTrackingHandler(StateMachine_Handle_t *hsm, Bracket
 		if(now_dist>last_dist) {
 			Move_Z = 0;
         Move_X = 0;
-        hsm->current_state = STATE_ERROR;
-			
+        hsm->current_state = STATE_FINISHED;
+			hsm->ahand_flag = 1;
 		}
     
 
@@ -287,6 +288,7 @@ static void StateMachine_LineTrackingHandler(StateMachine_Handle_t *hsm, Bracket
         Move_Z = 0;
         Move_X = 0;
         hsm->current_state = STATE_FINISHED;
+        hsm->ahand_flag = 1;
         Buzzer_Start_Once(10);
     }
 }
@@ -313,8 +315,8 @@ static void StateMachine_FinishedHandler(StateMachine_Handle_t *hsm,BracketConte
     Move_X = 0.0;
     // static uint16_t finish_time = 0;
     // finish_time ++;
-	Buzzer_Start_Once(10);
-    hsm->ahand_flag = 1;
+	// Buzzer_Start_Once(10);
+    
 
 //    //²âÊÔ
 //    osSemaphoreAcquire (hsm->uart_sem,0);

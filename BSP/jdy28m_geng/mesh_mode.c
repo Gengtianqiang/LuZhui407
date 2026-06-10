@@ -290,15 +290,7 @@ jdy_status_t JDY_func_init(Jdy_t *const self)
     /*************2. Initializing JDY-28M basic parameters**************/
 
     /*************3. Querying MAC and MADDR**************/
-    dev_OK(self, "AT\r\n");
-    self->p_time->my_delay(100);
-    dev_query(self, "AT+MAC\r\n", self->p_mesh_submode->MAC);
-#ifdef JDY_DEBUG
-    JDY_DEBUG_OUT("MAC: %s\n", self->p_mesh_submode->MAC);
-#endif
-    self->p_time->my_delay(200);
-    dev_query(self, "AT+MADDR\r\n", self->p_mesh_submode->MADDR);
-    self->p_time->my_delay(200);
+
     /*************3. Querying MAC and MADDR**************/
 
     /*************4. Configuring MESH NETID**************/
@@ -317,7 +309,18 @@ jdy_status_t JDY_func_init(Jdy_t *const self)
     //     self->p_time->my_delay(300);
     // }
     /*************4. Configuring MESH NETID**************/
-
+    dev_OK(self, "AT\r\n");
+    self->p_time->my_delay(500);
+    dev_query(self, "AT+MAC\r\n", self->p_mesh_submode->MAC);
+#ifdef JDY_DEBUG
+    JDY_DEBUG_OUT("MAC: %s\n", self->p_mesh_submode->MAC);
+#endif
+    self->p_time->my_delay(200);
+    dev_query(self, "AT+MADDR\r\n", self->p_mesh_submode->MADDR);
+#ifdef JDY_DEBUG
+    JDY_DEBUG_OUT("MADDR: %s\n", self->p_mesh_submode->MADDR);
+#endif
+    self->p_time->my_delay(200);
     /*************5. Resetting JDY-28M and marking initialization complete**************/
     dev_OK(self, "AT+RESET\r\n");
     self->p_time->my_delay(1000);
@@ -662,16 +665,16 @@ jdy_status_t jdy_task(Jdy_t *const self, mesh_datasend_pkt_t *pkt, ProtocolData 
         //向所有中间车发送返回指令
     }else if (3 == g_state_machine.ahand_flag)
     {
-        static uint8_t car_id = 0;
-        car_id++; 
+//        static uint8_t car_id = 0;
+//        car_id++; 
 
-        if(car_id==0) {
+//        if(car_id==0) {
             pkt->to_maddr = 0x0002U; // user  //select_node_M()
-        }else if(car_id==1) {
-            pkt->to_maddr = 0x0003U; // user  //select_node_M()
-        }else {
-            car_id=0;
-        }
+//        }else if(car_id==1) {
+//            pkt->to_maddr = 0x0003U; // user  //select_node_M()
+//        }else {
+//            car_id=0;
+//        }
 
         
         pkt->L = 2;
@@ -718,6 +721,12 @@ jdy_status_t jdy_task(Jdy_t *const self, mesh_datasend_pkt_t *pkt, ProtocolData 
     {
         
         g_state_machine.middle_flag = 1;
+		
+        pkt->to_maddr = 0x0001U; // user  //select_node_M()
+        pkt->L = 2;
+        pkt->R = 2;
+        pkt->valid = 0x01; // user  //key
+        res = jdy_handle.p_mesh_submode->p_parser->pf_mesh_datasend_handler(self, pkt);
         
 
     }else if (2 == self->p_mesh_submode->p_parser->recv_pkt.L)

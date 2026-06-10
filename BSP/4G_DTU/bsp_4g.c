@@ -81,6 +81,7 @@ dtu_status_t dtu_ack(DTU_t* const self) {
         self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
         break;
     case MSG_4G_ONEKEY_START:                    /* One-key start response | 一键出发信息响应 */
+				my_4g_dtu.start_flag = 1;
         memset(ack_buf, 0, sizeof(ack_buf));
         sprintf((char*)ack_buf, "One-key start received.\n");
         self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));

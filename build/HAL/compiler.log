@@ -3,7 +3,7 @@
 Compiler Full Name: Component: ARM Compiler 5.06 update 6 (build 750)
 Compiler Version: 5.06
 Builder Mode: Incremental
-The amount of C files: 1
+The amount of C files: 0
 The amount of C++ files: 0
 The amount of Asm files: 0
 
@@ -13,14 +13,11 @@ The amount of Asm files: 0
 
 >>> cc
 
-"APP/uart_task/uart_task.h", line 20: Warning:  #47-D: incompatible redefinition of macro "RING_BUFFER_SIZE"  (declared at line 9 of "BSP/jdy28m/forward.h")
-  #define RING_BUFFER_SIZE 128
-          ^
-.\BSP\jdy28m_geng\mesh_mode.c: 1 warning, 0 errors
+
 
 >>> ld
 
-Program Size: Code=72472 RO-data=15488 RW-data=984 ZI-data=27944  
+Program Size: Code=72692 RO-data=15488 RW-data=984 ZI-data=27952  
 
 
 >>> postbuild

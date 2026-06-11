@@ -298,6 +298,8 @@ jdy_status_t JDY_func_init(Jdy_t *const self)
     snprintf(self->p_mesh_submode->NETID, 11, "%s,6", self->p_mesh_submode->MAC + 4);
     memset(NETID_buff, 0, JDY_UART_MAX_SIZE);
     snprintf(NETID_buff, JDY_UART_MAX_SIZE, "AT+NETID%s\r\n", self->p_mesh_submode->NETID);
+
+
     // 设置组网ID号 全部一样
     res = dev_OK(self, MESH_NETID);
     self->p_time->my_delay(200);
@@ -321,10 +323,25 @@ jdy_status_t JDY_func_init(Jdy_t *const self)
     JDY_DEBUG_OUT("MADDR: %s\n", self->p_mesh_submode->MADDR);
 #endif
     self->p_time->my_delay(200);
+
+    if(self->p_mesh_submode->MADDR[4]=='\r') {
+#ifdef JDY_DEBUG
+    JDY_DEBUG_OUT("JDY_OK\n");
+#endif
+        self->p_mesh_submode->mash_init_flag = JDY_INIT;
+    }else{
+
+#ifdef JDY_DEBUG
+    JDY_DEBUG_OUT("JDY_ERROR:MADDR[4]=%c\n", self->p_mesh_submode->MADDR[4]);
+#endif
+        self->p_mesh_submode->mash_init_flag = JDY_NOT_INIT;
+        res = JDY_ERROR;
+        my_4g_dtu.jdy_error_flag = 1;
+    }
     /*************5. Resetting JDY-28M and marking initialization complete**************/
     dev_OK(self, "AT+RESET\r\n");
     self->p_time->my_delay(1000);
-    self->p_mesh_submode->mash_init_flag = JDY_INIT; // 标记MESH初始化完成
+     // 标记MESH初始化完成
     /*************5. Resetting JDY-28M and marking initialization complete**************/
 
     return res;

@@ -245,6 +245,21 @@ dtu_status_t dtu_parser(DTU_t* const self, uint8_t* buf) {
         my_4g_dtu.rx_flag=0;
    }
 
+
+   //imu和jdy ERROR
+   if(my_4g_dtu.imu_error_flag==1) {
+        memset(ack_buf, 0, sizeof(ack_buf));
+        sprintf((char*)ack_buf, "imu error");
+        self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
+        self->p_time->my_delay(500);
+
+   }else if(my_4g_dtu.jdy_error_flag==1) {
+        memset(ack_buf, 0, sizeof(ack_buf));
+        sprintf((char*)ack_buf, "jdy error");
+        self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
+        self->p_time->my_delay(500);
+   }
+
    //超过五分钟无问答，直接重启
    if(self->p_time->getSysTickCnt()-dtu_reast_titk>300000){
         memset(ack_buf, 0, sizeof(ack_buf));
@@ -408,6 +423,9 @@ dtu_status_t dtu_init(DTU_t* const self)
     self->stop_flag = 0;
     self->start_flag = 0;
     self->return_flag = 0;
+    
+    self->imu_error_flag = 0;
+    self->jdy_error_flag = 0;
 
     self->point.x = 2.0;
     self->point.y = 2.0;

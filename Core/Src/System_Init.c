@@ -52,8 +52,14 @@ void systemInit(void)
     is_icm_success = ICM20948_APP_Init();
     i++;
     if(i > 4){
-      if(is_icm_success == false)
-        Buzzer_Start_Circle(50, 3950);
+      if(is_icm_success == false) {
+
+        my_4g_dtu.imu_error_flag = 1;
+      }else{
+
+        my_4g_dtu.imu_error_flag = 0;
+      }
+
       i = 1;
       break;
     }

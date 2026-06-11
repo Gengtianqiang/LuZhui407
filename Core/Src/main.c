@@ -1047,11 +1047,11 @@ static void MX_GPIO_Init(void)
 // void StartBalanceTask(void *argument)
 // {
 //   /* USER CODE BEGIN 5 */
-//   /* Infinite loop */
-//   for(;;)
-//   {
-//     osDelay(1);
-//   }
+// //   /* Infinite loop */
+// //   for(;;)
+// //   {
+// //     osDelay(1);
+// //   }
 //   /* USER CODE END 5 */
 // }
 
@@ -1065,11 +1065,11 @@ static void MX_GPIO_Init(void)
 // void StartUsartTask(void *argument)
 // {
 //   /* USER CODE BEGIN StartUsartTask */
-//   /* Infinite loop */
-//   for(;;)
-//   {
-//     osDelay(1);
-//   }
+// //   /* Infinite loop */
+// //   for(;;)
+// //   {
+// //     osDelay(1);
+// //   }
 //   /* USER CODE END StartUsartTask */
 // }
 
@@ -1083,11 +1083,11 @@ static void MX_GPIO_Init(void)
 // void StartIMUTask(void *argument)
 // {
 //   /* USER CODE BEGIN StartIMUTask */
-//   /* Infinite loop */
-//   for(;;)
-//   {
-//     osDelay(1);
-//   }
+// //   /* Infinite loop */
+// //   for(;;)
+// //   {
+// //     osDelay(1);
+// //   }
 //   /* USER CODE END StartIMUTask */
 // }
 
@@ -1101,11 +1101,11 @@ static void MX_GPIO_Init(void)
 // void StartLedTask(void *argument)
 // {
 //   /* USER CODE BEGIN StartLedTask */
-//   /* Infinite loop */
-//   for(;;)
-//   {
-//     osDelay(1);
-//   }
+// //   /* Infinite loop */
+// //   for(;;)
+// //   {
+// //     osDelay(1);
+// //   }
 //   /* USER CODE END StartLedTask */
 // }
 

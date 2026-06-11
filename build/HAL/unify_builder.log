@@ -147,3 +147,22 @@ These source files will be recompiled
 [2026-06-11 15:17:56]	[done]
 	build successfully !
 
+[2026-06-11 15:46:19]	[info] incremental build: 12 source files changed
+These source files will be recompiled
+---
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\jdy_driver.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\jdy_driver.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\jdy_driver.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\jdy_driver.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.h' has been changed.
+
+[2026-06-11 15:46:21]	[done]
+	build successfully !
+

@@ -56,7 +56,7 @@
 #define FRAME_HEAD       '@'                       /* Frame header byte | 帧头字节 */
 #define FRAME_TAIL       'a'                       /* Frame tail byte | 帧尾字节 */
 
-#define DTU_DEBUG                                  /* Enable debug output for DTU driver | 启用DTU驱动的调试输出 */
+// #define DTU_DEBUG                                  /* Enable debug output for DTU driver | 启用DTU驱动的调试输出 */
 #define DTU_DEBUG_OUT(X,...) Vofa_Printf(&vofa_inst_binding_uart3, X, ##__VA_ARGS__);  /* Debug output interface | 调试输出接口 */
 
 /**

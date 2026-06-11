@@ -95,7 +95,9 @@ typedef enum {
     MSG_4G_ONEKEY_START  = 0x05,     /* One-key start | 一键出发 */
     MSG_4G_ONEKEY_RETURN = 0x06,     /* One-key return | 一键返回 */
     MSG_4G_SET_XY        = 0x07,     /* Set target XY coordinates | 设置XY坐标目标点 */
-    MSG_4G_NONE          = 0x08,     /* No message pending | 无消息需要处理 */
+    MSG_4G_IMU_ERROR     = 0x08,     /* One-key return | 陀螺仪故障 */
+    MSG_4G_JDY_ERROR     = 0x09,     /* Set target XY coordinates | JDY故障 */
+    MSG_4G_NONE          = 0x10,     /* No message pending | 无消息需要处理 */
 } msg_4g_type_t;
 
 /**
@@ -147,6 +149,10 @@ struct dtu_s {
     uint8_t                        start_flag;       /* One-key start flag | 一键出发标志 */
 
     uint8_t                       return_flag;      /* One-key return flag | 一键返回标志 */
+
+    uint8_t                    imu_error_flag;       /* One-key start flag | 一键出发标志 */
+
+    uint8_t                    jdy_error_flag;      /* One-key return flag | 一键返回标志 */
 
     dtu_status_t (*send_fun)(uint8_t* buf, uint16_t len);       /* Send function | 发送函数 */
 

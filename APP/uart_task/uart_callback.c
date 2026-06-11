@@ -6,7 +6,7 @@
 
 Forward myForward = {0};
 
-
+uint8_t uart4_error = 0;
 
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 {
@@ -88,6 +88,15 @@ void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
     (void)sr;
     (void)dr;
 		
+	}
+
+  	if(huart->Instance == UART4) {
+		    // Çå³ý´íÎó±êÖ¾
+    // uint32_t sr = huart->Instance->SR;
+    // uint8_t dr = huart->Instance->DR;
+    // (void)sr;
+    // (void)dr;
+		uart4_error = 1;
 	}
 }
 

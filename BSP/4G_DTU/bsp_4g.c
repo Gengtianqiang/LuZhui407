@@ -90,7 +90,17 @@ dtu_status_t dtu_ack(DTU_t* const self) {
         memset(ack_buf, 0, sizeof(ack_buf));
         sprintf((char*)ack_buf, "One-key return received.\n");
         self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
-        break;
+    // case MSG_4G_IMU_ERROR:                    /* One-key start response | IMU故障 */
+    //     memset(ack_buf, 0, sizeof(ack_buf));
+    //     sprintf((char*)ack_buf, "One-key start received.\n");
+    //     self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
+    //     break;
+    // case MSG_4G_JDY_ERROR:                   /* One-key return response | 一键返回信息响应 */
+    //     self->return_flag = 1;
+    //     memset(ack_buf, 0, sizeof(ack_buf));
+    //     sprintf((char*)ack_buf, "One-key return received.\n");
+    //     self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
+    //     break;
     case MSG_4G_SET_XY:                          /* Set XY response | 设置XY坐标信息响应 */
         
                 // dtu_reast_titk = self->p_time->getSysTickCnt();
@@ -407,6 +417,8 @@ dtu_status_t dtu_init(DTU_t* const self)
     self->stop_flag = 0;
     self->start_flag = 0;
     self->return_flag = 0;
+    self->imu_error_flag = 0;
+    self->jdy_error_flag = 0;
 
     self->point.x = 2.0;
     self->point.y = 2.0;

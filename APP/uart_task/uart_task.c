@@ -29,7 +29,15 @@ void StartUsartTask(void *argument)
 		osDelay(50);
 
 
+		uint8_t uart4_error = 0;
 
+		if(uart4_error) {
+
+#ifdef JDY_DEBUG
+              JDY_DEBUG_OUT("uart4_error\n");
+  #endif
+			
+		}
 
  	if(JDY_OK==jdy_task(&jdy_handle, &my_mesh_send_pkt,&proto_data)) {
 

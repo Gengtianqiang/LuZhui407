@@ -304,7 +304,7 @@ jdy_status_t dev_init(Jdy_t *const self)
     // self->p_time->my_delay(1000);
     dev_OK(self, "AT+ROLE2\r\n");
     self->p_time->my_delay(1000);
-    dev_OK(self, "AT+ALED0\r\n");
+    dev_OK(self, "AT+ALED1\r\n");
     self->p_time->my_delay(1000);
     dev_OK(self, "AT+ENLOG0\r\n");
     self->p_time->my_delay(1000);

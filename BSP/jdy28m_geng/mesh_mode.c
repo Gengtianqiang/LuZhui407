@@ -119,6 +119,7 @@ jdy_status_t JDY_func_it(Jdy_t *const self, uint8_t *ble_datarev_buff, uint16_t 
     /*************3. Handling waiting state data**************/
     if (self->p_mesh_submode->state == waiting)
     {
+        memset(jdy_uart_recv, 0, JDY_UART_MAX_SIZE);
         for (int i = 0; i < received; i++)
         {
             uint8_t byte = ble_datarev_buff[i];

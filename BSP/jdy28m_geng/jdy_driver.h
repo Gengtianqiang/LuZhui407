@@ -47,9 +47,9 @@
  */
 //******************************** Defines **********************************//
 
-// #define JDY_DEBUG
+
 #define JDY_USE_OS                              /* Enable OS support for JDY driver | 启用JDY驱动的OS支持 */
-//#define JDY_DEBUG                               /* Enable debug output for JDY driver | 启用JDY驱动的调试输出 */
+#define JDY_DEBUG                               /* Enable debug output for JDY driver | 启用JDY驱动的调试输出 */
 #define JDY_DEBUG_OUT(X,...) Vofa_Printf(&vofa_inst_binding_uart3, X, ##__VA_ARGS__);  /* Debug output interface | 调试输出接口 */
 
 /**

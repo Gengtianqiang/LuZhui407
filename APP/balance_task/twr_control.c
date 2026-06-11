@@ -95,7 +95,8 @@ static void StateMachine_IdleHandler(StateMachine_Handle_t *hsm,BracketContent *
     begin_timecounter ++;
     if(begin_timecounter>1000) {
         // Check trigger signal, TWR data valid
-        if(my_4g_dtu.start_flag && bracket_data.twr_status) {
+        // if(my_4g_dtu.start_flag && bracket_data.twr_status) {
+        if(my_4g_dtu.start_flag) {
             // Switch to peripheral check state
             hsm->current_state = STATE_FINISHED;
             hsm->ahand_flag = 1;

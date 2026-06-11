@@ -81,7 +81,7 @@ dtu_status_t dtu_ack(DTU_t* const self) {
         self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
         break;
     case MSG_4G_ONEKEY_START:                    /* One-key start response | 一键出发信息响应 */
-				my_4g_dtu.start_flag = 1;
+		self->start_flag = 1;
         memset(ack_buf, 0, sizeof(ack_buf));
         sprintf((char*)ack_buf, "One-key start received.\n");
         self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
@@ -247,13 +247,14 @@ dtu_status_t dtu_parser(DTU_t* const self, uint8_t* buf) {
 
 
    //imu和jdy ERROR
-   if(my_4g_dtu.imu_error_flag==1) {
+
+   if(self->imu_error_flag==1) {
         memset(ack_buf, 0, sizeof(ack_buf));
         sprintf((char*)ack_buf, "imu error");
         self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
         self->p_time->my_delay(500);
 
-   }else if(my_4g_dtu.jdy_error_flag==1) {
+   }else if(self->jdy_error_flag==1) {
         memset(ack_buf, 0, sizeof(ack_buf));
         sprintf((char*)ack_buf, "jdy error");
         self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));

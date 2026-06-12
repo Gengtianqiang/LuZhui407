@@ -127,6 +127,8 @@ void Error_Handler(void);
 #define LED_B_PIN_GPIO_Port GPIOD
 #define Motor_A8_Pin GPIO_PIN_8
 #define Motor_A8_GPIO_Port GPIOA
+#define Motor_C12_Pin GPIO_PIN_12
+#define Motor_C12_GPIO_Port GPIOC
 #define Motor_D3_Pin GPIO_PIN_3
 #define Motor_D3_GPIO_Port GPIOD
 

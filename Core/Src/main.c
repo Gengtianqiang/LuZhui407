@@ -53,14 +53,11 @@ TIM_HandleTypeDef htim7;
 TIM_HandleTypeDef htim8;
 
 UART_HandleTypeDef huart4;
-UART_HandleTypeDef huart5;
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart2;
 UART_HandleTypeDef huart3;
 DMA_HandleTypeDef hdma_uart4_rx;
 DMA_HandleTypeDef hdma_uart4_tx;
-DMA_HandleTypeDef hdma_uart5_rx;
-DMA_HandleTypeDef hdma_uart5_tx;
 DMA_HandleTypeDef hdma_usart1_rx;
 DMA_HandleTypeDef hdma_usart1_tx;
 DMA_HandleTypeDef hdma_usart2_rx;
@@ -121,7 +118,6 @@ static void MX_TIM2_Init(void);
 static void MX_TIM3_Init(void);
 static void MX_TIM4_Init(void);
 static void MX_TIM1_Init(void);
-static void MX_UART5_Init(void);
 void StartBalanceTask(void *argument);
 void StartUsartTask(void *argument);
 void StartIMUTask(void *argument);
@@ -180,7 +176,6 @@ int main(void)
   MX_TIM3_Init();
   MX_TIM4_Init();
   MX_TIM1_Init();
-  MX_UART5_Init();
   /* USER CODE BEGIN 2 */
   systemInit();
   /* USER CODE END 2 */
@@ -766,39 +761,6 @@ static void MX_UART4_Init(void)
 }
 
 /**
-  * @brief UART5 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_UART5_Init(void)
-{
-
-  /* USER CODE BEGIN UART5_Init 0 */
-
-  /* USER CODE END UART5_Init 0 */
-
-  /* USER CODE BEGIN UART5_Init 1 */
-
-  /* USER CODE END UART5_Init 1 */
-  huart5.Instance = UART5;
-  huart5.Init.BaudRate = 115200;
-  huart5.Init.WordLength = UART_WORDLENGTH_8B;
-  huart5.Init.StopBits = UART_STOPBITS_1;
-  huart5.Init.Parity = UART_PARITY_NONE;
-  huart5.Init.Mode = UART_MODE_TX_RX;
-  huart5.Init.HwFlowCtl = UART_HWCONTROL_NONE;
-  huart5.Init.OverSampling = UART_OVERSAMPLING_16;
-  if (HAL_UART_Init(&huart5) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN UART5_Init 2 */
-
-  /* USER CODE END UART5_Init 2 */
-
-}
-
-/**
   * @brief USART1 Initialization Function
   * @param None
   * @retval None
@@ -908,9 +870,6 @@ static void MX_DMA_Init(void)
   __HAL_RCC_DMA1_CLK_ENABLE();
 
   /* DMA interrupt init */
-  /* DMA1_Stream0_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA1_Stream0_IRQn, 5, 0);
-  HAL_NVIC_EnableIRQ(DMA1_Stream0_IRQn);
   /* DMA1_Stream1_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA1_Stream1_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(DMA1_Stream1_IRQn);
@@ -923,9 +882,6 @@ static void MX_DMA_Init(void)
   /* DMA1_Stream5_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA1_Stream5_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(DMA1_Stream5_IRQn);
-  /* DMA1_Stream7_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA1_Stream7_IRQn, 5, 0);
-  HAL_NVIC_EnableIRQ(DMA1_Stream7_IRQn);
   /* DMA2_Stream2_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA2_Stream2_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream2_IRQn);
@@ -958,7 +914,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOE, DEBUG_IO_Pin|GPIO_PIN_0|GPIO_PIN_1, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(Motor_C0_GPIO_Port, Motor_C0_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOC, Motor_C0_Pin|Motor_C12_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, Motor_B12_Pin|Motor_B13_Pin|Motor_B14_Pin, GPIO_PIN_RESET);
@@ -985,12 +941,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(Enable_PIN_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : Motor_C0_Pin */
-  GPIO_InitStruct.Pin = Motor_C0_Pin;
+  /*Configure GPIO pins : Motor_C0_Pin Motor_C12_Pin */
+  GPIO_InitStruct.Pin = Motor_C0_Pin|Motor_C12_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(Motor_C0_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pins : Motor_B12_Pin Motor_B13_Pin Motor_B14_Pin */
   GPIO_InitStruct.Pin = Motor_B12_Pin|Motor_B13_Pin|Motor_B14_Pin;
@@ -1047,11 +1003,11 @@ static void MX_GPIO_Init(void)
 // void StartBalanceTask(void *argument)
 // {
 //   /* USER CODE BEGIN 5 */
-// //   /* Infinite loop */
-// //   for(;;)
-// //   {
-// //     osDelay(1);
-// //   }
+// // //   /* Infinite loop */
+// // //   for(;;)
+// // //   {
+// // //     osDelay(1);
+// // //   }
 //   /* USER CODE END 5 */
 // }
 
@@ -1065,11 +1021,11 @@ static void MX_GPIO_Init(void)
 // void StartUsartTask(void *argument)
 // {
 //   /* USER CODE BEGIN StartUsartTask */
-// //   /* Infinite loop */
-// //   for(;;)
-// //   {
-// //     osDelay(1);
-// //   }
+// // //   /* Infinite loop */
+// // //   for(;;)
+// // //   {
+// // //     osDelay(1);
+// // //   }
 //   /* USER CODE END StartUsartTask */
 // }
 
@@ -1083,11 +1039,11 @@ static void MX_GPIO_Init(void)
 // void StartIMUTask(void *argument)
 // {
 //   /* USER CODE BEGIN StartIMUTask */
-// //   /* Infinite loop */
-// //   for(;;)
-// //   {
-// //     osDelay(1);
-// //   }
+// // //   /* Infinite loop */
+// // //   for(;;)
+// // //   {
+// // //     osDelay(1);
+// // //   }
 //   /* USER CODE END StartIMUTask */
 // }
 
@@ -1101,11 +1057,11 @@ static void MX_GPIO_Init(void)
 // void StartLedTask(void *argument)
 // {
 //   /* USER CODE BEGIN StartLedTask */
-// //   /* Infinite loop */
-// //   for(;;)
-// //   {
-// //     osDelay(1);
-// //   }
+// // //   /* Infinite loop */
+// // //   for(;;)
+// // //   {
+// // //     osDelay(1);
+// // //   }
 //   /* USER CODE END StartLedTask */
 // }
 

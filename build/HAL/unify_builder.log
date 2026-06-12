@@ -255,3 +255,83 @@ These source files will be recompiled
 [2026-06-12 15:32:33]	[done]
 	build successfully !
 
+[2026-06-12 17:01:18]	[info] incremental build: 29 source files changed
+These source files will be recompiled
+---
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\pdoa_control.c': source file has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_task.c': source file has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\led\led.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\main.c': source file has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': source file has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\stm32f4xx_it.c': source file has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\MDK-ARM\startup_stm32f407xx.s': source file has been changed.
+
+[2026-06-12 17:01:20]	link failed !, exit code: 1
+   at unify_builder.Program.Main(String[] args_)
+---
+Error: L6200E: Symbol StartBalanceTask multiply defined (by main.o and balance.o).
+Error: L6200E: Symbol StartLedTask multiply defined (by main.o and bg_task.o).
+Error: L6200E: Symbol StartIMUTask multiply defined (by main.o and imu_task.o).
+Error: L6200E: Symbol StartUsartTask multiply defined (by main.o and uart_task.o).
+Not enough information to list image symbols.
+Not enough information to list the image map.
+Finished: 2 information, 0 warning and 4 error messages.
+
+
+[2026-06-12 17:02:20]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\main.c': source file has been changed.
+
+[2026-06-12 17:02:21]	link failed !, exit code: 1
+   at unify_builder.Program.Main(String[] args_)
+---
+Error: L6200E: Symbol StartLedTask multiply defined (by main.o and bg_task.o).
+Not enough information to list image symbols.
+Not enough information to list the image map.
+Finished: 2 information, 0 warning and 1 error messages.
+
+
+[2026-06-12 17:02:44]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\main.c': source file has been changed.
+
+[2026-06-12 17:02:45]	link failed !, exit code: 1
+   at unify_builder.Program.Main(String[] args_)
+---
+Error: L6218E: Undefined symbol huart5 (referred from uart_callback.o).
+Not enough information to list image symbols.
+Finished: 1 information, 0 warning and 1 error messages.
+
+
+[2026-06-12 17:05:23]	link failed !, exit code: 1
+   at unify_builder.Program.Main(String[] args_)
+---
+Error: L6218E: Undefined symbol huart5 (referred from uart_callback.o).
+Not enough information to list image symbols.
+Finished: 1 information, 0 warning and 1 error messages.
+
+

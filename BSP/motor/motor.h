@@ -94,9 +94,9 @@ typedef struct Motor_Pwm_HandleTypeDef
 #define PWM_PIN_D GPIO_Pin_6 //PWMD
 #define PWMD 	  TIM8->CCR1	 //PWMD
 
-#define IN1_PORTD GPIOD			  //DIN1
-#define IN1_PIN_D GPIO_Pin_3	//DIN1
-#define DIN1 	  PDout(3)		  //DIN1
+#define IN1_PORTD GPIOC			  //DIN1
+#define IN1_PIN_D GPIO_Pin_12	//DIN1
+#define DIN1 	  PCout(12)		  //DIN1
 
 #define IN2_PORTD GPIOA			  //DIN2
 #define IN2_PIN_D GPIO_Pin_8	//DIN2

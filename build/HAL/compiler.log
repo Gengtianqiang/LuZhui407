@@ -16,11 +16,14 @@ The amount of Asm files: 0
 "APP/uart_task/uart_task.h", line 20: Warning:  #47-D: incompatible redefinition of macro "RING_BUFFER_SIZE"  (declared at line 9 of "BSP/jdy28m/forward.h")
   #define RING_BUFFER_SIZE 128
           ^
-.\APP\bg_task\bg_task.c: 1 warning, 0 errors
+".\APP\balance_task\balance.c", line 49: Warning:  #223-D: function "Middle_Car_Loop" declared implicitly
+  		 Middle_Car_Loop();
+  		 ^
+.\APP\balance_task\balance.c: 2 warnings, 0 errors
 
 >>> ld
 
-Program Size: Code=72780 RO-data=15488 RW-data=992 ZI-data=27952  
+Program Size: Code=72752 RO-data=15488 RW-data=992 ZI-data=27952  
 
 
 >>> postbuild

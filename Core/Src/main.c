@@ -180,7 +180,8 @@ int main(void)
   MX_TIM3_Init();
   MX_TIM4_Init();
   MX_TIM1_Init();
-  MX_UART5_Init();
+
+  // MX_UART5_Init();
   /* USER CODE BEGIN 2 */
   systemInit();
   /* USER CODE END 2 */
@@ -958,7 +959,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOE, DEBUG_IO_Pin|GPIO_PIN_0|GPIO_PIN_1, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(Motor_C0_GPIO_Port, Motor_C0_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(Motor_C0_GPIO_Port, Motor_C0_Pin|GPIO_PIN_12, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, Motor_B12_Pin|Motor_B13_Pin|Motor_B14_Pin, GPIO_PIN_RESET);
@@ -986,7 +987,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(Enable_PIN_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : Motor_C0_Pin */
-  GPIO_InitStruct.Pin = Motor_C0_Pin;
+  GPIO_InitStruct.Pin = Motor_C0_Pin || GPIO_PIN_12;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -1016,7 +1017,7 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pins : Motor_D12_Pin LED_G_PIN_Pin LED_R_PIN_Pin LED_B_PIN_Pin
                            Motor_D3_Pin */
   GPIO_InitStruct.Pin = Motor_D12_Pin|LED_G_PIN_Pin|LED_R_PIN_Pin|LED_B_PIN_Pin
-                          |Motor_D3_Pin;
+                          ;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;

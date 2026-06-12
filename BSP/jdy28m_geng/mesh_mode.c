@@ -343,7 +343,7 @@ jdy_status_t JDY_func_init(Jdy_t *const self)
     dev_OK(self, "AT+RESET\r\n");
     self->p_time->my_delay(1000);
      // 标记MESH初始化完成
-		 self->p_mesh_submode->mash_init_flag = JDY_INIT;
+	self->p_mesh_submode->mash_init_flag = JDY_INIT;
     /*************5. Resetting JDY-28M and marking initialization complete**************/
 
     return res;
@@ -746,9 +746,9 @@ jdy_status_t jdy_task(Jdy_t *const self, mesh_datasend_pkt_t *pkt, ProtocolData 
         pkt->R = 2;
         pkt->valid = 0x01; // user  //key
         res = jdy_handle.p_mesh_submode->p_parser->pf_mesh_datasend_handler(self, pkt);
-#ifdef JDY_DEBUG
-        JDY_DEBUG_OUT("Middle Car 1 received forward signal, sent response to Car 1.\n");
-#endif
+// #ifdef JDY_DEBUG
+//         JDY_DEBUG_OUT("Middle Car 1 received forward signal, sent response to Car 1.\n");
+// #endif
         
 
     }else if (2 == self->p_mesh_submode->p_parser->recv_pkt.L)
@@ -759,9 +759,9 @@ jdy_status_t jdy_task(Jdy_t *const self, mesh_datasend_pkt_t *pkt, ProtocolData 
         pkt->R = 3;
         pkt->valid = 0x01; // user  //key
         res = jdy_handle.p_mesh_submode->p_parser->pf_mesh_datasend_handler(self, pkt);
-#ifdef JDY_DEBUG
-        JDY_DEBUG_OUT("Middle Car 1 received return signal, sent response to Car 4.\n");
-#endif
+// #ifdef JDY_DEBUG
+//         JDY_DEBUG_OUT("Middle Car 1 received return signal, sent response to Car 4.\n");
+// #endif
     }
 
 #endif

@@ -88,6 +88,14 @@ void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
     (void)dr;
 		
 	}
+  	if(huart->Instance == UART4) {
+		    // Çå³ý´íÎó±êÖ¾
+    uint32_t sr = huart->Instance->SR;
+    uint8_t dr = huart->Instance->DR;
+    (void)sr;
+    (void)dr;
+		HAL_UARTEx_ReceiveToIdle_DMA(&huart4, uart4_dma_rx_buffer, UART_RX_BUFFER_SIZE);
+	}
 }
 
 

@@ -28,9 +28,12 @@ typedef struct
     uint16_t len;                       // 实际接收的字节数
 } UART4_Queue_Data_t;
 extern uwb_set uwb_set_t;
+extern ADC_HandleTypeDef hadc1;
 
 bool uwb_set_state(void);
 void systemInit(void) ;
+
+
 
 #endif
 

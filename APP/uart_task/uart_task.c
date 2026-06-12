@@ -51,6 +51,10 @@ void StartUsartTask(void *argument)
 		Protocol_Parse(&ring3_rx_DMA_buf, &retuen_proto_data);
 #endif
 
+#ifdef MIDDLE_CAR_FIRST
+		Protocol_Parse(&ring3_rx_DMA_buf, &retuen_proto_data);
+#endif
+
 
  	if(JDY_OK==jdy_task(&jdy_handle, &my_mesh_send_pkt,&proto_data)) {
 

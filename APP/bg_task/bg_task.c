@@ -13,7 +13,7 @@ void StartLedTask(void *argument)
 		LED_Loop(&led_R);
     LED_Loop(&led_G);
     LED_Loop(&led_B);
-//		Buzzer_LOOP();
+		Buzzer_LOOP();
 
     Volt = Get_battery_volt();
     Set_battery_led();

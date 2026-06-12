@@ -52,7 +52,7 @@ void systemInit(void)
     HAL_Delay(10);
     is_icm_success = ICM20948_APP_Init();
     i++;
-    if(i > 4){
+    if(i > 2){
       if(is_icm_success == false) {
 
         my_4g_dtu.imu_error_flag = 1;

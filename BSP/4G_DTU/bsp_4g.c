@@ -93,12 +93,13 @@ dtu_status_t dtu_ack(DTU_t* const self) {
         self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
         break;
     case MSG_4G_SET_XY:                          /* Set XY response | 设置XY坐标信息响应 */
-        
-                // dtu_reast_titk = self->p_time->getSysTickCnt();
-        memset(ack_buf, 0, sizeof(ack_buf));
-        sprintf((char*)ack_buf, "+++");
-        self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
-
+        //输入格式：@7[2.0,2.0]1a
+          memset(ack_buf, 0, sizeof(ack_buf));
+          sprintf((char*)ack_buf,
+                  "Set XY OK: x=%.2f, y=%.2f\n",
+                  self->point.x,
+                  self->point.y);
+          self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
         break;
     default:
         break;
@@ -192,8 +193,37 @@ uint8_t DTU_ParseFrame(DTU_t* const self,uint8_t *buf,uint16_t len)
         self->state = MSG_4G_ONEKEY_RETURN;
         break;
     case '7':
-        self->state = MSG_4G_SET_XY;
+      {     
+          char *left_bracket  = NULL;
+          char *right_bracket = NULL;
+          char xy_buf[32] = {0};
+          float x = 0.0f;
+          float y = 0.0f;
 
+          self->state = MSG_4G_SET_XY;
+
+          left_bracket = strchr((char*)buf, '[');
+          right_bracket = strchr((char*)buf, ']');
+
+          if(left_bracket != NULL && right_bracket != NULL && right_bracket > left_bracket)
+          {
+              uint16_t xy_len = right_bracket - left_bracket - 1;
+
+              if(xy_len < sizeof(xy_buf))
+              {
+                  memcpy(xy_buf, left_bracket + 1, xy_len);
+                  xy_buf[xy_len] = '\0';
+
+                  if(sscanf(xy_buf, "%f,%f", &x, &y) == 2)
+                  {
+                      self->point.x = x;
+                      self->point.y = y;
+                  }
+              }
+          }
+
+          break;
+      }
     default:
         break;
     }

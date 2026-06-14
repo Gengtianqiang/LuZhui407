@@ -152,13 +152,13 @@ struct dtu_s {
 
     uint8_t                    jdy_error_flag;      /* One-key return flag | 一键返回标志 */
 
-    dtu_status_t (*send_fun)(uint8_t* buf, uint16_t len);       /* Send function | 发送函数 */
+    dtu_time_t*                        p_time;           /* Time interface | 时间接口 */
 
-    dtu_time_t*                 p_time;           /* Time interface | 时间接口 */
+    dtu_status_t        (*send_fun)(uint8_t* buf, uint16_t len);       /* Send function | 发送函数 */
 
     dtu_status_t (*parser_fun)(DTU_t* const self, uint8_t* buf); /* Parser function (uses ring buffer) | 解包函数（使用了ring buffer） */
 
-    dtu_status_t (*ack_fun)(DTU_t* const);        /* ACK response function | 应答函数 */
+    dtu_status_t                       (*ack_fun)(DTU_t* const);        /* ACK response function | 应答函数 */
 };
 
 /**

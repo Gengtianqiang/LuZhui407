@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>4G DTU 通信协议说明</title>
+<style>
+body { font-family: SimSun, Microsoft YaHei, Arial, sans-serif; line-height: 1.6; }
+h1, h2, h3 { color: #1f4e79; }
+table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+th, td { border: 1px solid #999; padding: 6px 8px; text-align: left; }
+th { background: #d9eaf7; }
+pre { background: #f4f4f4; border: 1px solid #ccc; padding: 8px; white-space: pre-wrap; }
+code { font-family: Consolas, monospace; }
+</style>
+</head>
+<body>
+
+<h1>4G DTU 通信协议说明</h1>
+
+<p><b>适用代码：</b><code>BSP/4G_DTU/bsp_4g.c</code>、<code>BSP/4G_DTU/bsp_4g.h</code></p>
+<p><b>当前协议：</b>ASCII 字符串协议，不是二进制帧协议。</p>
+
+<h2>1. 通信方向</h2>
+
+<pre>上位机 / 4G 云端 / 手机端  ---&gt;  小车
+小车                     ---&gt;  上位机 / 4G 云端 / 手机端</pre>
+
+<p>上位机发送控制指令，小车解析后执行对应动作，并通过 UART5 DMA 返回一段字符串作为应答。</p>
+
+<p>发送接口：</p>
+<pre>HAL_UART_Transmit_DMA(&amp;huart5, buf, len);</pre>
+
+<h2>2. 下行帧格式</h2>
+
+<p>当前代码使用的帧格式为：</p>
+
+<pre>@ + 指令码 + 数据区 + a</pre>
+
+<table>
+<tr><th>字段</th><th>类型</th><th>说明</th></tr>
+<tr><td>@</td><td>char</td><td>帧头，固定为 @</td></tr>
+<tr><td>指令码</td><td>char</td><td>位于 buf[1]，例如 '1'、'2'、'7'</td></tr>
+<tr><td>数据区</td><td>string</td><td>可选，只有设置坐标时使用</td></tr>
+<tr><td>a</td><td>char</td><td>帧尾，固定为 a</td></tr>
+</table>
+
+<p>代码中的定义：</p>
+<pre>#define FRAME_HEAD '@'
+#define FRAME_TAIL 'a'</pre>
+
+<p>解析时会检查：</p>
+<pre>buf[0] == '@'
+buf[len - 1] == 'a'</pre>
+
+<p>如果帧头或帧尾不正确，则该帧无效，不会执行对应指令，也不会返回正常应答。</p>
+
+<h2>3. 指令总表</h2>
+
+<table>
+<tr><th>指令码</th><th>接收示例</th><th>功能</th><th>小车内部状态</th></tr>
+<tr><td>'1'</td><td>@1a</td><td>查询电池电压</td><td>MSG_4G_BATTERY</td></tr>
+<tr><td>'2'</td><td>@2a</td><td>查询俯仰角</td><td>MSG_4G_PITCH_ANGLE</td></tr>
+<tr><td>'3'</td><td>@3a</td><td>一键报警 / 关闭报警</td><td>MSG_4G_ALARM_START</td></tr>
+<tr><td>'4'</td><td>@4a</td><td>一键停止 / 取消停止</td><td>MSG_4G_ONEKEY_STOP</td></tr>
+<tr><td>'5'</td><td>@5a</td><td>一键出发</td><td>MSG_4G_ONEKEY_START</td></tr>
+<tr><td>'6'</td><td>@6a</td><td>一键返回</td><td>MSG_4G_ONEKEY_RETURN</td></tr>
+<tr><td>'7'</td><td>@7[2.0,2.0]1a</td><td>设置目标点 XY 坐标</td><td>MSG_4G_SET_XY</td></tr>
+</table>
+
+<h2>4. 各指令详细说明</h2>
+
+<h3>4.1 查询电池电压</h3>
+<p><b>下发格式：</b></p>
+<pre>@1a</pre>
+<p><b>执行动作：</b>小车读取变量 <code>Volt</code>。</p>
+<p><b>返回格式：</b></p>
+<pre>Battery level is %.1fv\n</pre>
+<p><b>返回示例：</b></p>
+<pre>Battery level is 12.3v</pre>
+
+<h3>4.2 查询俯仰角</h3>
+<p><b>下发格式：</b></p>
+<pre>@2a</pre>
+<p><b>执行动作：</b>小车读取 <code>myimu.euler.pitch</code>。</p>
+<p><b>返回格式：</b></p>
+<pre>Pitch angle is %.1f\n</pre>
+<p><b>返回示例：</b></p>
+<pre>Pitch angle is -3.5</pre>
+
+<h3>4.3 一键报警</h3>
+<p><b>下发格式：</b></p>
+<pre>@3a</pre>
+<p><b>执行动作：</b>每收到一次该指令，切换一次报警状态。</p>
+<pre>self-&gt;buzzer_flag += 1;
+if(self-&gt;buzzer_flag == 2)
+{
+    self-&gt;buzzer_flag = 0;
+}</pre>
+<table>
+<tr><th>当前状态</th><th>收到 @3a 后</th></tr>
+<tr><td>关闭</td><td>打开</td></tr>
+<tr><td>打开</td><td>关闭</td></tr>
+</table>
+<p><b>返回示例：</b></p>
+<pre>Alarm ON
+Alarm OFF</pre>
+
+<h3>4.4 一键停止</h3>
+<p><b>下发格式：</b></p>
+<pre>@4a</pre>
+<p><b>执行动作：</b>每收到一次该指令，切换一次停止状态。</p>
+<pre>self-&gt;stop_flag += 1;
+if(self-&gt;stop_flag == 2)
+{
+    self-&gt;stop_flag = 0;
+}</pre>
+<table>
+<tr><th>当前状态</th><th>收到 @4a 后</th></tr>
+<tr><td>未停止</td><td>进入停止</td></tr>
+<tr><td>已停止</td><td>取消停止</td></tr>
+</table>
+<p><b>返回示例：</b></p>
+<pre>One-key stop Activated
+One-key stop Deactivated</pre>
+
+<h3>4.5 一键出发</h3>
+<p><b>下发格式：</b></p>
+<pre>@5a</pre>
+<p><b>执行动作：</b></p>
+<pre>self-&gt;start_flag = 1;</pre>
+<p><b>返回内容：</b></p>
+<pre>One-key start received.</pre>
+
+<h3>4.6 一键返回</h3>
+<p><b>下发格式：</b></p>
+<pre>@6a</pre>
+<p><b>执行动作：</b></p>
+<pre>self-&gt;return_flag = 1;</pre>
+<p><b>返回内容：</b></p>
+<pre>One-key return received.</pre>
+
+<h3>4.7 设置目标点 XY 坐标</h3>
+<p><b>下发格式：</b></p>
+<pre>@7[x,y]1a</pre>
+
+<table>
+<tr><th>字段</th><th>说明</th></tr>
+<tr><td>@</td><td>帧头</td></tr>
+<tr><td>7</td><td>设置坐标指令</td></tr>
+<tr><td>[x,y]</td><td>目标点坐标</td></tr>
+<tr><td>1</td><td>当前代码中未使用，可作为保留位</td></tr>
+<tr><td>a</td><td>帧尾</td></tr>
+</table>
+
+<p><b>合法示例：</b></p>
+<pre>@7[2,2]1a
+@7[2.0,2.0]1a
+@7[10,20]1a
+@7[1.5,6.8]1a
+@7[-1.2,3.4]1a</pre>
+
+<p>代码真正解析的是中括号 <code>[]</code> 里面的内容。只要能找到 <code>[</code> 和 <code>]</code>，并且里面是 <code>数字,数字</code> 格式，就可以解析。</p>
+
+<p><b>解析方式：</b></p>
+<pre>left_bracket = strchr((char*)buf, '[');
+right_bracket = strchr((char*)buf, ']');</pre>
+
+<p>例如收到：</p>
+<pre>@7[10.5,20.3]1a</pre>
+<p>则中括号内内容为：</p>
+<pre>xy_buf = "10.5,20.3";</pre>
+<p>然后通过下面代码解析两个浮点数：</p>
+<pre>sscanf(xy_buf, "%f,%f", &amp;x, &amp;y)</pre>
+
+<p>解析成功后保存到：</p>
+<pre>self-&gt;point.x = x;
+self-&gt;point.y = y;</pre>
+
+<p><b>返回格式：</b></p>
+<pre>Set XY OK: x=%.2f, y=%.2f\n</pre>
+
+<p><b>返回示例：</b></p>
+<pre>收到：@7[10,20]1a
+保存：self-&gt;point.x = 10.0f; self-&gt;point.y = 20.0f;
+返回：Set XY OK: x=10.00, y=20.00
+
+收到：@7[1.5,6.8]1a
+保存：self-&gt;point.x = 1.5f; self-&gt;point.y = 6.8f;
+返回：Set XY OK: x=1.50, y=6.80</pre>
+
+<h2>5. 返回指令 / 应答总表</h2>
+
+<table>
+<tr><th>上位机发送</th><th>小车动作</th><th>小车返回</th></tr>
+<tr><td>@1a</td><td>查询电压</td><td>Battery level is %.1fv\n</td></tr>
+<tr><td>@2a</td><td>查询俯仰角</td><td>Pitch angle is %.1f\n</td></tr>
+<tr><td>@3a</td><td>切换报警状态</td><td>Alarm ON\n 或 Alarm OFF\n</td></tr>
+<tr><td>@4a</td><td>切换停止状态</td><td>One-key stop Activated\n 或 One-key stop Deactivated\n</td></tr>
+<tr><td>@5a</td><td>设置 start_flag = 1</td><td>One-key start received.\n</td></tr>
+<tr><td>@6a</td><td>设置 return_flag = 1</td><td>One-key return received.\n</td></tr>
+<tr><td>@7[x,y]1a</td><td>设置 self-&gt;point.x/y</td><td>Set XY OK: x=%.2f, y=%.2f\n</td></tr>
+</table>
+
+<h2>6. 初始化返回</h2>
+
+<p>DTU 驱动初始化完成后，会主动发送：</p>
+<pre>The car is ready.</pre>
+
+<p>对应代码：</p>
+<pre>self-&gt;send_fun("The car is ready.\n", strlen("The car is ready.\n"));</pre>
+
+<p>该消息表示小车 4G DTU 通信部分已经初始化完成。</p>
+
+<h2>7. 错误上报</h2>
+
+<p>当前代码中有两个错误标志位：</p>
+<pre>self-&gt;imu_error_flag
+self-&gt;jdy_error_flag</pre>
+
+<h3>7.1 IMU 错误</h3>
+<p>当 <code>self-&gt;imu_error_flag == 1</code> 时，小车会发送：</p>
+<pre>imu error</pre>
+<p>发送后延时 500 ms。</p>
+
+<h3>7.2 JDY 错误</h3>
+<p>当 <code>self-&gt;jdy_error_flag == 1</code> 时，小车会发送：</p>
+<pre>jdy error</pre>
+<p>发送后延时 500 ms。</p>
+
+<h2>8. 长时间无通信时的保活 / 复位相关发送</h2>
+
+<p>代码中有一个超时判断：</p>
+<pre>if(self-&gt;p_time-&gt;getSysTickCnt() - dtu_reast_titk &gt; 300000)</pre>
+
+<p>如果超过该时间没有收到新数据，小车会依次发送：</p>
+<pre>+++
+atk
+AT+PWR\r\n
+AT+PWR\r\n</pre>
+
+<h2>9. 无效帧处理</h2>
+
+<h3>9.1 帧头错误</h3>
+<pre>#1a</pre>
+<p>因为第一个字符不是 <code>@</code>，解析失败，不会执行任何指令。</p>
+
+<h3>9.2 帧尾错误</h3>
+<pre>@1b</pre>
+<p>因为最后一个字符不是 <code>a</code>，解析失败，不会执行任何指令。</p>
+
+<h3>9.3 未定义指令</h3>
+<pre>@8a</pre>
+<p>当前 <code>switch</code> 中没有 <code>'8'</code> 对应的处理分支，因此不会执行有效动作。</p>
+
+<h2>10. 当前协议特点</h2>
+
+<ol>
+<li>协议简单：只需要判断帧头、指令码、帧尾。</li>
+<li>指令码是 ASCII 字符：例如 <code>'1'</code>，不是数值 <code>0x01</code>。</li>
+<li>没有 CRC 校验：当前 CRC 相关代码被保留但未启用。</li>
+<li>没有长度字段：通过 <code>strlen((char*)buf)</code> 获取长度。</li>
+<li>设置坐标使用字符串解析：坐标格式为 <code>[x,y]</code>，通过 <code>sscanf</code> 转成 float。</li>
+<li>所有正常指令都会调用 <code>ack_fun</code> 返回字符串应答。</li>
+<li><code>@7[x,y]1a</code> 中 <code>]</code> 后面的 <code>1</code> 当前没有参与解析，可以作为后续扩展字段。</li>
+</ol>
+
+<h2>11. 推荐上位机发送格式</h2>
+
+<pre>@1a              查询电池电压
+@2a              查询俯仰角
+@3a              切换报警
+@4a              切换停止
+@5a              一键出发
+@6a              一键返回
+@7[10.0,20.0]1a 设置目标坐标 x=10.0, y=20.0</pre>
+
+<p>每条指令单独发送，不要多条指令粘在一起发送。当前解析使用 <code>strlen</code> 和首尾字符判断，若多帧粘包，可能导致解析异常。</p>
+
+</body>
+</html>

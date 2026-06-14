@@ -30,6 +30,16 @@ void pdoa_follow(ProtocolData *pdoa_data)
 		int pn = 0;
 #ifdef AHAND_CAR
 		pn = -1;
+
+		if(my_4g_dtu.return_flag = 0) {
+			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_RESET);
+			
+		}else{
+			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_SET);
+
+		}
+
+
 #endif
 
 #ifdef BEHIND_CAR 
@@ -37,6 +47,16 @@ void pdoa_follow(ProtocolData *pdoa_data)
 			pn = -1;
 		else 
 			pn = 1;
+
+			
+		if(pdoa_data==&proto_data) {
+			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_SET);
+		}else{
+			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_SET);
+
+		}
 #endif
 		
 #ifdef MIDDLE_CAR_FIRST
@@ -44,6 +64,15 @@ void pdoa_follow(ProtocolData *pdoa_data)
 			pn = -1;
 		else 
 			pn = 1;
+
+		if(pdoa_data==&proto_data) {
+			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_SET);
+		}else{
+			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_SET);
+
+		}
 #endif
 		
 #ifdef MIDDLE_CAR
@@ -53,9 +82,20 @@ void pdoa_follow(ProtocolData *pdoa_data)
 			pn = 1;
 #endif
 
+
+
+
 		float angle_error =  pdoa_data->aoa_deg;
 
 		float Horizontal_Distance = pdoa_data->distance_cm * 1.0f / 100;
+ 
+		//目标车距
+		float distance =  0;
+		if(pdoa_data==&retuen_proto_data)
+			distance = RETURN_DISTANCE;
+		else
+			distance =  START_DISTANCE;
+
 
 		switch (Current_State)
 		{
@@ -77,7 +117,7 @@ void pdoa_follow(ProtocolData *pdoa_data)
 
 		case STATE_Turn:
 			/*直接将基站的AOA角度接收作为误差数据偏移*/
-			if (fabs(angle_error) > 15.0f) /*误差偏移，转向更平滑*/
+			if (fabs(angle_error) > 15.0f && Horizontal_Distance > distance) /*误差偏移，转向更平滑*/
 			{
 				float pid_output = pid_update(&heading_pid, angle_error, 1);
 				if (fabs(pid_output) < 5.0f)
@@ -113,7 +153,7 @@ void pdoa_follow(ProtocolData *pdoa_data)
 				Current_State = STATE_Detection_IDLE;
 				// printf("水平→中速档，水平距离=%.2fm，速度=%.1f\r\n", Horizontal_Distance, speed);
 			}
-			else if (Horizontal_Distance > 1.0f && Horizontal_Distance < 3.5f)
+			else if (Horizontal_Distance > distance && Horizontal_Distance < 3.5f)
 			{
 				/*低速档*/
 				float speed = 2 * DiSu_Speed * speed_weight * pn;
@@ -121,7 +161,7 @@ void pdoa_follow(ProtocolData *pdoa_data)
 				Current_State = STATE_Detection_IDLE;
 				// printf("水平→低速档，水平距离=%.2fm，速度=%.1f\r\n", Horizontal_Distance, speed);
 			}
-			else if (Horizontal_Distance > 0.2f && Horizontal_Distance < 1.0f)
+			else if (Horizontal_Distance > 0.2f && Horizontal_Distance < distance)
 			{
 				/*停车档*/
 				Motor_Pwm_Stop();

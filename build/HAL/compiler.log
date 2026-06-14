@@ -16,29 +16,14 @@ The amount of Asm files: 0
 "APP/uart_task/uart_task.h", line 20: Warning:  #47-D: incompatible redefinition of macro "RING_BUFFER_SIZE"  (declared at line 9 of "BSP/jdy28m/forward.h")
   #define RING_BUFFER_SIZE 128
           ^
-".\APP\balance_task\twr_control.c", line 267: Warning:  #1035-D: single-precision operand implicitly converted to double-precision
-          Move_Z = Line_Track_PD_Ctrl(ref_line, res->x, res->y) * 0.6
-                   ^
-".\APP\balance_task\twr_control.c", line 268: Warning:  #1035-D: single-precision operand implicitly converted to double-precision
-                  + Yaw_PD_Ctrl(myimu.euler_yaw_Cali, hsm->coor2.angle) * 0.4;
-                    ^
-".\APP\balance_task\twr_control.c", line 350: Warning:  #223-D: function "pdoa_follow" declared implicitly
-          pdoa_follow(&proto_data);
-          ^
-".\APP\balance_task\twr_control.c", line 511: Warning:  #1035-D: single-precision operand implicitly converted to double-precision
-      hsm->coor3.angle = 180 - acosf(cos_theta) * (180.0f / 3.1415);
-                                                   ^
-".\APP\balance_task\twr_control.c", line 248: Warning:  #177-D: function "StateMachine_RotateWaitHandler"  was declared but never referenced
-  static void StateMachine_RotateWaitHandler(StateMachine_Handle_t *hsm,BracketContent *res)
-              ^
-".\APP\balance_task\twr_control.c", line 310: Warning:  #177-D: function "StateMachine_MoveToTargetHandler"  was declared but never referenced
-  static void StateMachine_MoveToTargetHandler(StateMachine_Handle_t *hsm, BracketContent *res)
-              ^
-.\APP\balance_task\twr_control.c: 7 warnings, 0 errors
+".\APP\balance_task\pdoa_control.c", line 195: Warning:  #177-D: variable "Behind_back_time"  was declared but never referenced
+  static uint32_t Behind_back_time = 0;
+                  ^
+.\APP\balance_task\pdoa_control.c: 2 warnings, 0 errors
 
 >>> ld
 
-Program Size: Code=81736 RO-data=15652 RW-data=1100 ZI-data=27948  
+Program Size: Code=74068 RO-data=15488 RW-data=996 ZI-data=27948  
 
 
 >>> postbuild

@@ -12,6 +12,9 @@
 #define ZhongSu_Speed   100
 #define DiSu_Speed      100
 
+//出发返回时车距
+#define START_DISTANCE   1.0
+#define RETURN_DISTANCE  0.5
 
 typedef enum{
 	STATE_Straight,                                   

@@ -65,8 +65,14 @@ void systemInit(void)
       break;
     }
   }
-	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_RESET);
+
+#ifdef AHAND_CAR
 	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_SET);
+#else
+  HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_RESET);
+#endif
+
 	StateMachine_Init();
 	
 }

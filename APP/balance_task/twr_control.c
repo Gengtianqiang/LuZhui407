@@ -342,7 +342,8 @@ static void StateMachine_FinishedHandler(StateMachine_Handle_t *hsm,BracketConte
  */
 static void StateMachine_PdoaHandler(StateMachine_Handle_t *hsm,BracketContent *res)
 {
-
+    HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_SET);
+	
     if(1==my_4g_dtu.return_flag) {
 
         //收到返回指令

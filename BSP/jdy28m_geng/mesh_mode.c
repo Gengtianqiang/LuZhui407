@@ -205,6 +205,8 @@ jdy_status_t dev_query(Jdy_t *const self, const char *cmd, char *dest)
 #ifdef JDY_DEBUG
             JDY_DEBUG_OUT("Error: JDY query timeout (waiting for response).\n");
 #endif
+
+            my_4g_dtu.jdy_error_flag = 1;
             return ret;
         }
     }

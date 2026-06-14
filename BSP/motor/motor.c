@@ -318,7 +318,7 @@ void Motor_Stop_Loop(void)
         Buzzer_Start_Once(100);
         return;
     }
-    if (isEnable == false||my_4g_dtu.stop_flag == 1)
+    if (isEnable == false||my_4g_dtu.stop_flag == 1||1==my_4g_dtu.imu_error_flag||1==my_4g_dtu.jdy_error_flag)
     {
         Motor_Pwm_Stop();
         Motor_Instance.pwm_running = false;

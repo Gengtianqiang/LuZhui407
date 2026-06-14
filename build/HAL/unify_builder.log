@@ -255,3 +255,55 @@ These source files will be recompiled
 [2026-06-12 15:32:33]	[done]
 	build successfully !
 
+[2026-06-14 15:31:01]	[info] incremental build: 28 source files changed
+These source files will be recompiled
+---
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\balance.c': source file has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\bg_task\bg_task.c': source file has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': source file has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\led\led.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\motor\motor.c': source file has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\main.c': source file has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+
+[2026-06-14 15:31:04]	[done]
+	build successfully !
+
+[2026-06-14 15:33:00]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\bg_task\bg_task.c': source file has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': source file has been changed.
+
+[2026-06-14 15:33:02]	[done]
+	build successfully !
+
+[2026-06-14 15:33:31]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\motor\motor.c': source file has been changed.
+
+[2026-06-14 15:33:32]	[done]
+	build successfully !
+

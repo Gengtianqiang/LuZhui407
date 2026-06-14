@@ -18,9 +18,21 @@ void StartLedTask(void *argument)
     Volt = Get_battery_volt();
     Set_battery_led();
 		
-		if(my_4g_dtu.buzzer_flag == 1) {
 
-        Buzzer_Start_Circle(200, 200); // 200msœÏ£¨200msÕ££¨—≠ª∑
+		if(my_4g_dtu.buzzer_flag == 1||my_4g_dtu.imu_error_flag == 1||my_4g_dtu.jdy_error_flag == 1) {
+
+
+      if(1==my_4g_dtu.buzzer_flag)
+            Buzzer_Start_Circle(200, 200); 
+      else if(1==my_4g_dtu.imu_error_flag){
+
+          Buzzer_Start_Circle(300, 100); 
+
+      }else {
+          Buzzer_Start_Circle(100, 300); 
+
+
+      }
     } else {
         Buzzer_Stop();
       

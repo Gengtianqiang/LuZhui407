@@ -34,6 +34,8 @@ void StartBalanceTask(void *argument)
 		HAL_GPIO_WritePin(DEBUG_IO_GPIO_Port, DEBUG_IO_Pin, GPIO_PIN_SET);
 #endif
 
+
+
 #ifdef AHAND_CAR
 		StateMachine_Loop(&g_state_machine, &bracket_data);
 		// pdoa_follow(&proto_data);

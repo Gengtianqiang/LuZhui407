@@ -148,9 +148,10 @@ struct dtu_s {
 
     uint8_t                       return_flag;      /* One-key return flag | 一键返回标志 */
 
-    uint8_t                    imu_error_flag;       /* One-key start flag | 一键出发标志 */
+    uint8_t                    imu_error_flag;    
 
-    uint8_t                    jdy_error_flag;      /* One-key return flag | 一键返回标志 */
+    uint8_t                    jdy_error_flag;  
+    
 
     dtu_status_t (*send_fun)(uint8_t* buf, uint16_t len);       /* Send function | 发送函数 */
 

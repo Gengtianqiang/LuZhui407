@@ -65,8 +65,8 @@ void systemInit(void)
       break;
     }
   }
-	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_SET);
-	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_RESET);
 	StateMachine_Init();
 	
 }
@@ -76,7 +76,7 @@ bool uwb_set_state() {
 			uwb_set_t.pdoa_time++;
 			uwb_set_t.twr_time++;
 			if(uwb_set_t.pdoa_time>100) {
-				HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_SET);
+				HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_RESET);
 				HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_SET);
 				uwb_set_t.pdoa_state = true;
 				uwb_set_t.twr_state = true;

@@ -442,3 +442,37 @@ These source files will be recompiled
 [2026-06-14 18:05:18]	[done]
 	build successfully !
 
+[2026-06-14 21:03:36]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\pdoa_control.c': source file has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\System_Init.c': source file has been changed.
+
+[2026-06-14 21:03:36]	compilation failed at : "c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\pdoa_control.c", exit code: 1
+command: 
+  "d:\Keil_5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I. -ICore/Inc -IDrivers/STM32F4xx_HAL_Driver/Inc -IDrivers/STM32F4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32F4xx/Include -IDrivers/CMSIS/Include -IBSP -IMiddlewares/Third_Party/FreeRTOS/Source/include -IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -IMiddlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -IHARDWARE/Encoder -IHARDWARE/Motor_GPIO -IAPP/balance_task -IAPP/bg_task -IAPP/imu_task -IAPP/uart_task -IBSP/battery -IBSP/buzzer -IBSP/Encoder -IBSP/icm20948/app -IBSP/icm20948/lib -IBSP/led -IBSP/motor -IBSP/Motor_GPIO -IBSP/sleep -IBSP/timer -IBSP/util -IBSP/VOFA+ -IBSP/icm20948/lib/include -IBSP/jdy28m_geng -IBSP/jdy28m -I.cmsis/include -IMDK-ARM/RTE/_HAL -IBSP/4G_DTU -D"USE_HAL_DRIVER" -D"STM32F407xx" --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O0 -Otime --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\HAL\.obj\APP\balance_task\pdoa_control.o --no_depend_system_headers --depend .\build\HAL\.obj\APP\balance_task\pdoa_control.d .\APP\balance_task\pdoa_control.c
+   at unify_builder.Program.Main(String[] args_)
+---
+"APP/uart_task/uart_task.h", line 20: Warning:  #47-D: incompatible redefinition of macro "RING_BUFFER_SIZE"  (declared at line 9 of "BSP/jdy28m/forward.h")
+  #define RING_BUFFER_SIZE 128
+          ^
+".\APP\balance_task\pdoa_control.c", line 219: Error:  #127: expected a statement
+  	else if(g_state_machine.middle_flag == 2) {
+  	^
+".\APP\balance_task\pdoa_control.c", line 226: Warning:  #12-D: parsing restarts here after previous syntax error
+  }
+  ^
+".\APP\balance_task\pdoa_control.c", line 188: Warning:  #177-D: variable "Behind_back_time"  was declared but never referenced
+  static uint32_t Behind_back_time = 0;
+                  ^
+.\APP\balance_task\pdoa_control.c: 3 warnings, 1 error
+
+[2026-06-14 21:04:05]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\pdoa_control.c': source file has been changed.
+'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\System_Init.c': source file has been changed.
+
+[2026-06-14 21:04:06]	[done]
+	build successfully !
+

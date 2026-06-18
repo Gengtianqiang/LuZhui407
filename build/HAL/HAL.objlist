@@ -12,6 +12,8 @@
 .\build\HAL\.obj\BSP\4G_DTU\bsp_4g.o
 .\build\HAL\.obj\BSP\Encoder\Encoder.o
 .\build\HAL\.obj\BSP\Motor_GPIO\Motor_GPIO.o
+.\build\HAL\.obj\BSP\NRF24L01\NRF24L01.o
+.\build\HAL\.obj\BSP\NRF24L01\NRF24L01_APP.o
 .\build\HAL\.obj\BSP\VOFA+\Vofa+.o
 .\build\HAL\.obj\BSP\VOFA+\Vofa.o
 .\build\HAL\.obj\BSP\VOFA+\Vofa_if.o

@@ -955,10 +955,10 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOE, DEBUG_IO_Pin|GPIO_PIN_0|GPIO_PIN_1, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOE, SPI_CSN_Pin|SPI_CE_Pin|GPIO_PIN_0|GPIO_PIN_1, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(Motor_C0_GPIO_Port, Motor_C0_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOC, Motor_C0_Pin|SPI_SCK_Pin|SPI_MOSI_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, Motor_B12_Pin|Motor_B13_Pin|Motor_B14_Pin, GPIO_PIN_RESET);
@@ -972,18 +972,25 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(Motor_A8_GPIO_Port, Motor_A8_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : DEBUG_IO_Pin PE0 PE1 */
-  GPIO_InitStruct.Pin = DEBUG_IO_Pin|GPIO_PIN_0|GPIO_PIN_1;
+  /*Configure GPIO pins : SPI_CSN_Pin PE0 PE1 */
+  GPIO_InitStruct.Pin = SPI_CSN_Pin|GPIO_PIN_0|GPIO_PIN_1;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : Enable_PIN_Pin */
-  GPIO_InitStruct.Pin = Enable_PIN_Pin;
+  /*Configure GPIO pin : SPI_CE_Pin */
+  GPIO_InitStruct.Pin = SPI_CE_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(SPI_CE_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : Enable_PIN_Pin SPI_MISO_Pin */
+  GPIO_InitStruct.Pin = Enable_PIN_Pin|SPI_MISO_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
-  HAL_GPIO_Init(Enable_PIN_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
   /*Configure GPIO pin : Motor_C0_Pin */
   GPIO_InitStruct.Pin = Motor_C0_Pin;
@@ -991,6 +998,13 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(Motor_C0_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : SPI_SCK_Pin SPI_MOSI_Pin */
+  GPIO_InitStruct.Pin = SPI_SCK_Pin|SPI_MOSI_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pins : Motor_B12_Pin Motor_B13_Pin Motor_B14_Pin */
   GPIO_InitStruct.Pin = Motor_B12_Pin|Motor_B13_Pin|Motor_B14_Pin;
@@ -1037,77 +1051,7 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE END 4 */
 
-/* USER CODE BEGIN Header_StartBalanceTask */
-/**
- * @brief  Function implementing the BalanceTask thread.
- * @param  argument: Not used
- * @retval None
- */
-/* USER CODE END Header_StartBalanceTask */
-// void StartBalanceTask(void *argument)
-// {
-//   /* USER CODE BEGIN 5 */
-// //   /* Infinite loop */
-// //   for(;;)
-// //   {
-// //     osDelay(1);
-// //   }
-//   /* USER CODE END 5 */
-// }
 
-/* USER CODE BEGIN Header_StartUsartTask */
-/**
- * @brief Function implementing the UsartTask thread.
- * @param argument: Not used
- * @retval None
- */
-/* USER CODE END Header_StartUsartTask */
-// void StartUsartTask(void *argument)
-// {
-//   /* USER CODE BEGIN StartUsartTask */
-// //   /* Infinite loop */
-// //   for(;;)
-// //   {
-// //     osDelay(1);
-// //   }
-//   /* USER CODE END StartUsartTask */
-// }
-
-/* USER CODE BEGIN Header_StartIMUTask */
-/**
- * @brief Function implementing the IMUTask thread.
- * @param argument: Not used
- * @retval None
- */
-/* USER CODE END Header_StartIMUTask */
-// void StartIMUTask(void *argument)
-// {
-//   /* USER CODE BEGIN StartIMUTask */
-// //   /* Infinite loop */
-// //   for(;;)
-// //   {
-// //     osDelay(1);
-// //   }
-//   /* USER CODE END StartIMUTask */
-// }
-
-/* USER CODE BEGIN Header_StartLedTask */
-/**
- * @brief Function implementing the LedTask thread.
- * @param argument: Not used
- * @retval None
- */
-/* USER CODE END Header_StartLedTask */
-// void StartLedTask(void *argument)
-// {
-//   /* USER CODE BEGIN StartLedTask */
-// //   /* Infinite loop */
-// //   for(;;)
-// //   {
-// //     osDelay(1);
-// //   }
-//   /* USER CODE END StartLedTask */
-// }
 
 /**
   * @brief  Period elapsed callback in non blocking mode

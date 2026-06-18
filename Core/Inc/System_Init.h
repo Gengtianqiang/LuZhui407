@@ -6,10 +6,10 @@
 #include "forward.h"
 
 
-// #define AHAND_CAR
+#define AHAND_CAR
 // #define MIDDLE_CAR
-//  #define MIDDLE_CAR_FIRST //中间车第一辆
-#define BEHIND_CAR
+ // #define MIDDLE_CAR_FIRST //中间车第一辆
+// #define BEHIND_CAR
 
 
 

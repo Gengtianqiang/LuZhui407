@@ -2,6 +2,17 @@
 
 Control_State Current_State = STATE_Detection_IDLE;
 
+#ifdef AHAND_CAR
+PID_Controller heading_pid = {
+	.kp = 1.8f,	 // 比例增益 - 需要调试
+	.ki = 0.005f, // 积分增益 - 需要调试
+	.kd = 0.2f,	 // 微分增益 - 需要调试
+	.integral = 0.0f,
+	.prev_error = 0.0f,
+	.integral_limit = 50.0f, // 积分限幅
+	.output_limit = 80.0f	 // 输出限幅
+};
+#else
 PID_Controller heading_pid = {
 	.kp = 1.2f,	 // 比例增益 - 需要调试
 	.ki = 0.01f, // 积分增益 - 需要调试
@@ -11,8 +22,16 @@ PID_Controller heading_pid = {
 	.integral_limit = 50.0f, // 积分限幅
 	.output_limit = 80.0f	 // 输出限幅
 };
+#endif
+
+
+#ifdef AHAND_CAR
+float speed_weight = 15;
+#else
 
 float speed_weight = 10;
+#endif
+
 float R_D_ratio = 1.00f;
 extern Control_State Current_State;
 void pdoa_follow(ProtocolData *pdoa_data)
@@ -31,7 +50,7 @@ void pdoa_follow(ProtocolData *pdoa_data)
 #ifdef AHAND_CAR
 		pn = -1;
 
-		if(my_4g_dtu.return_flag = 0) {
+		if ( 0== my_4g_dtu.return_flag ) {
 			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_RESET);
 			
 		}else{
@@ -49,14 +68,8 @@ void pdoa_follow(ProtocolData *pdoa_data)
 			pn = 1;
 
 			
-		if(pdoa_data==&proto_data) {
-			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_RESET);
-			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_SET);
-		}else{
-			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_RESET);
-			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_SET);
-
-		}
+		
+	
 #endif
 		
 #ifdef MIDDLE_CAR_FIRST
@@ -64,7 +77,6 @@ void pdoa_follow(ProtocolData *pdoa_data)
 			pn = -1;
 		else 
 			pn = 1;
-
 
 #endif
 		
@@ -84,11 +96,15 @@ void pdoa_follow(ProtocolData *pdoa_data)
  
 		//目标车距
 		float distance =  0;
+
+#ifdef AHAND_CAR
+		distance =  RETURN_DISTANCE;
+#else
 		if(pdoa_data==&retuen_proto_data)
 			distance = RETURN_DISTANCE;
 		else
 			distance =  START_DISTANCE;
-
+#endif
 
 		switch (Current_State)
 		{
@@ -188,19 +204,19 @@ void pdoa_follow(ProtocolData *pdoa_data)
 static uint32_t Behind_back_time = 0;
 void Behind_Car_Loop()
 {
-	if(1==g_state_machine.behind_flag) {
+	if(1==g_state_machine.behind_flag){
 
-		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_SET);
+	
+	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_RESET);
 		pdoa_follow(&retuen_proto_data);
 	}
-		
 	else {
+		
+	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_SET);	
 		pdoa_follow(&proto_data);
-		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_SET);
 	}
-
 }
 
 
@@ -218,16 +234,17 @@ void Middle_Car_Loop()
 #endif
 
 #ifdef MIDDLE_CAR_FIRST
-	if(g_state_machine.middle_flag == 1){
+	if(g_state_machine.middle_flag == 1)
+	{
+		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_SET);
 		pdoa_follow(&proto_data);
-
-			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_RESET);
-			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_SET);
 	}
+		
 	else if(g_state_machine.middle_flag == 2) {
-		pdoa_follow(&retuen_proto_data);
-		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_RESET);
 		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_RESET);
+		pdoa_follow(&retuen_proto_data);
 	}
 #endif
 

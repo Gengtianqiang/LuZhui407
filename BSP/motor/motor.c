@@ -379,6 +379,6 @@ void differential_drive_control(float pid_output, float base_speed)
     /*暂时先这样*/
     // Move_X = 0;
     // Move_Z = pid_output/10;
-     Set_Pwm(left_speed*100,left_speed*100,right_speed*100,right_speed*100);
+     Set_Pwm(left_speed*80,left_speed*80,right_speed*80,right_speed*80);
 }
 

@@ -1,492 +1,612 @@
-[2026-06-12 14:22:54]	[done]
+[2026-06-15 15:25:56]	[done]
 	build successfully !
 
-[2026-06-12 14:24:32]	[info] incremental build: 1 source files changed
+[2026-06-15 15:38:08]	[info] incremental build: 30 source files changed
 These source files will be recompiled
 ---
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': source file has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\PID.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\balance.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\control.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\pdoa_control.c': source file has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\twr_control.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\bg_task\bg_task.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\imu_task\imu_task.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\uart_task\uart_callback.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\uart_task\uart_task.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\Encoder\Encoder.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\NRF24L01\NRF24L01.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': source file has been changed.
+'d:\桌面\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\battery\battery.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\jdy28m\Parser.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\led\led.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\motor\motor.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\timer\tim.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\System_Init.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\freertos.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\main.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
 
-[2026-06-12 14:24:33]	[done]
+[2026-06-15 15:38:10]	[done]
 	build successfully !
 
-[2026-06-12 14:25:35]	[info] incremental build: 1 source files changed
+[2026-06-15 15:38:52]	[info] incremental build: 1 source files changed
 These source files will be recompiled
 ---
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_callback.c': source file has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\pdoa_control.c': source file has been changed.
 
-[2026-06-12 14:25:36]	[done]
+[2026-06-15 15:38:53]	[done]
 	build successfully !
 
-[2026-06-12 14:28:29]	[done]
-	build successfully !
-
-[2026-06-12 14:29:03]	[info] incremental build: 28 source files changed
+[2026-06-15 15:49:20]	[info] incremental build: 3 source files changed
 These source files will be recompiled
 ---
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\led\led.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\main.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\pdoa_control.c': source file has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\twr_control.c': source file has been changed.
+'d:\桌面\TH_HAL\Core\Src\System_Init.c': source file has been changed.
 
-[2026-06-12 14:29:06]	[done]
+[2026-06-15 15:49:23]	[done]
 	build successfully !
 
-[2026-06-12 14:30:02]	[info] incremental build: 28 source files changed
+[2026-06-15 15:50:06]	[info] incremental build: 30 source files changed
 These source files will be recompiled
 ---
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\led\led.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\main.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\PID.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\balance.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\control.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\twr_control.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\bg_task\bg_task.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\imu_task\imu_task.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\uart_task\uart_callback.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\uart_task\uart_task.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\Encoder\Encoder.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\NRF24L01\NRF24L01.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\battery\battery.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\jdy28m\Parser.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\led\led.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\motor\motor.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\timer\tim.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\System_Init.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\freertos.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\main.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
 
-[2026-06-12 14:30:05]	[done]
+[2026-06-15 15:50:10]	[done]
 	build successfully !
 
-[2026-06-12 15:05:02]	[info] incremental build: 28 source files changed
+[2026-06-15 15:50:31]	[info] incremental build: 30 source files changed
 These source files will be recompiled
 ---
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\led\led.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\main.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\PID.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\balance.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\control.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\twr_control.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\bg_task\bg_task.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\imu_task\imu_task.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\uart_task\uart_callback.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\uart_task\uart_task.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\Encoder\Encoder.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\NRF24L01\NRF24L01.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\battery\battery.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\jdy28m\Parser.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\led\led.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\motor\motor.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\timer\tim.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\System_Init.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\freertos.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\main.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
 
-[2026-06-12 15:05:05]	[done]
+[2026-06-15 15:50:35]	[done]
 	build successfully !
 
-[2026-06-12 15:06:05]	[done]
-	build successfully !
-
-[2026-06-12 15:09:22]	[info] incremental build: 28 source files changed
+[2026-06-15 15:52:41]	[info] incremental build: 1 source files changed
 These source files will be recompiled
 ---
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\led\led.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\main.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\System_Init.c': source file has been changed.
 
-[2026-06-12 15:09:25]	[done]
+[2026-06-15 15:52:42]	[done]
 	build successfully !
 
-[2026-06-12 15:09:46]	[done]
-	build successfully !
-
-[2026-06-12 15:15:53]	[info] incremental build: 28 source files changed
+[2026-06-15 15:53:05]	[info] incremental build: 1 source files changed
 These source files will be recompiled
 ---
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\led\led.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\main.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\twr_control.c': source file has been changed.
 
-[2026-06-12 15:15:56]	[done]
+[2026-06-15 15:53:07]	[done]
 	build successfully !
 
-[2026-06-12 15:25:49]	[info] incremental build: 28 source files changed
+[2026-06-15 15:54:04]	[info] incremental build: 30 source files changed
 These source files will be recompiled
 ---
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\led\led.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\main.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\PID.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\balance.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\control.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\twr_control.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\bg_task\bg_task.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\imu_task\imu_task.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\uart_task\uart_callback.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\uart_task\uart_task.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\Encoder\Encoder.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\NRF24L01\NRF24L01.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\battery\battery.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\jdy28m\Parser.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\led\led.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\motor\motor.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\timer\tim.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\System_Init.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\freertos.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\main.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
 
-[2026-06-12 15:25:52]	[done]
+[2026-06-15 15:54:08]	[done]
 	build successfully !
 
-[2026-06-12 15:28:14]	[done]
-	build successfully !
-
-[2026-06-12 15:31:07]	[info] incremental build: 1 source files changed
+[2026-06-15 15:59:48]	[info] incremental build: 30 source files changed
 These source files will be recompiled
 ---
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\System_Init.c': source file has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\PID.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\balance.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\control.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\pdoa_control.c': source file has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\twr_control.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\bg_task\bg_task.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\imu_task\imu_task.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\uart_task\uart_callback.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\uart_task\uart_task.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\Encoder\Encoder.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\NRF24L01\NRF24L01.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\battery\battery.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\jdy28m\Parser.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\led\led.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\motor\motor.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\timer\tim.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\System_Init.c': source file has been changed.
+'d:\桌面\TH_HAL\Core\Src\freertos.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\main.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
 
-[2026-06-12 15:31:08]	[done]
+[2026-06-15 15:59:52]	[done]
 	build successfully !
 
-[2026-06-12 15:32:32]	[info] incremental build: 1 source files changed
+[2026-06-15 16:09:09]	[info] incremental build: 1 source files changed
 These source files will be recompiled
 ---
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\bg_task\bg_task.c': source file has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\pdoa_control.c': source file has been changed.
 
-[2026-06-12 15:32:33]	[done]
+[2026-06-15 16:09:11]	[done]
 	build successfully !
 
-[2026-06-14 15:31:01]	[info] incremental build: 28 source files changed
+[2026-06-15 16:17:25]	[info] incremental build: 2 source files changed
 These source files will be recompiled
 ---
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\balance.c': source file has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\bg_task\bg_task.c': source file has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': source file has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\led\led.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\motor\motor.c': source file has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\main.c': source file has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\pdoa_control.c': source file has been changed.
+'d:\桌面\TH_HAL\BSP\motor\motor.c': source file has been changed.
 
-[2026-06-14 15:31:04]	[done]
+[2026-06-15 16:17:27]	[done]
 	build successfully !
 
-[2026-06-14 15:33:00]	[info] incremental build: 2 source files changed
+[2026-06-15 16:18:21]	[info] incremental build: 30 source files changed
 These source files will be recompiled
 ---
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\bg_task\bg_task.c': source file has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': source file has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\PID.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\balance.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\control.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\twr_control.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\bg_task\bg_task.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\imu_task\imu_task.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\uart_task\uart_callback.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\uart_task\uart_task.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\Encoder\Encoder.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\NRF24L01\NRF24L01.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\battery\battery.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\jdy28m\Parser.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\led\led.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\motor\motor.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\timer\tim.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\System_Init.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\freertos.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\main.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
 
-[2026-06-14 15:33:02]	[done]
+[2026-06-15 16:18:24]	[done]
 	build successfully !
 
-[2026-06-14 15:33:31]	[info] incremental build: 1 source files changed
+[2026-06-15 16:18:55]	[info] incremental build: 30 source files changed
 These source files will be recompiled
 ---
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\motor\motor.c': source file has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\PID.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\balance.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\control.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\twr_control.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\bg_task\bg_task.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\imu_task\imu_task.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\uart_task\uart_callback.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\uart_task\uart_task.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\Encoder\Encoder.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\NRF24L01\NRF24L01.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\battery\battery.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\jdy28m\Parser.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\led\led.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\motor\motor.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\timer\tim.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\System_Init.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\freertos.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\main.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
 
-[2026-06-14 15:33:32]	[done]
+[2026-06-15 16:18:59]	[done]
 	build successfully !
 
-[2026-06-14 16:25:11]	[info] incremental build: 10 source files changed
+[2026-06-15 17:11:29]	[info] incremental build: 30 source files changed
 These source files will be recompiled
 ---
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.c': source file has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\PID.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\balance.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\control.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\twr_control.c': source file has been changed.
+'d:\桌面\TH_HAL\APP\bg_task\bg_task.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\imu_task\imu_task.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\uart_task\uart_callback.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\uart_task\uart_task.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\4G_DTU\bsp_4g.c': source file has been changed.
+'d:\桌面\TH_HAL\BSP\Encoder\Encoder.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\NRF24L01\NRF24L01.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\battery\battery.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\jdy28m\Parser.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\led\led.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\motor\motor.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\timer\tim.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\System_Init.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\freertos.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\main.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'd:\桌面\TH_HAL\Core\Inc\System_Init.h' has been changed.
 
-[2026-06-14 16:25:13]	[done]
+[2026-06-15 17:11:31]	[done]
 	build successfully !
 
-[2026-06-14 16:26:41]	[info] incremental build: 28 source files changed
+[2026-06-15 17:13:59]	[done]
+	build successfully !
+
+[2026-06-15 17:34:20]	[info] incremental build: 1 source files changed
 These source files will be recompiled
 ---
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\led\led.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\main.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\pdoa_control.c': source file has been changed.
 
-[2026-06-14 16:26:44]	[done]
+[2026-06-15 17:34:21]	[done]
 	build successfully !
 
-[2026-06-14 16:34:02]	[info] incremental build: 1 source files changed
+[2026-06-15 17:35:52]	[info] incremental build: 1 source files changed
 These source files will be recompiled
 ---
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.c': source file has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\pdoa_control.c': source file has been changed.
 
-[2026-06-14 16:34:03]	[done]
+[2026-06-15 17:35:54]	[done]
 	build successfully !
 
-[2026-06-14 16:34:31]	[info] incremental build: 1 source files changed
+[2026-06-15 17:45:54]	[info] incremental build: 1 source files changed
 These source files will be recompiled
 ---
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.c': source file has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\pdoa_control.c': source file has been changed.
 
-[2026-06-14 16:34:32]	[done]
+[2026-06-15 17:45:56]	[done]
 	build successfully !
 
-[2026-06-14 16:58:47]	[info] incremental build: 28 source files changed
+[2026-06-15 17:46:51]	[info] incremental build: 1 source files changed
 These source files will be recompiled
 ---
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\led\led.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\main.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'d:\桌面\TH_HAL\BSP\motor\motor.c': source file has been changed.
 
-[2026-06-14 16:58:49]	[done]
+[2026-06-15 17:46:53]	[done]
 	build successfully !
 
-[2026-06-14 16:59:35]	[done]
-	build successfully !
-
-[2026-06-14 17:19:09]	[info] incremental build: 1 source files changed
+[2026-06-15 17:50:46]	[info] incremental build: 1 source files changed
 These source files will be recompiled
 ---
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\pdoa_control.c': source file has been changed.
+'d:\桌面\TH_HAL\BSP\motor\motor.c': source file has been changed.
 
-[2026-06-14 17:19:10]	[done]
+[2026-06-15 17:50:48]	[done]
 	build successfully !
 
-[2026-06-14 17:23:35]	[info] incremental build: 2 source files changed
+[2026-06-15 17:56:25]	[info] incremental build: 1 source files changed
 These source files will be recompiled
 ---
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\pdoa_control.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\pdoa_control.c': source file has been changed.
+'d:\桌面\TH_HAL\APP\balance_task\pdoa_control.c': source file has been changed.
 
-[2026-06-14 17:23:36]	[done]
+[2026-06-15 17:56:27]	[done]
 	build successfully !
 
-[2026-06-14 17:24:20]	[info] incremental build: 1 source files changed
+[2026-06-18 15:45:45]	[info] incremental build: 74 source files changed
 These source files will be recompiled
 ---
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\pdoa_control.c': source file has been changed.
+'e:\workspace\TH_HAL\APP\balance_task\PID.c': compiler options has been changed.
+'e:\workspace\TH_HAL\APP\balance_task\balance.c': compiler options has been changed.
+'e:\workspace\TH_HAL\APP\balance_task\balance_core.c': compiler options has been changed.
+'e:\workspace\TH_HAL\APP\balance_task\control.c': compiler options has been changed.
+'e:\workspace\TH_HAL\APP\balance_task\filter.c': compiler options has been changed.
+'e:\workspace\TH_HAL\APP\balance_task\pdoa_control.c': compiler options has been changed.
+'e:\workspace\TH_HAL\APP\balance_task\twr_control.c': compiler options has been changed.
+'e:\workspace\TH_HAL\APP\bg_task\bg_task.c': compiler options has been changed.
+'e:\workspace\TH_HAL\APP\imu_task\imu_task.c': compiler options has been changed.
+'e:\workspace\TH_HAL\APP\uart_task\uart_callback.c': compiler options has been changed.
+'e:\workspace\TH_HAL\APP\uart_task\uart_task.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\Encoder\Encoder.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\VOFA+\Vofa+.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\VOFA+\Vofa.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\VOFA+\Vofa_if.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\battery\battery.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\buzzer\buzzer.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\icm20948\app\icm20948_app.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\icm20948\app\imu_output.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\icm20948\lib\icm20948.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\jdy28m\Parser.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\jdy28m\forward.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\jdy28m\jdy28m.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\jdy28m\response.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\jdy28m\transmit.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\led\led.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\motor\motor.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\sleep\sleep.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\timer\tim.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\util\RingByteBuffer.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Core\Src\System_Init.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Core\Src\freertos.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Core\Src\main.c': source file has been changed.
+'e:\workspace\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Core\Src\stm32f4xx_hal_timebase_tim.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Core\Src\stm32f4xx_it.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Core\Src\system_stm32f4xx.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_adc.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_adc_ex.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c_ex.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_adc.c': compiler options has been changed.
+'e:\workspace\TH_HAL\MDK-ARM\startup_stm32f407xx.s': source file has been changed.
+'e:\workspace\TH_HAL\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2\cmsis_os2.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Middlewares\Third_Party\FreeRTOS\Source\croutine.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Middlewares\Third_Party\FreeRTOS\Source\event_groups.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Middlewares\Third_Party\FreeRTOS\Source\list.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Middlewares\Third_Party\FreeRTOS\Source\portable\MemMang\heap_4.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Middlewares\Third_Party\FreeRTOS\Source\portable\RVDS\ARM_CM4F\port.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Middlewares\Third_Party\FreeRTOS\Source\queue.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Middlewares\Third_Party\FreeRTOS\Source\stream_buffer.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Middlewares\Third_Party\FreeRTOS\Source\tasks.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Middlewares\Third_Party\FreeRTOS\Source\timers.c': compiler options has been changed.
 
-[2026-06-14 17:24:21]	[done]
-	build successfully !
+[2026-06-18 15:45:48]	compilation failed at : "e:\workspace\TH_HAL\APP\bg_task\bg_task.c", exit code: 1
+command: 
+  "d:\Keil_5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I. -ICore/Inc -IDrivers/STM32F4xx_HAL_Driver/Inc -IDrivers/STM32F4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32F4xx/Include -IDrivers/CMSIS/Include -IBSP -IMiddlewares/Third_Party/FreeRTOS/Source/include -IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -IMiddlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -IHARDWARE/Encoder -IHARDWARE/Motor_GPIO -IAPP/balance_task -IAPP/bg_task -IAPP/imu_task -IAPP/uart_task -IBSP/battery -IBSP/buzzer -IBSP/Encoder -IBSP/icm20948/app -IBSP/icm20948/lib -IBSP/led -IBSP/motor -IBSP/Motor_GPIO -IBSP/sleep -IBSP/timer -IBSP/util -IBSP/VOFA+ -IBSP/icm20948/lib/include -IBSP/jdy28m_geng -IBSP/jdy28m -I.cmsis/include -IMDK-ARM/RTE/_HAL -IBSP/4G_DTU -D"USE_HAL_DRIVER" -D"STM32F407xx" --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O0 -Otime --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\HAL\.obj\APP\bg_task\bg_task.o --no_depend_system_headers --depend .\build\HAL\.obj\APP\bg_task\bg_task.d .\APP\bg_task\bg_task.c
+   at unify_builder.Program.compileByMulThread(Int32 thrNum, CmdInfo[] cmds_, List`1 errLogs)
+   at unify_builder.Program.Main(String[] args_)
+---
+".\APP\uart_task\uart_task.h", line 20: Warning:  #47-D: incompatible redefinition of macro "RING_BUFFER_SIZE"  (declared at line 9 of "BSP/jdy28m/forward.h")
+  #define RING_BUFFER_SIZE 128
+          ^
+".\APP\uart_task\uart_task.c", line 2: Error:  #5: cannot open source input file "NRF24L01_APP.h": No such file or directory
+  #include "NRF24L01_APP.h"
+                           ^
+.\APP\uart_task\uart_task.c: 1 warning, 1 error
+"APP/uart_task/uart_task.h", line 20: Warning:  #47-D: incompatible redefinition of macro "RING_BUFFER_SIZE"  (declared at line 9 of "BSP/jdy28m/forward.h")
+  #define RING_BUFFER_SIZE 128
+          ^
+".\APP\bg_task\bg_task.c", line 4: Error:  #5: cannot open source input file "NRF24L01.h": No such file or directory
+  #include "NRF24L01.h"
+                       ^
+.\APP\bg_task\bg_task.c: 1 warning, 1 error
 
-[2026-06-14 17:25:12]	[info] incremental build: 2 source files changed
+[2026-06-18 15:47:24]	[info] incremental build: 76 source files changed
 These source files will be recompiled
 ---
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\pdoa_control.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\pdoa_control.c': source file has been changed.
+'e:\workspace\TH_HAL\APP\balance_task\PID.c': compiler options has been changed.
+'e:\workspace\TH_HAL\APP\balance_task\balance.c': compiler options has been changed.
+'e:\workspace\TH_HAL\APP\balance_task\balance_core.c': compiler options has been changed.
+'e:\workspace\TH_HAL\APP\balance_task\control.c': compiler options has been changed.
+'e:\workspace\TH_HAL\APP\balance_task\filter.c': compiler options has been changed.
+'e:\workspace\TH_HAL\APP\balance_task\pdoa_control.c': compiler options has been changed.
+'e:\workspace\TH_HAL\APP\balance_task\twr_control.c': compiler options has been changed.
+'e:\workspace\TH_HAL\APP\bg_task\bg_task.c': compiler options has been changed.
+'e:\workspace\TH_HAL\APP\imu_task\imu_task.c': compiler options has been changed.
+'e:\workspace\TH_HAL\APP\uart_task\uart_callback.c': compiler options has been changed.
+'e:\workspace\TH_HAL\APP\uart_task\uart_task.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\Encoder\Encoder.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\NRF24L01\NRF24L01.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\VOFA+\Vofa+.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\VOFA+\Vofa.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\VOFA+\Vofa_if.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\battery\battery.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\buzzer\buzzer.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\icm20948\app\icm20948_app.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\icm20948\app\imu_output.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\icm20948\lib\icm20948.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\jdy28m\Parser.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\jdy28m\forward.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\jdy28m\jdy28m.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\jdy28m\response.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\jdy28m\transmit.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\led\led.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\motor\motor.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\sleep\sleep.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\timer\tim.c': compiler options has been changed.
+'e:\workspace\TH_HAL\BSP\util\RingByteBuffer.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Core\Src\System_Init.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Core\Src\freertos.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Core\Src\main.c': source file has been changed.
+'e:\workspace\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Core\Src\stm32f4xx_hal_timebase_tim.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Core\Src\stm32f4xx_it.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Core\Src\system_stm32f4xx.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_adc.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_adc_ex.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c_ex.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_adc.c': compiler options has been changed.
+'e:\workspace\TH_HAL\MDK-ARM\startup_stm32f407xx.s': source file has been changed.
+'e:\workspace\TH_HAL\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2\cmsis_os2.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Middlewares\Third_Party\FreeRTOS\Source\croutine.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Middlewares\Third_Party\FreeRTOS\Source\event_groups.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Middlewares\Third_Party\FreeRTOS\Source\list.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Middlewares\Third_Party\FreeRTOS\Source\portable\MemMang\heap_4.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Middlewares\Third_Party\FreeRTOS\Source\portable\RVDS\ARM_CM4F\port.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Middlewares\Third_Party\FreeRTOS\Source\queue.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Middlewares\Third_Party\FreeRTOS\Source\stream_buffer.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Middlewares\Third_Party\FreeRTOS\Source\tasks.c': compiler options has been changed.
+'e:\workspace\TH_HAL\Middlewares\Third_Party\FreeRTOS\Source\timers.c': compiler options has been changed.
 
-[2026-06-14 17:25:14]	[done]
-	build successfully !
+[2026-06-18 15:47:29]	link failed !, exit code: 1
+   at unify_builder.Program.Main(String[] args_)
+---
+Error: L6200E: Symbol StartBalanceTask multiply defined (by main.o and balance.o).
+Error: L6200E: Symbol StartLedTask multiply defined (by main.o and bg_task.o).
+Error: L6200E: Symbol StartIMUTask multiply defined (by main.o and imu_task.o).
+Error: L6200E: Symbol StartUsartTask multiply defined (by main.o and uart_task.o).
+Not enough information to list image symbols.
+Not enough information to list the image map.
+Finished: 2 information, 0 warning and 4 error messages.
 
-[2026-06-14 18:01:07]	[info] incremental build: 1 source files changed
+
+[2026-06-18 15:57:49]	link failed !, exit code: 1
+   at unify_builder.Program.Main(String[] args_)
+---
+Error: L6200E: Symbol StartBalanceTask multiply defined (by main.o and balance.o).
+Error: L6200E: Symbol StartLedTask multiply defined (by main.o and bg_task.o).
+Error: L6200E: Symbol StartIMUTask multiply defined (by main.o and imu_task.o).
+Error: L6200E: Symbol StartUsartTask multiply defined (by main.o and uart_task.o).
+Not enough information to list image symbols.
+Not enough information to list the image map.
+Finished: 2 information, 0 warning and 4 error messages.
+
+
+[2026-06-18 15:58:46]	[info] incremental build: 1 source files changed
 These source files will be recompiled
 ---
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\pdoa_control.c': source file has been changed.
+'e:\workspace\TH_HAL\Core\Src\main.c': source file has been changed.
 
-[2026-06-14 18:01:08]	[done]
-	build successfully !
-
-[2026-06-14 21:14:22]	[info] incremental build: 28 source files changed
-These source files will be recompiled
----
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\balance.c': source file has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\pdoa_control.c': source file has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.c': source file has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.c': source file has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': source file has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\led\led.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\motor\motor.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\System_Init.c': source file has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\main.c': source file has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\Yharim\Desktop\workspace\TH_HAL\Core\Inc\main.h' has been changed.
-
-[2026-06-14 21:14:25]	[done]
+[2026-06-18 15:58:48]	[done]
 	build successfully !
 

@@ -1,12 +1,16 @@
 #include "bg_task.h"
 #include "main.h"
 #include "bsp_4g.h"
+#include "NRF24L01.h"
+#include "uart_callback.h"
 
 
+uint8_t FLAG;
 void StartLedTask(void *argument)
 {
   /* USER CODE BEGIN StartLedTask */
   /* Infinite loop */
+  
   for(;;)
   {
     osDelay(100);
@@ -19,7 +23,7 @@ void StartLedTask(void *argument)
     Set_battery_led();
 		
 
-		if(my_4g_dtu.buzzer_flag == 1||my_4g_dtu.imu_error_flag == 1||my_4g_dtu.jdy_error_flag == 1) {
+		if(my_4g_dtu.buzzer_flag == 1||my_4g_dtu.imu_error_flag == 1 || FLAG) {
 
 
       if(1==my_4g_dtu.buzzer_flag)
@@ -33,6 +37,7 @@ void StartLedTask(void *argument)
 
 
       }
+      FLAG = 0;
     } else {
         Buzzer_Stop();
       

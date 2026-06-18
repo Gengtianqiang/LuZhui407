@@ -3,7 +3,7 @@
 
 
 #include "forward.h"
-
+extern uint8_t rx_flag;
 
 typedef struct Forward
 {

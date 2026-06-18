@@ -7,7 +7,7 @@
     "buildMode": "fast|multhread",
     "showRepathOnLog": true,
     "threadNum": 12,
-    "rootDir": "c:\\Users\\Yharim\\Desktop\\workspace\\TH_HAL",
+    "rootDir": "e:\\workspace\\TH_HAL",
     "dumpPath": "build\\HAL",
     "outDir": "build\\HAL",
     "ram": 196608,
@@ -46,7 +46,8 @@
         "BSP/jdy28m",
         ".cmsis/include",
         "MDK-ARM/RTE/_HAL",
-        "BSP/4G_DTU"
+        "BSP/4G_DTU",
+        "BSP/NRF24L01"
     ],
     "libDirs": [],
     "defines": [
@@ -68,6 +69,8 @@
         "BSP/4G_DTU/bsp_4g.c",
         "BSP/Encoder/Encoder.c",
         "BSP/Motor_GPIO/Motor_GPIO.c",
+        "BSP/NRF24L01/NRF24L01.c",
+        "BSP/NRF24L01/NRF24L01_APP.c",
         "BSP/VOFA+/Vofa+.c",
         "BSP/VOFA+/Vofa.c",
         "BSP/VOFA+/Vofa_if.c",
@@ -161,21 +164,21 @@
             ],
             "output-format": "elf",
             "link-scatter": [
-                "c:/Users/Yharim/Desktop/workspace/TH_HAL/build/HAL/HAL.sct"
+                "e:/workspace/TH_HAL/build/HAL/HAL.sct"
             ]
         }
     },
     "env": {
         "KEIL_OUTPUT_DIR": "HAL",
-        "workspaceFolder": "c:\\Users\\Yharim\\Desktop\\workspace\\TH_HAL",
+        "workspaceFolder": "e:\\workspace\\TH_HAL",
         "workspaceFolderBasename": "TH_HAL",
-        "OutDir": "c:\\Users\\Yharim\\Desktop\\workspace\\TH_HAL\\build\\HAL",
+        "OutDir": "e:\\workspace\\TH_HAL\\build\\HAL",
         "OutDirRoot": "build",
         "OutDirBase": "build\\HAL",
         "ProjectName": "HAL",
         "ConfigName": "HAL",
-        "ProjectRoot": "c:\\Users\\Yharim\\Desktop\\workspace\\TH_HAL",
-        "ExecutableName": "c:\\Users\\Yharim\\Desktop\\workspace\\TH_HAL\\build\\HAL\\HAL",
+        "ProjectRoot": "e:\\workspace\\TH_HAL",
+        "ExecutableName": "e:\\workspace\\TH_HAL\\build\\HAL\\HAL",
         "ChipPackDir": ".pack/Keil/STM32F4xx_DFP.2.17.0",
         "ChipName": "",
         "SYS_Platform": "win32",

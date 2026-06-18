@@ -4,7 +4,7 @@
 #include "bsp_4g.h"
 
 Forward myForward = {0};
-
+uint8_t rx_flag = 0;
 
 
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
@@ -13,7 +13,8 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 
   if (huart->Instance == USART1)
   {
-		RingByteBuffer_pushBuffer(&ring_rx_DMA_buf, uart1_dma_rx_buffer, received);
+		//RingByteBuffer_pushBuffer(&ring_rx_DMA_buf, uart1_dma_rx_buffer, received);
+    rx_flag = 1;
     HAL_UARTEx_ReceiveToIdle_DMA(&huart1, uart1_dma_rx_buffer, UART_RX_BUFFER_SIZE);
   }
 

@@ -1,5 +1,5 @@
 #include "uart_task.h"
-
+#include "NRF24L01_APP.h"
 
 uint8_t dma_buffer_receive_usart1[RECEIVE_USART1_BUFFER] = {0};
 uint8_t dma_buffer_Transmit_usart1[Transmit_USART1_BUFFER] = {0};
@@ -55,18 +55,20 @@ void StartUsartTask(void *argument)
 		Protocol_Parse(&ring3_rx_DMA_buf, &retuen_proto_data);
 #endif
 
+	NRF24L01_TASK();
 
- 	if(JDY_OK==jdy_task(&jdy_handle, &my_mesh_send_pkt,&proto_data)) {
+ 	// if(JDY_OK==jdy_task(&jdy_handle, &my_mesh_send_pkt,&proto_data)) {
 
- 		my_mesh_send_pkt.valid = 1;
+ 	// 	my_mesh_send_pkt.valid = 1;
 
- 	}else my_mesh_send_pkt.valid = 0;
-
+ 	// }else my_mesh_send_pkt.valid = 0;
 
 	
+	
 
-	}
+	// }
 	/* USER CODE END StartUsartTask */
+	}
 }
 
 

@@ -101,14 +101,22 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define DEBUG_IO_Pin GPIO_PIN_2
-#define DEBUG_IO_GPIO_Port GPIOE
+#define SPI_CSN_Pin GPIO_PIN_2
+#define SPI_CSN_GPIO_Port GPIOE
+#define SPI_CE_Pin GPIO_PIN_3
+#define SPI_CE_GPIO_Port GPIOE
 #define Enable_PIN_Pin GPIO_PIN_4
 #define Enable_PIN_GPIO_Port GPIOE
 #define Motor_C0_Pin GPIO_PIN_0
 #define Motor_C0_GPIO_Port GPIOC
+#define SPI_SCK_Pin GPIO_PIN_1
+#define SPI_SCK_GPIO_Port GPIOC
+#define SPI_MOSI_Pin GPIO_PIN_2
+#define SPI_MOSI_GPIO_Port GPIOC
 #define Battery_Ch_Pin GPIO_PIN_0
 #define Battery_Ch_GPIO_Port GPIOB
+#define SPI_MISO_Pin GPIO_PIN_13
+#define SPI_MISO_GPIO_Port GPIOE
 #define Motor_B12_Pin GPIO_PIN_12
 #define Motor_B12_GPIO_Port GPIOB
 #define Motor_B13_Pin GPIO_PIN_13

@@ -5,7 +5,7 @@
 #include "twr_control.h"
 #include "jdy_driver.h"
 #include "mesh_mode.h"
-
+#include "NRF24L01.h"
 uwb_set uwb_set_t = {
 	.pdoa_time = 0,
 	.twr_time = 0,
@@ -39,6 +39,8 @@ void systemInit(void)
   HAL_Delay(300);
   Encoder_Init();
 
+  //260614新增NRF24L01无线模块
+  NRF24L01_Init();
 
 
   bool is_icm_success = false;
@@ -66,13 +68,12 @@ void systemInit(void)
     }
   }
 	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_RESET);
-
-#ifdef AHAND_CAR
-	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_SET);
+#ifdef  AHAND_CAR
+	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_SET);
 #else
-  HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_RESET);
-#endif
-
+	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_RESET);
+#endif  
 	StateMachine_Init();
 	
 }

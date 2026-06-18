@@ -95,18 +95,18 @@ static void StateMachine_IdleHandler(StateMachine_Handle_t *hsm,BracketContent *
     begin_timecounter ++;
     if(begin_timecounter>1000) {
         // Check trigger signal, TWR data valid
-        // if(my_4g_dtu.start_flag && bracket_data.twr_status) {
-        if(my_4g_dtu.start_flag) {
+        if(my_4g_dtu.start_flag && bracket_data.twr_status) {
+        // if(my_4g_dtu.start_flag) {
             // Switch to peripheral check state
 
             //unit test
-            hsm->current_state = STATE_FINISHED;
-            hsm->ahand_flag = 1;
+            // hsm->current_state = STATE_FINISHED;
+            // hsm->ahand_flag = 1;
 
             //op
-            // hsm->current_state = STATE_PERIPHERAL_CHECK;
-            // hsm->coor3.x = my_4g_dtu.point.x;
-            // hsm->coor3.y = my_4g_dtu.point.y;
+            hsm->current_state = STATE_PERIPHERAL_CHECK;
+            hsm->coor3.x = my_4g_dtu.point.x;
+            hsm->coor3.y = my_4g_dtu.point.y;
             
             // Record the first coordinate point
             hsm->coor1.x = res->x;
@@ -329,9 +329,7 @@ static void StateMachine_FinishedHandler(StateMachine_Handle_t *hsm,BracketConte
 //    //测试
 //    osSemaphoreAcquire (hsm->uart_sem,0);
     //准备与串口任务通信：向后车和中间车发送返回信号
-    if(hsm->ahand_flag == 2) {
-        hsm->current_state = STATE_PDOA;
-    }
+     hsm->current_state = STATE_PDOA;
 }
 
 /**
@@ -342,12 +340,12 @@ static void StateMachine_FinishedHandler(StateMachine_Handle_t *hsm,BracketConte
  */
 static void StateMachine_PdoaHandler(StateMachine_Handle_t *hsm,BracketContent *res)
 {
-    HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_SET);
-	
+
     if(1==my_4g_dtu.return_flag) {
 
         //收到返回指令
         hsm->ahand_flag = 3;
+        HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_SET);
         pdoa_follow(&proto_data);
     }
 

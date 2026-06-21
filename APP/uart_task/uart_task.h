@@ -17,7 +17,7 @@
 #define RECEIVE_USART1_BUFFER 128
 #define Transmit_USART1_BUFFER 128
 // 环形队列缓冲区大小（可根据需求修改）
-#define RING_BUFFER_SIZE 128
+// #define RING_BUFFER_SIZE 128
 
 #define RXUART2_BUFFER 128
 #define RXUART3_BUFFER 512

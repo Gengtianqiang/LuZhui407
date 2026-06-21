@@ -1,0 +1,161 @@
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\Keil_5\ARM\ARMCC\Bin'
+Build target 'HAL'
+compiling buzzer.c...
+compiling System_Init.c...
+../BSP/jdy28m_geng/mesh_mode.h(98): error:  #20: identifier "jdy_status_t" is undefined
+  jdy_status_t JDY_func_init(Jdy_t *const self);
+../BSP/jdy28m_geng/mesh_mode.h(98): error:  #20: identifier "Jdy_t" is undefined
+  jdy_status_t JDY_func_init(Jdy_t *const self);
+../BSP/jdy28m_geng/mesh_mode.h(99): error:  #20: identifier "jdy_status_t" is undefined
+  jdy_status_t JDY_func_it(Jdy_t *const self, uint8_t *ble_datarev_buff, uint16_t received);
+../BSP/jdy28m_geng/mesh_mode.h(99): error:  #20: identifier "Jdy_t" is undefined
+  jdy_status_t JDY_func_it(Jdy_t *const self, uint8_t *ble_datarev_buff, uint16_t received);
+..\Core\Src\System_Init.c(31): warning:  #223-D: function "UART_Init" declared implicitly
+  	UART_Init();
+..\Core\Src\System_Init.c: 1 warning, 4 errors
+compiling jdy_driver.c...
+..\BSP\jdy28m_geng\mesh_mode.h(98): error:  #20: identifier "jdy_status_t" is undefined
+  jdy_status_t JDY_func_init(Jdy_t *const self);
+..\BSP\jdy28m_geng\mesh_mode.h(98): error:  #20: identifier "Jdy_t" is undefined
+  jdy_status_t JDY_func_init(Jdy_t *const self);
+..\BSP\jdy28m_geng\mesh_mode.h(99): error:  #20: identifier "jdy_status_t" is undefined
+  jdy_status_t JDY_func_it(Jdy_t *const self, uint8_t *ble_datarev_buff, uint16_t received);
+..\BSP\jdy28m_geng\mesh_mode.h(99): error:  #20: identifier "Jdy_t" is undefined
+  jdy_status_t JDY_func_it(Jdy_t *const self, uint8_t *ble_datarev_buff, uint16_t received);
+..\BSP\jdy28m_geng\jdy_driver.c: 0 warnings, 4 errors
+compiling pdoa_control.c...
+../BSP/jdy28m_geng/mesh_mode.h(98): error:  #20: identifier "jdy_status_t" is undefined
+  jdy_status_t JDY_func_init(Jdy_t *const self);
+../BSP/jdy28m_geng/mesh_mode.h(98): error:  #20: identifier "Jdy_t" is undefined
+  jdy_status_t JDY_func_init(Jdy_t *const self);
+../BSP/jdy28m_geng/mesh_mode.h(99): error:  #20: identifier "jdy_status_t" is undefined
+  jdy_status_t JDY_func_it(Jdy_t *const self, uint8_t *ble_datarev_buff, uint16_t received);
+../BSP/jdy28m_geng/mesh_mode.h(99): error:  #20: identifier "Jdy_t" is undefined
+  jdy_status_t JDY_func_it(Jdy_t *const self, uint8_t *ble_datarev_buff, uint16_t received);
+..\APP\balance_task\pdoa_control.c: 0 warnings, 4 errors
+compiling twr_control.c...
+../BSP/jdy28m_geng/mesh_mode.h(98): error:  #20: identifier "jdy_status_t" is undefined
+  jdy_status_t JDY_func_init(Jdy_t *const self);
+../BSP/jdy28m_geng/mesh_mode.h(98): error:  #20: identifier "Jdy_t" is undefined
+  jdy_status_t JDY_func_init(Jdy_t *const self);
+../BSP/jdy28m_geng/mesh_mode.h(99): error:  #20: identifier "jdy_status_t" is undefined
+  jdy_status_t JDY_func_it(Jdy_t *const self, uint8_t *ble_datarev_buff, uint16_t received);
+../BSP/jdy28m_geng/mesh_mode.h(99): error:  #20: identifier "Jdy_t" is undefined
+  jdy_status_t JDY_func_it(Jdy_t *const self, uint8_t *ble_datarev_buff, uint16_t received);
+..\APP\balance_task\twr_control.c: 0 warnings, 4 errors
+compiling Parser.c...
+../BSP/jdy28m_geng/mesh_mode.h(98): error:  #20: identifier "jdy_status_t" is undefined
+  jdy_status_t JDY_func_init(Jdy_t *const self);
+../BSP/jdy28m_geng/mesh_mode.h(98): error:  #20: identifier "Jdy_t" is undefined
+  jdy_status_t JDY_func_init(Jdy_t *const self);
+../BSP/jdy28m_geng/mesh_mode.h(99): error:  #20: identifier "jdy_status_t" is undefined
+  jdy_status_t JDY_func_it(Jdy_t *const self, uint8_t *ble_datarev_buff, uint16_t received);
+../BSP/jdy28m_geng/mesh_mode.h(99): error:  #20: identifier "Jdy_t" is undefined
+  jdy_status_t JDY_func_it(Jdy_t *const self, uint8_t *ble_datarev_buff, uint16_t received);
+..\BSP\jdy28m\Parser.c: 0 warnings, 4 errors
+compiling uart_task.c...
+../BSP/jdy28m_geng/mesh_mode.h(98): error:  #20: identifier "jdy_status_t" is undefined
+  jdy_status_t JDY_func_init(Jdy_t *const self);
+../BSP/jdy28m_geng/mesh_mode.h(98): error:  #20: identifier "Jdy_t" is undefined
+  jdy_status_t JDY_func_init(Jdy_t *const self);
+../BSP/jdy28m_geng/mesh_mode.h(99): error:  #20: identifier "jdy_status_t" is undefined
+  jdy_status_t JDY_func_it(Jdy_t *const self, uint8_t *ble_datarev_buff, uint16_t received);
+../BSP/jdy28m_geng/mesh_mode.h(99): error:  #20: identifier "Jdy_t" is undefined
+  jdy_status_t JDY_func_it(Jdy_t *const self, uint8_t *ble_datarev_buff, uint16_t received);
+..\APP\uart_task\uart_task.c: 0 warnings, 4 errors
+compiling bg_task.c...
+../BSP/jdy28m_geng/mesh_mode.h(98): error:  #20: identifier "jdy_status_t" is undefined
+  jdy_status_t JDY_func_init(Jdy_t *const self);
+../BSP/jdy28m_geng/mesh_mode.h(98): error:  #20: identifier "Jdy_t" is undefined
+  jdy_status_t JDY_func_init(Jdy_t *const self);
+../BSP/jdy28m_geng/mesh_mode.h(99): error:  #20: identifier "jdy_status_t" is undefined
+  jdy_status_t JDY_func_it(Jdy_t *const self, uint8_t *ble_datarev_buff, uint16_t received);
+../BSP/jdy28m_geng/mesh_mode.h(99): error:  #20: identifier "Jdy_t" is undefined
+  jdy_status_t JDY_func_it(Jdy_t *const self, uint8_t *ble_datarev_buff, uint16_t received);
+..\APP\bg_task\bg_task.c: 0 warnings, 4 errors
+compiling balance.c...
+../BSP/jdy28m_geng/mesh_mode.h(98): error:  #20: identifier "jdy_status_t" is undefined
+  jdy_status_t JDY_func_init(Jdy_t *const self);
+../BSP/jdy28m_geng/mesh_mode.h(98): error:  #20: identifier "Jdy_t" is undefined
+  jdy_status_t JDY_func_init(Jdy_t *const self);
+../BSP/jdy28m_geng/mesh_mode.h(99): error:  #20: identifier "jdy_status_t" is undefined
+  jdy_status_t JDY_func_it(Jdy_t *const self, uint8_t *ble_datarev_buff, uint16_t received);
+../BSP/jdy28m_geng/mesh_mode.h(99): error:  #20: identifier "Jdy_t" is undefined
+  jdy_status_t JDY_func_it(Jdy_t *const self, uint8_t *ble_datarev_buff, uint16_t received);
+..\APP\balance_task\balance.c: 0 warnings, 4 errors
+compiling uart_callback.c...
+../BSP/jdy28m_geng/mesh_mode.h(98): error:  #20: identifier "jdy_status_t" is undefined
+  jdy_status_t JDY_func_init(Jdy_t *const self);
+../BSP/jdy28m_geng/mesh_mode.h(98): error:  #20: identifier "Jdy_t" is undefined
+  jdy_status_t JDY_func_init(Jdy_t *const self);
+../BSP/jdy28m_geng/mesh_mode.h(99): error:  #20: identifier "jdy_status_t" is undefined
+  jdy_status_t JDY_func_it(Jdy_t *const self, uint8_t *ble_datarev_buff, uint16_t received);
+../BSP/jdy28m_geng/mesh_mode.h(99): error:  #20: identifier "Jdy_t" is undefined
+  jdy_status_t JDY_func_it(Jdy_t *const self, uint8_t *ble_datarev_buff, uint16_t received);
+..\APP\uart_task\uart_callback.c: 0 warnings, 4 errors
+compiling mesh_mode.c...
+compiling response.c...
+..\BSP\jdy28m\response.c(135): error:  #167: argument of type "char *" is incompatible with parameter of type "Vofa_HandleTypedef *"
+                 Vofa_Printf("[Node1] 正在广播启动信号\n");
+..\BSP\jdy28m\response.c(135): error:  #165: too few arguments in function call
+                 Vofa_Printf("[Node1] 正在广播启动信号\n");
+..\BSP\jdy28m\response.c(138): error:  #167: argument of type "char *" is incompatible with parameter of type "Vofa_HandleTypedef *"
+                      Vofa_Printf("[Node1] 所有节点已启动，开始接收数据\n");
+..\BSP\jdy28m\response.c(138): error:  #165: too few arguments in function call
+                      Vofa_Printf("[Node1] 所有节点已启动，开始接收数据\n");
+..\BSP\jdy28m\response.c(148): error:  #167: argument of type "char *" is incompatible with parameter of type "Vofa_HandleTypedef *"
+                     Vofa_Printf("[Node1] 收到节点%d的启动反馈，已收�?%d个反馈\n", msg->src_node, feedback_count);
+..\BSP\jdy28m\response.c(148): error:  #167: argument of type "uint8_t" is incompatible with parameter of type "const char *"
+                     Vofa_Printf("[Node1] 收到节点%d的启动反馈，已收�?%d个反馈\n", msg->src_node, feedback_count);
+..\BSP\jdy28m\response.c(152): error:  #167: argument of type "char *" is incompatible with parameter of type "Vofa_HandleTypedef *"
+                     Vofa_Printf("[Node1] 收到节点%d心跳：电�?=%d%%，是否倒下=%d\n", 
+..\BSP\jdy28m\response.c(153): error:  #167: argument of type "uint8_t" is incompatible with parameter of type "const char *"
+                            msg->src_node, msg->msg_body.heartbeat.battery, msg->msg_body.heartbeat.is_fallen);
+..\BSP\jdy28m\response.c(157): error:  #167: argument of type "char *" is incompatible with parameter of type "Vofa_HandleTypedef *"
+                     Vofa_Printf("[Node1] 收到节点%d的poda数据�?%s\n", msg->src_node, msg->msg_body.pdoa_packed_3bytes);
+..\BSP\jdy28m\response.c(157): error:  #167: argument of type "uint8_t" is incompatible with parameter of type "const char *"
+                     Vofa_Printf("[Node1] 收到节点%d的poda数据�?%s\n", msg->src_node, msg->msg_body.pdoa_packed_3bytes);
+..\BSP\jdy28m\response.c(186): error:  #167: argument of type "char *" is incompatible with parameter of type "Vofa_HandleTypedef *"
+                     Vofa_Printf("[Node%d] 收到启动信号，已反馈给节�?1\n", msg->dst_node);
+..\BSP\jdy28m\response.c(186): error:  #167: argument of type "uint8_t" is incompatible with parameter of type "const char *"
+                     Vofa_Printf("[Node%d] 收到启动信号，已反馈给节�?1\n", msg->dst_node);
+..\BSP\jdy28m\response.c(190): error:  #167: argument of type "char *" is incompatible with parameter of type "Vofa_HandleTypedef *"
+                          Vofa_Printf("[Node%d] 已启动，开始发送数据\n", msg->dst_node);
+..\BSP\jdy28m\response.c(190): error:  #167: argument of type "uint8_t" is incompatible with parameter of type "const char *"
+                          Vofa_Printf("[Node%d] 已启动，开始发送数据\n", msg->dst_node);
+..\BSP\jdy28m\response.c: 0 warnings, 14 errors
+compiling transmit.c...
+compiling NRF24L01_APP.c...
+../BSP/jdy28m_geng/mesh_mode.h(98): error:  #20: identifier "jdy_status_t" is undefined
+  jdy_status_t JDY_func_init(Jdy_t *const self);
+../BSP/jdy28m_geng/mesh_mode.h(98): error:  #20: identifier "Jdy_t" is undefined
+  jdy_status_t JDY_func_init(Jdy_t *const self);
+../BSP/jdy28m_geng/mesh_mode.h(99): error:  #20: identifier "jdy_status_t" is undefined
+  jdy_status_t JDY_func_it(Jdy_t *const self, uint8_t *ble_datarev_buff, uint16_t received);
+../BSP/jdy28m_geng/mesh_mode.h(99): error:  #20: identifier "Jdy_t" is undefined
+  jdy_status_t JDY_func_it(Jdy_t *const self, uint8_t *ble_datarev_buff, uint16_t received);
+..\BSP\NRF24L01\NRF24L01_APP.c: 0 warnings, 4 errors
+compiling motor.c...
+../BSP/jdy28m_geng/mesh_mode.h(98): error:  #20: identifier "jdy_status_t" is undefined
+  jdy_status_t JDY_func_init(Jdy_t *const self);
+../BSP/jdy28m_geng/mesh_mode.h(98): error:  #20: identifier "Jdy_t" is undefined
+  jdy_status_t JDY_func_init(Jdy_t *const self);
+../BSP/jdy28m_geng/mesh_mode.h(99): error:  #20: identifier "jdy_status_t" is undefined
+  jdy_status_t JDY_func_it(Jdy_t *const self, uint8_t *ble_datarev_buff, uint16_t received);
+../BSP/jdy28m_geng/mesh_mode.h(99): error:  #20: identifier "Jdy_t" is undefined
+  jdy_status_t JDY_func_it(Jdy_t *const self, uint8_t *ble_datarev_buff, uint16_t received);
+..\BSP\motor\motor.c: 0 warnings, 4 errors
+compiling bsp_4g.c...
+../BSP/jdy28m_geng/mesh_mode.h(98): error:  #20: identifier "jdy_status_t" is undefined
+  jdy_status_t JDY_func_init(Jdy_t *const self);
+../BSP/jdy28m_geng/mesh_mode.h(98): error:  #20: identifier "Jdy_t" is undefined
+  jdy_status_t JDY_func_init(Jdy_t *const self);
+../BSP/jdy28m_geng/mesh_mode.h(99): error:  #20: identifier "jdy_status_t" is undefined
+  jdy_status_t JDY_func_it(Jdy_t *const self, uint8_t *ble_datarev_buff, uint16_t received);
+../BSP/jdy28m_geng/mesh_mode.h(99): error:  #20: identifier "Jdy_t" is undefined
+  jdy_status_t JDY_func_it(Jdy_t *const self, uint8_t *ble_datarev_buff, uint16_t received);
+..\BSP\4G_DTU\bsp_4g.c: 0 warnings, 4 errors
+compiling NRF24L01.c...
+"HAL\HAL.axf" - 62 Error(s), 1 Warning(s).
+Target not created.
+Build Time Elapsed:  00:00:07

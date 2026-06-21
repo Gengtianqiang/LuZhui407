@@ -245,12 +245,12 @@ static void StateMachine_RotateFixedHandler(StateMachine_Handle_t *hsm,BracketCo
  * @param[in] res   : Pointer to bracket data | 括号数据指针
  * @return None
  */
-static void StateMachine_RotateWaitHandler(StateMachine_Handle_t *hsm,BracketContent *res)
-{
-    // Wait 0.5s, switch to target move state
-    if(1)
-        hsm->current_state = STATE_MOVE_TO_TARGET;
-}
+// static void StateMachine_RotateWaitHandler(StateMachine_Handle_t *hsm,BracketContent *res)
+// {
+//     // Wait 0.5s, switch to target move state
+//     if(1)
+//         hsm->current_state = STATE_MOVE_TO_TARGET;
+// }
 
 /**
  * @brief Line tracking state handler | 线跟踪状态处理函数
@@ -264,8 +264,8 @@ static void StateMachine_LineTrackingHandler(StateMachine_Handle_t *hsm, Bracket
     // Fixed forward speed
     Move_X = -0.2f;
     // PD control: fusion of line tracking and yaw control
-        Move_Z = Line_Track_PD_Ctrl(ref_line, res->x, res->y) * 0.6
-                + Yaw_PD_Ctrl(myimu.euler_yaw_Cali, hsm->coor2.angle) * 0.4;
+        Move_Z = Line_Track_PD_Ctrl(ref_line, res->x, res->y) * 0.6f
+                + Yaw_PD_Ctrl(myimu.euler_yaw_Cali, hsm->coor2.angle) * 0.4f;
 
     // Check target arrival
     float dx = res->x - hsm->coor3.x;
@@ -307,10 +307,10 @@ static void StateMachine_LineTrackingHandler(StateMachine_Handle_t *hsm, Bracket
  * @param[in] res   : Pointer to bracket data | 括号数据指针
  * @return None
  */
-static void StateMachine_MoveToTargetHandler(StateMachine_Handle_t *hsm, BracketContent *res)
-{
+// static void StateMachine_MoveToTargetHandler(StateMachine_Handle_t *hsm, BracketContent *res)
+// {
 
-}
+// }
 
 /**
  * @brief Finished state handler | 完成状态处理函数
@@ -507,7 +507,7 @@ static bool calc_angle2_and_position(StateMachine_Handle_t *hsm)
     float cos_theta = dot_product / (len_v21 * len_v23);
     // Limit cos range to avoid precision errors
     cos_theta = (cos_theta > 1.0f) ? 1.0f : (cos_theta < -1.0f) ? -1.0f : cos_theta;
-    hsm->coor3.angle = 180 - acosf(cos_theta) * (180.0f / 3.1415);
+    hsm->coor3.angle = 180 - acosf(cos_theta) * (180.0f / 3.1415f);
 
     /* 6. Judge middle point position (UP/DOWN) */
     float v13_x = x3 - x1;

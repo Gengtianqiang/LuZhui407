@@ -57,7 +57,7 @@ uint8_t NRF24L01_RxPacket[NRF24L01_RX_PACKET_WIDTH];				//接收数据包
 void NRF24L01_W_CE(uint8_t BitValue)
 {
 	/*根据BitValue的值，将CE置高电平或者低电平*/
-	HAL_GPIO_WritePin(SPI_CE_GPIO_Port, SPI_CE_Pin, BitValue);
+	HAL_GPIO_WritePin(SPI_CE_GPIO_Port, SPI_CE_Pin, (GPIO_PinState)BitValue);
 }
 
 /**
@@ -71,7 +71,7 @@ void NRF24L01_W_CE(uint8_t BitValue)
 void NRF24L01_W_CSN(uint8_t BitValue)
 {
 	/*根据BitValue的值，将CSN置高电平或者低电平*/
-	HAL_GPIO_WritePin(GPIOE, SPI_CSN_Pin, BitValue);
+	HAL_GPIO_WritePin(GPIOE, SPI_CSN_Pin, (GPIO_PinState)BitValue);
 }
 
 /**
@@ -85,7 +85,7 @@ void NRF24L01_W_CSN(uint8_t BitValue)
 void NRF24L01_W_SCK(uint8_t BitValue)
 {
 	/*根据BitValue的值，将SCK置高电平或者低电平*/
-	HAL_GPIO_WritePin(GPIOC, SPI_SCK_Pin, BitValue);
+	HAL_GPIO_WritePin(GPIOC, SPI_SCK_Pin, (GPIO_PinState)BitValue);
 }
 
 /**
@@ -99,7 +99,7 @@ void NRF24L01_W_SCK(uint8_t BitValue)
 void NRF24L01_W_MOSI(uint8_t BitValue)
 {
 	/*根据BitValue的值，将MOSI置高电平或者低电平*/
-	HAL_GPIO_WritePin(GPIOC, SPI_MOSI_Pin, BitValue);
+	HAL_GPIO_WritePin(GPIOC, SPI_MOSI_Pin, (GPIO_PinState)BitValue);
 }
 
 /**

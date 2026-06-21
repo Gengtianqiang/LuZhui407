@@ -123,7 +123,7 @@ void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
 
 
 
-void UART_Init(void)
+void MY_UART_Init(void)
 {
     
     RingByteBuffer_init(&ringBuffer1, ring_buffer_data_1, RING_BUFFER_SIZE);

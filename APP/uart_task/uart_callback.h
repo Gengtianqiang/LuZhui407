@@ -12,6 +12,6 @@ typedef struct Forward
 extern Forward myForward;
 
 
-
+void MY_UART_Init(void);
 
 #endif /* UART_CALLBACK_H */

@@ -78,7 +78,7 @@ void  TransmitData_LOOP(Transmit *self)
     static uint8_t      mesh_send_array[sizeof(self->mesh_send_pkt)+4] = {0};
 //    static uint32_t     last_time = 0;
 //    static uint32_t     Interval = 0;  // 间隔ms
-    static bool         isReady = true;
+    // static bool         isReady = true;
 //    static bool         isRAND = false;
 
     if(self->mesh_send_valid == false){return;}
@@ -108,7 +108,7 @@ void  TransmitData_LOOP(Transmit *self)
     
     // 清除标记位
     self->mesh_send_valid = false;
-    isReady = false;
+    // isReady = false;
 }
 
 //需要发数据时

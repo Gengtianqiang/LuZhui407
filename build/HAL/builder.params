@@ -57,7 +57,6 @@
     "sourceList": [
         "APP/balance_task/PID.c",
         "APP/balance_task/balance.c",
-        "APP/balance_task/balance_core.c",
         "APP/balance_task/control.c",
         "APP/balance_task/filter.c",
         "APP/balance_task/pdoa_control.c",

@@ -2,10 +2,10 @@
 
 Compiler Full Name: Component: ARM Compiler 5.06 update 6 (build 750)
 Compiler Version: 5.06
-Builder Mode: Incremental
-The amount of C files: 1
+Builder Mode: Rebuild
+The amount of C files: 74
 The amount of C++ files: 0
-The amount of Asm files: 0
+The amount of Asm files: 1
 
 >>> prebuild
 
@@ -17,7 +17,7 @@ The amount of Asm files: 0
 
 >>> ld
 
-Program Size: Code=82836 RO-data=15648 RW-data=1196 ZI-data=27948  
+Program Size: Code=82708 RO-data=15648 RW-data=1192 ZI-data=27952  
 
 
 >>> postbuild

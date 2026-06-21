@@ -7,6 +7,9 @@
 #include "mesh_mode.h"
 #include "NRF24L01.h"
 #include "Vofa.h"
+#include "uart_callback.h"
+
+
 uwb_set uwb_set_t = {
 	.pdoa_time = 0,
 	.twr_time = 0,
@@ -28,7 +31,7 @@ void systemInit(void)
   Set_LED_State(&led_R, Off, 500);
   Set_LED_State(&led_G, blink, 500);
   Set_LED_State(&led_B, Off, 500);
-	UART_Init();
+	MY_UART_Init();
   // buzzer
   Buzzer_Start_Duration(100, 150, 400);
  Vofa_Printf(&VOFA3, "Vofa+ Uart3 Init Success!\r\n");
@@ -45,8 +48,6 @@ void systemInit(void)
 
 
   bool is_icm_success = false;
-
- ICM_INIT_HOP:
 
   is_icm_success = ICM20948_APP_Init();
 

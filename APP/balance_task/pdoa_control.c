@@ -201,7 +201,6 @@ void pdoa_follow(ProtocolData *pdoa_data)
 	}
 }
 
-static uint32_t Behind_back_time = 0;
 void Behind_Car_Loop()
 {
 	if(1==g_state_machine.behind_flag){

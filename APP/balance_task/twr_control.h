@@ -13,8 +13,8 @@
  * 
  * @author Yharim
  * 
- * @brief TWR Control State Machine Driver | TWR¿ØÖÆ×´Ì¬»úÇı¶¯
- * @details This header file defines TWR positioning, state machine and motion control parameters | ¶¨ÒåTWR¶¨Î»¡¢×´Ì¬»ú¼°ÔË¶¯¿ØÖÆÏà¹Ø²ÎÊı
+ * @brief TWR Control State Machine Driver | TWRæ§åˆ¶çŠ¶æ€æœºé©±åŠ¨
+ * @details This header file defines TWR positioning, state machine and motion control parameters | å®šä¹‰TWRå®šä½ã€çŠ¶æ€æœºåŠè¿åŠ¨æ§åˆ¶ç›¸å…³å‚æ•°
  * @note 1 tab == 4 spaces!
  * 
  * @version V1.0 2026-3-20
@@ -24,8 +24,8 @@
 #define TWR_CONTRAL_H
 
 /**
- * @brief Header file includes | Í·ÎÄ¼ş°üº¬
- * @note HAL library + RTOS library are mandatory | HAL¿âÓëRTOS¿âÎª±ØÑ¡ÒÀÀµ
+ * @brief Header file includes | å¤´æ–‡ä»¶åŒ…å«
+ * @note HAL library + RTOS library are mandatory | HALåº“ä¸RTOSåº“ä¸ºå¿…é€‰ä¾èµ–
  */
 //******************************** Includes *********************************//
 #include "main.h"
@@ -38,110 +38,111 @@
 //******************************** Includes *********************************//
 
 /**
- * @brief Macro definitions and type definitions | ºê¶¨ÒåºÍÀàĞÍ¶¨Òå
- * @details Define state machine, coordinate and structure for TWR control | ¶¨ÒåTWR¿ØÖÆµÄ×´Ì¬»ú¡¢×ø±ê¼°½á¹¹Ìå
- * @note All custom types are prefixed to avoid naming conflict | ËùÓĞ×Ô¶¨ÒåÀàĞÍÌí¼ÓÇ°×º£¬±ÜÃâÃüÃû³åÍ»
+ * @brief Macro definitions and type definitions | å®å®šä¹‰å’Œç±»å‹å®šä¹‰
+ * @details Define state machine, coordinate and structure for TWR control | å®šä¹‰TWRæ§åˆ¶çš„çŠ¶æ€æœºã€åæ ‡åŠç»“æ„ä½“
+ * @note All custom types are prefixed to avoid naming conflict | æ‰€æœ‰è‡ªå®šä¹‰ç±»å‹æ·»åŠ å‰ç¼€ï¼Œé¿å…å‘½åå†²çª
  */
 //******************************** Defines **********************************//
 
 /**
- * @brief State machine state enumeration | ×´Ì¬»ú×´Ì¬Ã¶¾Ù
- * @details Define all running states of TWR control system | ¶¨ÒåTWR¿ØÖÆÏµÍ³µÄËùÓĞÔËĞĞ×´Ì¬
+ * @brief State machine state enumeration | çŠ¶æ€æœºçŠ¶æ€æšä¸¾
+ * @details Define all running states of TWR control system | å®šä¹‰TWRæ§åˆ¶ç³»ç»Ÿçš„æ‰€æœ‰è¿è¡ŒçŠ¶æ€
  */
 typedef enum {
-    STATE_IDLE                  = 0,    /* Idle state | ¿ÕÏĞ×´Ì¬ */
-    STATE_PERIPHERAL_CHECK      = 1,    /* Peripheral self-check state | ÍâÉè¼ì²é×´Ì¬ */
-    STATE_MOVE_INIT             = 2,    /* Initial forward state | ³õÊ¼Ç°½ø×´Ì¬ */
-    STATE_IMU_CHECK             = 3,    /* IMU self-check state | IMU¼ì²é×´Ì¬ */
-    STATE_ROTATE_FIXED          = 4,    /* Fixed angle rotation state | ¹Ì¶¨×ª½Ç×´Ì¬ */
-    STATE_ROTATE_WAIT           = 5,    /* Rotation wait state | ×ª½ÇµÈ´ı×´Ì¬ */
-    STATE_MOVE_TO_TARGET        = 6,    /* Target forward state | Ä¿±êÇ°½ø×´Ì¬ */
-	STATE_LINE_TRACKING 		= 7,    /* Line tracking state | Ïß¸ú×Ù×´Ì¬ */
-    STATE_DISTANCE_CHECK        = 8,    /* Distance check state | ¾àÀë¼ì²é×´Ì¬ */
-    STATE_FINISHED              = 9,    /* Task finished state | ½áÊø×´Ì¬ */
-    STATE_ERROR                 = 10,   /* Error state | ´íÎó×´Ì¬ */
-    STATE_PDOA                  = 11    /* Tracking state | ¸ú×Ù×´Ì¬ */
+    STATE_IDLE                  = 0,    /* Idle state | ç©ºé—²çŠ¶æ€ */
+    STATE_PERIPHERAL_CHECK      = 1,    /* Peripheral self-check state | å¤–è®¾æ£€æŸ¥çŠ¶æ€ */
+    STATE_MOVE_INIT             = 2,    /* Initial forward state | åˆå§‹å‰è¿›çŠ¶æ€ */
+    STATE_IMU_CHECK             = 3,    /* IMU self-check state | IMUæ£€æŸ¥çŠ¶æ€ */
+    STATE_ROTATE_FIXED          = 4,    /* Fixed angle rotation state | å›ºå®šè½¬è§’çŠ¶æ€ */
+    STATE_ROTATE_WAIT           = 5,    /* Rotation wait state | è½¬è§’ç­‰å¾…çŠ¶æ€ */
+    STATE_MOVE_TO_TARGET        = 6,    /* Target forward state | ç›®æ ‡å‰è¿›çŠ¶æ€ */
+	STATE_LINE_TRACKING 		= 7,    /* Line tracking state | çº¿è·Ÿè¸ªçŠ¶æ€ */
+    STATE_DISTANCE_CHECK        = 8,    /* Distance check state | è·ç¦»æ£€æŸ¥çŠ¶æ€ */
+    STATE_FINISHED              = 9,    /* Task finished state | ç»“æŸçŠ¶æ€ */
+    STATE_ERROR                 = 10,   /* Error state | é”™è¯¯çŠ¶æ€ */
+    STATE_PDOA                  = 11    /* Tracking state | è·Ÿè¸ªçŠ¶æ€ */
 } StateMachine_State_t;
 
 /**
- * @brief TWR positioning coordinate structure | TWRÎ»ÖÃ½âËã×ø±ê½á¹¹Ìå
- * @details Store three-point positioning coordinates and angle | ´æ´¢Èıµã¶¨Î»×ø±êÓë½Ç¶ÈĞÅÏ¢
+ * @brief TWR positioning coordinate structure | TWRä½ç½®è§£ç®—åæ ‡ç»“æ„ä½“
+ * @details Store three-point positioning coordinates and angle | å­˜å‚¨ä¸‰ç‚¹å®šä½åæ ‡ä¸è§’åº¦ä¿¡æ¯
  */
 typedef struct {
-	float x;                      /* X coordinate | X×ø±ê */
-	float y;                      /* Y×ø±ê | Y×ø±ê */
-	float angle;                  /* Angle | ½Ç¶È */
+	float x;                      /* X coordinate | Xåæ ‡ */
+	float y;                      /* Yåæ ‡ | Yåæ ‡ */
+	float angle;                  /* Angle | è§’åº¦ */
 } coordinate;
 
 /**
- * @brief Midpoint state enumeration | ÖĞµã×´Ì¬Ã¶¾Ù
- * @details Define the up/down state of the midpoint | ¶¨ÒåÖĞµãµÄÉÏÏÂ×´Ì¬
+ * @brief Midpoint state enumeration | ä¸­ç‚¹çŠ¶æ€æšä¸¾
+ * @details Define the up/down state of the midpoint | å®šä¹‰ä¸­ç‚¹çš„ä¸Šä¸‹çŠ¶æ€
  */
 typedef enum {
-	UP,                         /* Up state | ÏòÉÏ */
-	DOWN,                       /* Down state | ÏòÏÂ */
-	Error                       /* Error state | ´íÎó */
+	UP,                         /* Up state | å‘ä¸Š */
+	DOWN,                       /* Down state | å‘ä¸‹ */
+	Error                       /* Error state | é”™è¯¯ */
 } middle_state_t;
 
 /**
- * @brief Line parameter structure | Ö±Ïß²ÎÊı½á¹¹Ìå
- * @details Store linear equation parameters and normalization coefficients | ´æ´¢Ö±Ïß·½³Ì²ÎÊıÓë¹éÒ»»¯ÏµÊı
+ * @brief Line parameter structure | ç›´çº¿å‚æ•°ç»“æ„ä½“
+ * @details Store linear equation parameters and normalization coefficients | å­˜å‚¨ç›´çº¿æ–¹ç¨‹å‚æ•°ä¸å½’ä¸€åŒ–ç³»æ•°
  */
 typedef struct {
-    float    A;                      /* Line parameter A | Ö±Ïß²ÎÊıA */
-    float    B;                      /* Line parameter B | Ö±Ïß²ÎÊıB */
-    float    C;                      /* Line parameter C | Ö±Ïß²ÎÊıC */
-    float norm;                   /* Normalization coefficient = sqrt(A?+B?) | ¹éÒ»»¯ÏµÊı */
+    float    A;                      /* Line parameter A | ç›´çº¿å‚æ•°A */
+    float    B;                      /* Line parameter B | ç›´çº¿å‚æ•°B */
+    float    C;                      /* Line parameter C | ç›´çº¿å‚æ•°C */
+    float norm;                   /* Normalization coefficient = sqrt(A?+B?) | å½’ä¸€åŒ–ç³»æ•° */
 } LineParam_t;
 
 /**
- * @brief State machine control structure | ×´Ì¬»ú¿ØÖÆ½á¹¹Ìå
- * @details Adapt to CubeMX RTOS, encapsulate all TWR control parameters | ÊÊÅäCubeMX RTOS£¬·â×°TWR¿ØÖÆËùÓĞ²ÎÊı
+ * @brief State machine control structure | çŠ¶æ€æœºæ§åˆ¶ç»“æ„ä½“
+ * @details Adapt to CubeMX RTOS, encapsulate all TWR control parameters | é€‚é…CubeMX RTOSï¼Œå°è£…TWRæ§åˆ¶æ‰€æœ‰å‚æ•°
  */
 typedef struct {
-    StateMachine_State_t    current_state;    /* Current state | µ±Ç°×´Ì¬ */
-    uint8_t             peripheral_status;             /* Peripheral status (1=normal, 0=abnormal) | ÍâÉè×´Ì¬ */
-    uint8_t                    imu_status;                    /* IMU status (1=normal, 0=abnormal) | IMU×´Ì¬ */
-    float                 target_distance;                 /* Distance to target (unit: cm) | µ½ÖÕµãµÄ¾àÀë(cm) */
-    osSemaphoreId_t             start_sem;             /* Start command semaphore | Æô¶¯ÃüÁîĞÅºÅÁ¿ */
+    StateMachine_State_t    current_state;    /* Current state | å½“å‰çŠ¶æ€ */
+    uint8_t             peripheral_status;             /* Peripheral status (1=normal, 0=abnormal) | å¤–è®¾çŠ¶æ€ */
+    uint8_t                    imu_status;                    /* IMU status (1=normal, 0=abnormal) | IMUçŠ¶æ€ */
+    float                 target_distance;                 /* Distance to target (unit: cm) | åˆ°ç»ˆç‚¹çš„è·ç¦»(cm) */
+    osSemaphoreId_t             start_sem;             /* Start command semaphore | å¯åŠ¨å‘½ä»¤ä¿¡å·é‡ */
     uint8_t                    ahand_flag;      
     uint8_t                   middle_flag;
     uint8_t                   behind_flag;       
-	uint16_t                 time_counter;					        /* Timing counter | Æô¶¯¶¨Ê±¼ÆÊıĞÅºÅÁ¿ */
-    uint32_t               TWR_Time_count;				          /* Timing counter | ¶¨Ê±¼ÆÊıÆ÷ */
-	coordinate                      coor1;					              /* Three-point coordinate 1 | Èıµã×ø±ê1 */
-	coordinate                      coor2;					              /* Three-point coordinate 2 | Èıµã×ø±ê2 */
-    coordinate                      coor3;					              /* Three-point coordinate 3 | Èıµã×ø±ê3 */
-    middle_state_t           middle_state;			      /* Midpoint position state | ÖĞµãÎ»ÖÃ */
-    float                  distance_coor3;				          /* Real-time distance of stage 3 | ½×¶ÎÈıÊµÊ±¾àÀë */
-    float             fost_distance_coor3;             /* Initial distance of stage 3 | ½×¶ÎÈı³õÊ¼¾àÀë */
-    float             last_distance_coor3;             /* Last distance of stage 3 | ½×¶ÎÈıÉÏÒ»Ö¡¾àÀë */
-    SemaphoreHandle_t           twr_mutex;			      /* Mutex for TWR coordinates | TWR×ø±ê»¥³âËø */
+	uint16_t                 time_counter;					        /* Timing counter | å¯åŠ¨å®šæ—¶è®¡æ•°ä¿¡å·é‡ */
+    uint32_t               TWR_Time_count;				          /* Timing counter | å®šæ—¶è®¡æ•°å™¨ */
+	coordinate                      coor1;					              /* Three-point coordinate 1 | ä¸‰ç‚¹åæ ‡1 */
+	coordinate                      coor2;					              /* Three-point coordinate 2 | ä¸‰ç‚¹åæ ‡2 */
+    coordinate                      coor3;					              /* Three-point coordinate 3 | ä¸‰ç‚¹åæ ‡3 */
+    middle_state_t           middle_state;			      /* Midpoint position state | ä¸­ç‚¹ä½ç½® */
+    float                  distance_coor3;				          /* Real-time distance of stage 3 | é˜¶æ®µä¸‰å®æ—¶è·ç¦» */
+    float             fost_distance_coor3;             /* Initial distance of stage 3 | é˜¶æ®µä¸‰åˆå§‹è·ç¦» */
+    float             last_distance_coor3;             /* Last distance of stage 3 | é˜¶æ®µä¸‰ä¸Šä¸€å¸§è·ç¦» */
+    SemaphoreHandle_t           twr_mutex;			      /* Mutex for TWR coordinates | TWRåæ ‡äº’æ–¥é” */
 } StateMachine_Handle_t;
 
 /**
- * @brief Global variables declaration | È«¾Ö±äÁ¿ÉùÃ÷
- * @details Expose state machine handle and PID controller | ¶ÔÍâ±©Â¶×´Ì¬»ú¾ä±úÓëPID¿ØÖÆÆ÷
+ * @brief Global variables declaration | å…¨å±€å˜é‡å£°æ˜
+ * @details Expose state machine handle and PID controller | å¯¹å¤–æš´éœ²çŠ¶æ€æœºå¥æŸ„ä¸PIDæ§åˆ¶å™¨
  */
 extern StateMachine_Handle_t g_state_machine;
 extern PID_Controller            heading_pid;
 extern ProtocolData               proto_data;
 
 /**
- * @brief Differential drive control function | ²îËÙÇı¶¯¿ØÖÆº¯Êı
- * @param[in] pid_output  : PID calculation output | PID¼ÆËãÊä³öÖµ
- * @param[in] base_speed  : Base speed of the car | µ×ÅÌ»ù×¼ËÙ¶È
+ * @brief Differential drive control function | å·®é€Ÿé©±åŠ¨æ§åˆ¶å‡½æ•°
+ * @param[in] pid_output  : PID calculation output | PIDè®¡ç®—è¾“å‡ºå€¼
+ * @param[in] base_speed  : Base speed of the car | åº•ç›˜åŸºå‡†é€Ÿåº¦
  * @return None
  */
 void differential_drive_control(float pid_output, float base_speed);
 
 /**
- * @brief State machine main loop function | ×´Ì¬»úÖ÷Ñ­»·º¯Êı
- * @param[in] argument    : Pointer to state machine handle | ×´Ì¬»ú¾ä±úÖ¸Õë
- * @param[in] result      : Pointer to bracket data result | À¨ºÅÊı¾İ½á¹ûÖ¸Õë
+ * @brief State machine main loop function | çŠ¶æ€æœºä¸»å¾ªç¯å‡½æ•°
+ * @param[in] argument    : Pointer to state machine handle | çŠ¶æ€æœºå¥æŸ„æŒ‡é’ˆ
+ * @param[in] result      : Pointer to bracket data result | æ‹¬å·æ•°æ®ç»“æœæŒ‡é’ˆ
  * @return None
  */
 void StateMachine_Loop(StateMachine_Handle_t *argument,BracketContent *result);
+void StateMachine_Init(void);
 bool line_param_init(StateMachine_Handle_t *hsm, LineParam_t *line);
 float Yaw_PD_Ctrl(float curr_yaw, float target_yaw);
 static bool calc_angle2_and_position(StateMachine_Handle_t *hsm);

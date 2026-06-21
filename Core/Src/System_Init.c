@@ -6,6 +6,7 @@
 #include "jdy_driver.h"
 #include "mesh_mode.h"
 #include "NRF24L01.h"
+#include "Vofa.h"
 uwb_set uwb_set_t = {
 	.pdoa_time = 0,
 	.twr_time = 0,

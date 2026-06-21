@@ -309,5 +309,9 @@ extern jdy_function_t     function_config;      /* Extended function configurati
 extern UART_HandleTypeDef          huart4;       /* UART4 handle for JDY communication | JDY通信使用的UART4句柄 */
 extern UART_HandleTypeDef          huart1;       /* UART1 handle for JDY communication | JDY通信使用的UART1句柄 */
 
+jdy_status_t JDY_func_init(Jdy_t *const self);
+jdy_status_t JDY_func_it(Jdy_t *const self, uint8_t *ble_datarev_buff, uint16_t received);
+
+
 #endif /* __JDY_DRIVER_H */
 

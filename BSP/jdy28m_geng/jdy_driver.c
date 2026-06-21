@@ -218,7 +218,7 @@ jdy_mesh_t mesh_config = {
  * @brief JDY driver instance | JDY驱动实例
  * @details Global JDY driver instance | 全局JDY驱动实例
  */
-Jdy_t jdy_handle = {0};
+Jdy_t jdy_handle = {JDY_NOT_INIT};
 
 /**
  * @brief JDY driver initialization function | JDY驱动初始化函数

@@ -2,6 +2,7 @@
 #include "timer/tim.h"
 #include <string.h>
 #include "freertos.h"
+#include "task.h"
 
 struct buzzer
 {

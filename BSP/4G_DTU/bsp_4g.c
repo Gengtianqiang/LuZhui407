@@ -309,6 +309,7 @@ dtu_status_t dtu_parser(DTU_t* const self, uint8_t* buf) {
         self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
         dtu_reast_titk = self->p_time->getSysTickCnt();
    }
+	 return DTU_OK;
 
 }
 

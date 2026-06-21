@@ -2,6 +2,7 @@
 #include "jdy_driver.h"
 #include "Vofa.h"
 #include "bsp_4g.h"
+#include "mesh_mode.h"
 
 Forward myForward = {0};
 uint8_t rx_flag = 0;
@@ -22,7 +23,7 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
   {
     //        if (myForward.isForward == true)
     //            RingByteBuffer_pushBuffer(&ringBuffer4, uart4_dma_rx_buffer, received);
-    //ÅäºÏdev_query
+    //é…åˆdev_query
     
     JDY_func_it(&jdy_handle, uart4_dma_rx_buffer, received);
     HAL_UARTEx_ReceiveToIdle_DMA(&huart4, uart4_dma_rx_buffer, UART_RX_BUFFER_SIZE);
@@ -59,30 +60,30 @@ void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
 {
   if (huart->Instance == USART3)
   {
-    // Çå³ı´íÎó±êÖ¾
+    // æ¸…é™¤é”™è¯¯æ ‡å¿—
     uint32_t sr = huart->Instance->SR;
     uint8_t dr = huart->Instance->DR;
     (void)sr;
     (void)dr;
 
-    // »Ö¸´¿ÕÏĞDMA½ÓÊÕ
+    // æ¢å¤ç©ºé—²DMAæ¥æ”¶
     HAL_UARTEx_ReceiveToIdle_DMA(&huart3, usart3_rx_DMA_buffer, RXUART3_BUFFER);
   }
 
   if (huart->Instance == USART2)
   {
-    // Çå³ı´íÎó±êÖ¾
+    // æ¸…é™¤é”™è¯¯æ ‡å¿—
     uint32_t sr = huart->Instance->SR;
     uint8_t dr = huart->Instance->DR;
     (void)sr;
     (void)dr;
 
-    // »Ö¸´¿ÕÏĞDMA½ÓÊÕ
+    // æ¢å¤ç©ºé—²DMAæ¥æ”¶
     HAL_UARTEx_ReceiveToIdle_DMA(&huart2, usart2_rx_DMA_buffer, RXUART2_BUFFER);
   }
 	
 	if(huart->Instance == USART1) {
-		    // Çå³ı´íÎó±êÖ¾
+		    // æ¸…é™¤é”™è¯¯æ ‡å¿—
     uint32_t sr = huart->Instance->SR;
     uint8_t dr = huart->Instance->DR;
     (void)sr;
@@ -90,7 +91,7 @@ void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
 		
 	}
   	if(huart->Instance == UART4) {
-		    // Çå³ı´íÎó±êÖ¾
+		    // æ¸…é™¤é”™è¯¯æ ‡å¿—
     uint32_t sr = huart->Instance->SR;
     uint8_t dr = huart->Instance->DR;
     (void)sr;
@@ -104,18 +105,18 @@ void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
 
 
 
-// // ÖØĞ´HAL¿â¹Ù·½»Øµ÷º¯Êı
+// // é‡å†™HALåº“å®˜æ–¹å›è°ƒå‡½æ•°
 // void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
 // {
-//     // ÅĞ¶ÏÊÇ´®¿Ú4·¢ËÍÍê³É
+//     // åˆ¤æ–­æ˜¯ä¸²å£4å‘é€å®Œæˆ
 //     if(huart == &huart4)
 //     {
 //         BaseType_t xHigherPriorityTaskWoken = pdFALSE;
 
-//         // ÖĞ¶ÏÖĞÊÍ·ÅĞÅºÅÁ¿£¬Í¨ÖªÈÎÎñ¡¸·¢ËÍÍê³É¡¹
+//         // ä¸­æ–­ä¸­é‡Šæ”¾ä¿¡å·é‡ï¼Œé€šçŸ¥ä»»åŠ¡ã€Œå‘é€å®Œæˆã€
 //         xSemaphoreGiveFromISR(jdy_handle.p_mesh_submode->p_parser->uart_tx_sem, &xHigherPriorityTaskWoken);
 
-//         // ÇĞ»»ÈÎÎñ£¨±ØÒª²Ù×÷£©
+//         // åˆ‡æ¢ä»»åŠ¡ï¼ˆå¿…è¦æ“ä½œï¼‰
 //         portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 //     }
 // }

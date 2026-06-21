@@ -950,3 +950,43 @@ These source files will be recompiled
 [2026-06-21 21:42:46]	[done]
 	build successfully !
 
+[2026-06-21 21:51:13]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\workspace\TH_HAL\Core\Src\System_Init.c': source file has been changed.
+
+[2026-06-21 21:51:14]	[done]
+	build successfully !
+
+[2026-06-21 21:52:32]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\workspace\TH_HAL\Core\Src\System_Init.c': source file has been changed.
+
+[2026-06-21 21:52:33]	[done]
+	build successfully !
+
+[2026-06-21 21:55:17]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\workspace\TH_HAL\Core\Src\System_Init.c': source file has been changed.
+
+[2026-06-21 21:55:18]	[done]
+	build successfully !
+
+[2026-06-21 21:55:26]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\workspace\TH_HAL\Core\Src\System_Init.c': source file has been changed.
+
+[2026-06-21 21:55:26]	[done]
+	build successfully !
+
+[2026-06-21 21:56:16]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\workspace\TH_HAL\Core\Src\System_Init.c': source file has been changed.
+
+[2026-06-21 21:56:16]	[done]
+	build successfully !
+

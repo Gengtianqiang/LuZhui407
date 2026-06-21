@@ -990,3 +990,13 @@ These source files will be recompiled
 [2026-06-21 21:56:16]	[done]
 	build successfully !
 
+[2026-06-21 22:10:38]	[info] incremental build: 3 source files changed
+These source files will be recompiled
+---
+'e:\workspace\TH_HAL\APP\balance_task\pdoa_control.c': source file has been changed.
+'e:\workspace\TH_HAL\APP\uart_task\uart_task.c': dependence 'e:\workspace\TH_HAL\BSP\NRF24L01\NRF24L01_APP.h' has been changed.
+'e:\workspace\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': source file has been changed.
+
+[2026-06-21 22:10:39]	[done]
+	build successfully !
+

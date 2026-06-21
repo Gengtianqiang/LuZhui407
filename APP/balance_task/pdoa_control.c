@@ -135,7 +135,7 @@ void pdoa_follow(ProtocolData *pdoa_data)
 					pid_output = 0;
 				}
 				
-				differential_drive_control(pid_output, 0);
+				differential_drive_control(pid_output, 100);
 			}
 			else
 			{

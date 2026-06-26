@@ -111,7 +111,7 @@ void pdoa_follow(ProtocolData *pdoa_data)
 		case STATE_Detection_IDLE:
 			if (fabs(angle_error) < 15.0f)
 			{
-				Current_State = STATE_Straight;
+				Current_State = STATE_Turn;
 			}
 			else
 			{
@@ -120,7 +120,7 @@ void pdoa_follow(ProtocolData *pdoa_data)
 			break;
 
 		case STATE_Stop:
-			Motor_Pwm_Stop();
+			// Motor_Pwm_Stop();
 			Current_State = STATE_Detection_IDLE;
 			break;
 

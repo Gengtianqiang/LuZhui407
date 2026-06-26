@@ -152,9 +152,7 @@ uint8_t NRF24L01_TASK(void)
     }
 #endif /* BEHIND_CAR */
 
-#ifdef MIDDLE_CAR
-    /************* 中间车：预留接收处理逻辑 **************/
-#endif /* MIDDLE_CAR */
+
 
 #ifdef MIDDLE_CAR_FIRST
     /************* 一号中间车：接收到头车信号后执行前进/转发返回指令 **************/
@@ -177,8 +175,8 @@ uint8_t NRF24L01_TASK(void)
             g_state_machine.middle_flag = 2;
             JDY_DEBUG_OUT("Middle Car 1 received return signal.\n");
 
-            /*************4. Forward return command to car 5 (behind car) | 转发返回指令给五号车（后车）**************/
-            NRF24L01_SetAddress(NRF24L01_TxAddress, 0xA5);
+            /*************4. Forward return command to car 5 (behind car) | 转发返回指令给3号车（后车）**************/
+            NRF24L01_SetAddress(NRF24L01_TxAddress, 0xA3);
             NRF24L01_TxPacket[0] = 0x00;
             NRF24L01_TxPacket[1] = 0x00;
             NRF24L01_TxPacket[2] = 0x00;
@@ -200,6 +198,90 @@ uint8_t NRF24L01_TASK(void)
         }
     }
 #endif /* MIDDLE_CAR_FIRST */
+
+#ifdef MIDDLE_CAR
+
+#ifdef MIDDLE_CAR_2
+    /************* 中间车：预留接收处理逻辑 **************/
+        /************* 一号中间车：接收到头车信号后执行前进/转发返回指令 **************/
+    /*************1. Set receive address (from car 1) and listen | 设置接收地址（来自头车）并监听**************/
+    NRF24L01_SetAddress(NRF24L01_RxAddress, 0xA3);
+    NRF24L01_UpdateRxAddress();
+    ReceiveFlag = NRF24L01_Receive();
+
+    if (1 == ReceiveFlag)
+    {
+
+        if (2 == NRF24L01_RxPacket[3])
+        {
+            g_state_machine.middle_flag = 2;
+            JDY_DEBUG_OUT("Middle Car 2 received return signal.\n");
+
+            /*************4. Forward return command to car 5 (behind car) | 转发返回指令给四号车**************/
+            NRF24L01_SetAddress(NRF24L01_TxAddress, 0xA4);
+            NRF24L01_TxPacket[0] = 0x00;
+            NRF24L01_TxPacket[1] = 0x00;
+            NRF24L01_TxPacket[2] = 0x00;
+            NRF24L01_TxPacket[3] = 0x02;
+
+            SendFlag = NRF24L01_Send();
+            if (SendFlag == 1)
+            {
+                JDY_DEBUG_OUT("Successfully sent packet: %02X %02X %02X %02X\r\n",
+                    NRF24L01_TxPacket[0], NRF24L01_TxPacket[1],
+                    NRF24L01_TxPacket[2], NRF24L01_TxPacket[3]);
+            }
+            else
+            {
+                JDY_DEBUG_OUT("Failed to send packet: %02X %02X %02X %02X\r\n",
+                    NRF24L01_TxPacket[0], NRF24L01_TxPacket[1],
+                    NRF24L01_TxPacket[2], NRF24L01_TxPacket[3]);
+            }
+        }
+    }
+#endif
+
+#ifdef MIDDLE_CAR_3
+        /************* 中间车：预留接收处理逻辑 **************/
+        /************* 一号中间车：接收到头车信号后执行前进/转发返回指令 **************/
+    /*************1. Set receive address (from car 1) and listen | 设置接收地址（来自3车）并监听**************/
+    NRF24L01_SetAddress(NRF24L01_RxAddress, 0xA4);
+    NRF24L01_UpdateRxAddress();
+    ReceiveFlag = NRF24L01_Receive();
+
+    if (1 == ReceiveFlag)
+    {
+
+        if (2 == NRF24L01_RxPacket[3])
+        {
+            g_state_machine.middle_flag = 2;
+            JDY_DEBUG_OUT("Middle Car 2 received return signal.\n");
+
+            /*************4. Forward return command to car 5 (behind car) | 转发返回指令给后车**************/
+            NRF24L01_SetAddress(NRF24L01_TxAddress, 0xA5);
+            NRF24L01_TxPacket[0] = 0x00;
+            NRF24L01_TxPacket[1] = 0x00;
+            NRF24L01_TxPacket[2] = 0x00;
+            NRF24L01_TxPacket[3] = 0x02;
+
+            SendFlag = NRF24L01_Send();
+            if (SendFlag == 1)
+            {
+                JDY_DEBUG_OUT("Successfully sent packet: %02X %02X %02X %02X\r\n",
+                    NRF24L01_TxPacket[0], NRF24L01_TxPacket[1],
+                    NRF24L01_TxPacket[2], NRF24L01_TxPacket[3]);
+            }
+            else
+            {
+                JDY_DEBUG_OUT("Failed to send packet: %02X %02X %02X %02X\r\n",
+                    NRF24L01_TxPacket[0], NRF24L01_TxPacket[1],
+                    NRF24L01_TxPacket[2], NRF24L01_TxPacket[3]);
+            }
+        }
+    }
+#endif
+
+#endif /* MIDDLE_CAR */
 
     return 0;
 }

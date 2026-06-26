@@ -11,6 +11,10 @@
  // #define MIDDLE_CAR_FIRST //中间车第一辆
 // #define BEHIND_CAR
 
+//中间车可扩展
+#define MIDDLE_CAR_2 //中间车第2辆
+#define MIDDLE_CAR_3 //中间车第2辆
+
 
 
 void systemInit(void); 

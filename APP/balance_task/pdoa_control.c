@@ -229,7 +229,6 @@ void Middle_Car_Loop()
 		pdoa_follow(&proto_data);
 	else
 		pdoa_follow(&retuen_proto_data);
-
 #endif
 
 #ifdef MIDDLE_CAR_FIRST

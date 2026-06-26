@@ -93,7 +93,9 @@ void systemInit(void)
 
     /*************7. NRF24L01 wireless module initialization | NRF24L01无线模块初始化**************/
     NRF24L01_Init();
-
+    
+    /*************7. JDY28M initialization | JDY28M初始化**************/
+    JDY_Task_Init(&myJDY, ForwardData_On);
     /*************8. ICM20948 IMU initialization with retry | ICM20948 IMU初始化（含重试）**************/
     bool is_icm_success = false;
 

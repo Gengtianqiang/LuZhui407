@@ -24,8 +24,9 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
     //        if (myForward.isForward == true)
     //            RingByteBuffer_pushBuffer(&ringBuffer4, uart4_dma_rx_buffer, received);
     //配合dev_query
-    
-    JDY_func_it(&jdy_handle, uart4_dma_rx_buffer, received);
+    // JDY_func_it(&jdy_handle, uart4_dma_rx_buffer, received);
+
+    // RingByteBuffer_pushBuffer(&ring_buffer_data_Parser, uart4_dma_rx_buffer, received);
     HAL_UARTEx_ReceiveToIdle_DMA(&huart4, uart4_dma_rx_buffer, UART_RX_BUFFER_SIZE);
   }
 

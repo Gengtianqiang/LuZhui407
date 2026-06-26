@@ -12,14 +12,14 @@ void StartUsartTask(void *argument)
 {
 	/* USER CODE BEGIN StartUsartTask */
 	
-    jdy_inst(&jdy_handle,
-		    &mesh_config,
-			&tx_config,
-			&rx_config,
-			&time_config,
-			&function_config);
+    // jdy_inst(&jdy_handle,
+	// 	    &mesh_config,
+	// 		&tx_config,
+	// 		&rx_config,
+	// 		&time_config,
+	// 		&function_config);
 
-	jdy_handle.p_mesh_submode->mesh_init(&jdy_handle);
+	// jdy_handle.p_mesh_submode->mesh_init(&jdy_handle);
 
 
 	dtu_inst(&my_4g_dtu, &dtu_time_config);
@@ -40,6 +40,8 @@ void StartUsartTask(void *argument)
 #ifdef AHAND_CAR
 
 	my_4g_dtu.parser_fun(&my_4g_dtu,dtu_rx_buffer);
+
+	JDY_Task_LOOP(&myJDY);
 
  	if (ParseTwrProtocol(&ring3_rx_DMA_buf, &bracket_data))
  	{

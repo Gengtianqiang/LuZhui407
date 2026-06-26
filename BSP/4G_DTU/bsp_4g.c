@@ -101,6 +101,14 @@ dtu_status_t dtu_ack(DTU_t* const self) {
                   self->point.y);
           self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
         break;
+    case MSG_4G_BLE:                          /* Set XY response | 设置XY坐标信息响应 */
+
+            self->ble_flag = 1;
+          memset(ack_buf, 0, sizeof(ack_buf));
+          sprintf((char*)ack_buf,
+                  "BLE signal received.\n");
+          self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
+        break;
     default:
         break;
     }
@@ -224,6 +232,10 @@ uint8_t DTU_ParseFrame(DTU_t* const self,uint8_t *buf,uint16_t len)
 
           break;
       }
+
+    case '8':
+        self->state = MSG_4G_BLE;
+        break;
     default:
         break;
     }
@@ -455,6 +467,7 @@ dtu_status_t dtu_init(DTU_t* const self)
     self->stop_flag = 0;
     self->start_flag = 0;
     self->return_flag = 0;
+    self->ble_flag = 0;
     
     self->imu_error_flag = 0;
     self->jdy_error_flag = 0;

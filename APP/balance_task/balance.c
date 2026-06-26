@@ -35,7 +35,15 @@ void StartBalanceTask(void *argument)
 #endif
 
 #ifdef AHAND_CAR
-		StateMachine_Loop(&g_state_machine, &bracket_data);
+
+		// if(my_4g_dtu.ble_flag==0)
+		// 	StateMachine_Loop(&g_state_machine, &bracket_data);
+		// else {
+
+		// }
+
+		
+
 		// pdoa_follow(&proto_data);
 #endif
 

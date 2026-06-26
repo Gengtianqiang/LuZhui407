@@ -1086,3 +1086,43 @@ These source files will be recompiled
 [2026-06-26 17:02:36]	[done]
 	build successfully !
 
+[2026-06-26 17:29:41]	[info] incremental build: 12 source files changed
+These source files will be recompiled
+---
+'e:\workspace\TH_HAL\APP\balance_task\balance.c': source file has been changed.
+'e:\workspace\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'e:\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.h' has been changed.
+'e:\workspace\TH_HAL\APP\balance_task\twr_control.c': dependence 'e:\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.h' has been changed.
+'e:\workspace\TH_HAL\APP\bg_task\bg_task.c': dependence 'e:\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.h' has been changed.
+'e:\workspace\TH_HAL\APP\uart_task\uart_callback.c': source file has been changed.
+'e:\workspace\TH_HAL\APP\uart_task\uart_task.c': dependence 'e:\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.h' has been changed.
+'e:\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.c': source file has been changed.
+'e:\workspace\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': dependence 'e:\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.h' has been changed.
+'e:\workspace\TH_HAL\BSP\jdy28m\forward.c': source file has been changed.
+'e:\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'e:\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.h' has been changed.
+'e:\workspace\TH_HAL\BSP\motor\motor.c': dependence 'e:\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.h' has been changed.
+'e:\workspace\TH_HAL\Core\Src\System_Init.c': source file has been changed.
+
+[2026-06-26 17:29:43]	compilation failed at : "e:\workspace\TH_HAL\APP\uart_task\uart_callback.c", exit code: 1
+command: 
+  "d:\Keil_5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I. -ICore/Inc -IDrivers/STM32F4xx_HAL_Driver/Inc -IDrivers/STM32F4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32F4xx/Include -IDrivers/CMSIS/Include -IBSP -IMiddlewares/Third_Party/FreeRTOS/Source/include -IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -IMiddlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -IHARDWARE/Encoder -IHARDWARE/Motor_GPIO -IAPP/balance_task -IAPP/bg_task -IAPP/imu_task -IAPP/uart_task -IBSP/battery -IBSP/buzzer -IBSP/Encoder -IBSP/icm20948/app -IBSP/icm20948/lib -IBSP/led -IBSP/motor -IBSP/Motor_GPIO -IBSP/sleep -IBSP/timer -IBSP/util -IBSP/VOFA+ -IBSP/icm20948/lib/include -IBSP/jdy28m_geng -IBSP/jdy28m -I.cmsis/include -IMDK-ARM/RTE/_HAL -IBSP/4G_DTU -IBSP/NRF24L01 -D"USE_HAL_DRIVER" -D"STM32F407xx" --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O0 -Otime --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\HAL\.obj\APP\uart_task\uart_callback.o --no_depend_system_headers --depend .\build\HAL\.obj\APP\uart_task\uart_callback.d .\APP\uart_task\uart_callback.c
+   at unify_builder.Program.compileByMulThread(Int32 thrNum, CmdInfo[] cmds_, List`1 errLogs)
+   at unify_builder.Program.Main(String[] args_)
+---
+".\APP\uart_task\uart_callback.c", line 30: Error:  #167: argument of type "uint8_t (*)[256]" is incompatible with parameter of type "RingByteBuffer *"
+      RingByteBuffer_pushBuffer(&ring_buffer_data_Parser, uart4_dma_rx_buffer, received);
+                                ^
+.\APP\uart_task\uart_callback.c: 0 warnings, 1 error
+
+[2026-06-26 18:02:00]	[info] incremental build: 6 source files changed
+These source files will be recompiled
+---
+'e:\workspace\TH_HAL\APP\uart_task\uart_callback.c': source file has been changed.
+'e:\workspace\TH_HAL\APP\uart_task\uart_task.c': source file has been changed.
+'e:\workspace\TH_HAL\BSP\jdy28m\forward.c': source file has been changed.
+'e:\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'e:\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.h' has been changed.
+'e:\workspace\TH_HAL\BSP\motor\motor.c': dependence 'e:\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.h' has been changed.
+'e:\workspace\TH_HAL\Core\Src\System_Init.c': source file has been changed.
+
+[2026-06-26 18:02:02]	[done]
+	build successfully !
+

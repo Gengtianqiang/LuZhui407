@@ -1126,3 +1126,20 @@ These source files will be recompiled
 [2026-06-26 18:02:02]	[done]
 	build successfully !
 
+[2026-06-26 18:10:31]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'e:\workspace\TH_HAL\APP\balance_task\balance.c': source file has been changed.
+'e:\workspace\TH_HAL\APP\uart_task\uart_callback.c': source file has been changed.
+
+[2026-06-26 18:10:33]	[done]
+	build successfully !
+
+[2026-06-26 18:17:24]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\workspace\TH_HAL\BSP\jdy28m\jdy28m.c': source file has been changed.
+
+[2026-06-26 18:17:25]	[done]
+	build successfully !
+

@@ -42,7 +42,7 @@ void StartBalanceTask(void *argument)
 
 		// }
 
-		
+		BLE_control();
 
 		// pdoa_follow(&proto_data);
 #endif

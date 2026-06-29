@@ -27,6 +27,7 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
     // JDY_func_it(&jdy_handle, uart4_dma_rx_buffer, received);
 
     // RingByteBuffer_pushBuffer(&ring_buffer_data_Parser, uart4_dma_rx_buffer, received);
+    RingByteBuffer_pushBuffer(&ringBuffer_Parser, uart4_dma_rx_buffer, received);
     HAL_UARTEx_ReceiveToIdle_DMA(&huart4, uart4_dma_rx_buffer, UART_RX_BUFFER_SIZE);
   }
 

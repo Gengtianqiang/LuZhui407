@@ -29,6 +29,9 @@
 #include "NRF24L01_APP.h"
 #include "twr_control.h"
 #include "jdy_driver.h"
+#include "bsp_4g.h"
+#include "battery/battery.h"
+#include "imu_output.h"
 //******************************** Includes *********************************//
 
 /**
@@ -41,15 +44,14 @@
  * @brief Send status variables | 发送状态变量
  */
 uint8_t         SendFlag;                               /* Send result flag | 发送结果标志位 */
-uint8_t SendSuccessCount;                       /* Send success counter | 发送成功计次 */
-uint8_t  SendFailedCount;                        /* Send failure counter | 发送失败计次 */
+
 
 /**
  * @brief Receive status variables | 接收状态变量
  */
 uint8_t         ReceiveFlag;                            /* Receive result flag | 接收结果标志位 */
-uint8_t ReceiveSuccessCount;                    /* Receive success counter | 接收成功计次 */
-uint8_t  ReceiveFailedCount;                     /* Receive failure counter | 接收失败计次 */
+uint8_t         nrf_state = 0;                          /* NRF24L01 state variable | NRF24L01状态变量 */
+uint8_t         nrf_state_flag = 0;                  /* NRF24L01 receive count | NRF24L01接收计数 */
 
 //******************************** Defines **********************************//
 
@@ -63,13 +65,22 @@ uint8_t  ReceiveFailedCount;                     /* Receive failure counter | �
  * @return None
  * @note Different nodes are identified by the last address byte | 不同节点通过末字节地址区分
  */
-static void NRF24L01_SetAddress(uint8_t *Address, uint8_t Address4)
+void NRF24L01_SetAddress(uint8_t *Address, uint8_t Address4)
 {
     Address[0] =     0x00;
     Address[1] =     0x00;
     Address[2] =     0x00;
     Address[3] =     0xAA;
     Address[4] = Address4;
+}
+
+void NRF24L01_SetAddress1(uint8_t *Address, uint16_t Address4)
+{
+    Address[0] =     0x00;
+    Address[1] =     0x00;
+    Address[2] =     0x00;
+    Address[3] =     Address4 >> 8;
+    Address[4] =     Address4;
 }
 
 /**
@@ -146,6 +157,7 @@ uint8_t NRF24L01_TASK(void)
     {
         if (2 == NRF24L01_RxPacket[3])
         {
+            Buzzer_Start_Circle(300, 100); 
             g_state_machine.behind_flag = 1;
             JDY_DEBUG_OUT("Behind Car received return signal.\n");
         }
@@ -172,6 +184,7 @@ uint8_t NRF24L01_TASK(void)
         /*************3. Return signal (packet[3]==2): forward to behind car | 返回信号（packet[3]==2）：转发给后车**************/
         else if (2 == NRF24L01_RxPacket[3])
         {
+            Buzzer_Start_Circle(300, 100); 
             g_state_machine.middle_flag = 2;
             JDY_DEBUG_OUT("Middle Car 1 received return signal.\n");
 
@@ -214,6 +227,7 @@ uint8_t NRF24L01_TASK(void)
 
         if (2 == NRF24L01_RxPacket[3])
         {
+            Buzzer_Start_Circle(300, 100); 
             g_state_machine.middle_flag = 2;
             JDY_DEBUG_OUT("Middle Car 2 received return signal.\n");
 
@@ -254,6 +268,7 @@ uint8_t NRF24L01_TASK(void)
 
         if (2 == NRF24L01_RxPacket[3])
         {
+            Buzzer_Start_Circle(300, 100);
             g_state_machine.middle_flag = 2;
             JDY_DEBUG_OUT("Middle Car 2 received return signal.\n");
 
@@ -286,4 +301,96 @@ uint8_t NRF24L01_TASK(void)
     return 0;
 }
 
-//******************************** Function Implementations ******************//
+
+
+/* Replaced by the two-pipe screen protocol below. */
+void NRF24L01_Screen_Task(void)
+{
+    /*************1. Set receive address and listen | 设置接收地址并监听**************/
+    if(nrf_state == 0) NRF24L01_SetAddress1(NRF24L01_RxAddress, 0xFFFF);
+    else if(nrf_state == 1) NRF24L01_SetAddress1(NRF24L01_RxAddress, 0xAAA1);
+    NRF24L01_UpdateRxAddress();
+    ReceiveFlag = NRF24L01_Receive();
+
+    /*************2. Check for received data | 检查是否接收到数据**************/
+    if (1 == ReceiveFlag)
+    {
+        JDY_DEBUG_OUT("Received packet: %02X %02X %02X %02X\r\n",
+            NRF24L01_RxPacket[0], NRF24L01_RxPacket[1],
+            NRF24L01_RxPacket[2], NRF24L01_RxPacket[3]);
+
+        if(NRF24L01_RxPacket[3] == 0x01)
+        {
+            Buzzer_Start_Circle(300, 100); 
+            JDY_DEBUG_OUT("Screen received forward signal.\n");
+            //加上对应的电机控制以及控制时间
+        }
+        else if(NRF24L01_RxPacket[3] == 0x02)
+        {
+            Buzzer_Start_Circle(300, 100); 
+            JDY_DEBUG_OUT("Screen received return signal.\n");
+            //加上对应的电机控制以及控制时间
+        }
+        else if(NRF24L01_RxPacket[3] == 0x03)
+        {
+            Buzzer_Start_Circle(300, 100); 
+            //JDY_DEBUG_OUT("Screen received quit signal.\n");
+            nrf_state = 1;  
+            nrf_state_flag = 1;
+            
+
+        }
+
+        else if(NRF24L01_RxPacket[3] == 0x04)
+        {
+            Buzzer_Start_Circle(300, 100); 
+            //JDY_DEBUG_OUT("Screen received exit quit signal.\n");
+            nrf_state_flag = 0;
+        }
+
+        else if(NRF24L01_RxPacket[3] == 0x00 && NRF24L01_RxPacket[2] == 0x01)
+        {
+            Buzzer_Start_Circle(300, 100); 
+            //JDY_DEBUG_OUT("Screen received start quit signal.\n");
+            nrf_state_flag = 0;
+        }
+
+        else if(NRF24L01_RxPacket[3] == 0x00 && NRF24L01_RxPacket[2] == 0x02)
+        {
+            Buzzer_Start_Circle(300, 100); 
+            //JDY_DEBUG_OUT("Screen received stop quit signal.\n");
+            nrf_state = 0;
+            nrf_state_flag = 2;
+           
+        }
+    }
+
+    if(nrf_state_flag == 1) 
+    {    
+        NRF24L01_SetAddress(NRF24L01_TxAddress, 0xA0);
+        NRF24L01_TxPacket[0] = 0x00;
+        NRF24L01_TxPacket[1] = 0x00;
+        NRF24L01_TxPacket[2] = 0x01;
+        NRF24L01_TxPacket[3] = 0x00;
+        SendFlag = NRF24L01_Send();
+        //JDY_DEBUG_OUT("%02X %02X\n",NRF24L01_TxAddress[3],NRF24L01_TxAddress[4]);
+    }
+    
+    if(nrf_state_flag == 2) 
+    {
+        
+        NRF24L01_SetAddress(NRF24L01_TxAddress, 0xA0);
+        NRF24L01_TxPacket[0] = 0x00;
+        NRF24L01_TxPacket[1] = 0x00;
+        NRF24L01_TxPacket[2] = 0x02;
+        NRF24L01_TxPacket[3] = 0x00;
+        SendFlag = NRF24L01_Send();
+        //JDY_DEBUG_OUT("%02X %02X\n",NRF24L01_TxAddress[3],NRF24L01_TxAddress[4]);
+    }
+
+}
+
+
+
+
+

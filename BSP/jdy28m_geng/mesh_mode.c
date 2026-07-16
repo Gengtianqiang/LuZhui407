@@ -250,8 +250,8 @@ jdy_status_t dev_init(Jdy_t *const self)
     // 实测，100ms延时是必须的
     dev_OK(self, "AT\r\n");
     self->p_time->my_delay(100);
-    dev_OK(self, "AT+DEFAULT\r\n"); // 默认，很关键
-    self->p_time->my_delay(100);
+    // dev_OK(self, "AT+DEFAULT\r\n"); // 默认，很关键
+    // self->p_time->my_delay(100);
     dev_OK(self, "AT+RESET\r\n");
     self->p_time->my_delay(500); // 实测，300ms延时是必须的
 
@@ -259,8 +259,8 @@ jdy_status_t dev_init(Jdy_t *const self)
     self->p_time->my_delay(100);
     dev_OK(self, "AT+ROLE2\r\n");
     self->p_time->my_delay(100);
-    // dev_OK(self, "AT+ALED1\r\n");
-    // self->p_time->my_delay(100);
+    dev_OK(self, "AT+ALED0\r\n");
+    self->p_time->my_delay(100);
     dev_OK(self, "AT+ENLOG0\r\n");
     self->p_time->my_delay(100);
 
@@ -277,76 +277,49 @@ jdy_status_t dev_init(Jdy_t *const self)
 jdy_status_t JDY_func_init(Jdy_t *const self)
 {
     jdy_status_t res = JDY_OK;
-    char NETID_buff[JDY_UART_MAX_SIZE] = {0};
 
-    /*************1. Checking the input parameters**************/
     if (NULL == self)
     {
-        res = JDY_ERRORPARAMETER;
-        return res;
+        return JDY_ERRORPARAMETER;
     }
-    /*************1. Checking the input parameters**************/
 
-    /*************2. Initializing JDY-28M basic parameters**************/
-    dev_init(self);
+    /* Match the old working car: do not run dev_init()/DEFAULT here. */
     self->p_time->my_delay(100);
-    /*************2. Initializing JDY-28M basic parameters**************/
 
-    /*************3. Querying MAC and MADDR**************/
-
-    /*************3. Querying MAC and MADDR**************/
-
-    /*************4. Configuring MESH NETID**************/
-    // 组网ID，只能设置不能查询
-    snprintf(self->p_mesh_submode->NETID, 11, "%s,6", self->p_mesh_submode->MAC + 4);
-    memset(NETID_buff, 0, JDY_UART_MAX_SIZE);
-    snprintf(NETID_buff, JDY_UART_MAX_SIZE, "AT+NETID%s\r\n", self->p_mesh_submode->NETID);
-
-
-    // 设置组网ID号 全部一样
-    res = dev_OK(self, MESH_NETID);
-    self->p_time->my_delay(200);
-    res = dev_OK(self, MESH_MADDR);
-    self->p_time->my_delay(200);
-    // while (JDY_ERROR == res)
-    // {
-    //     res = dev_OK(self, MESH_MADDR);
-    //     self->p_time->my_delay(300);
-    // }
-    /*************4. Configuring MESH NETID**************/
     dev_OK(self, "AT\r\n");
-    self->p_time->my_delay(500);
+    self->p_time->my_delay(100);
+
     dev_query(self, "AT+MAC\r\n", self->p_mesh_submode->MAC);
 #ifdef JDY_DEBUG
     JDY_DEBUG_OUT("MAC: %s\n", self->p_mesh_submode->MAC);
 #endif
     self->p_time->my_delay(200);
+
     dev_query(self, "AT+MADDR\r\n", self->p_mesh_submode->MADDR);
 #ifdef JDY_DEBUG
-    JDY_DEBUG_OUT("MADDR: %s\n", self->p_mesh_submode->MADDR);
+    JDY_DEBUG_OUT("MADDR before set: %s\n", self->p_mesh_submode->MADDR);
 #endif
     self->p_time->my_delay(200);
 
-//     if(self->p_mesh_submode->MADDR[4]=='\r') {
-// #ifdef JDY_DEBUG
-//     JDY_DEBUG_OUT("JDY_OK\n");
-// #endif
-//         self->p_mesh_submode->mash_init_flag = JDY_INIT;
-//     }else{
+    res = dev_OK(self, MESH_NETID);
+    self->p_time->my_delay(200);
 
-// // #ifdef JDY_DEBUG
-// //     JDY_DEBUG_OUT("JDY_ERROR:MADDR[4]=%c\n", self->p_mesh_submode->MADDR[4]);
-// // #endif
-//         self->p_mesh_submode->mash_init_flag = JDY_NOT_INIT;
-//         res = JDY_ERROR;
-//         my_4g_dtu.jdy_error_flag = 1;
-//     }
-    /*************5. Resetting JDY-28M and marking initialization complete**************/
+#ifdef MESH_MADDR
+    res = dev_OK(self, MESH_MADDR);
+    self->p_time->my_delay(200);
+#endif
+
+    dev_query(self, "AT+MADDR\r\n", self->p_mesh_submode->MADDR);
+#ifdef JDY_DEBUG
+    JDY_DEBUG_OUT("MADDR after set: %s\n", self->p_mesh_submode->MADDR);
+#endif
+    self->p_time->my_delay(200);
+
     dev_OK(self, "AT+RESET\r\n");
     self->p_time->my_delay(1000);
-     // 标记MESH初始化完成
-	self->p_mesh_submode->mash_init_flag = JDY_INIT;
-    /*************5. Resetting JDY-28M and marking initialization complete**************/
+
+    self->p_mesh_submode->mash_init_flag = JDY_INIT;
+    HAL_UARTEx_ReceiveToIdle_DMA(&huart4, uart4_dma_rx_buffer, UART_RX_BUFFER_SIZE);
 
     return res;
 }

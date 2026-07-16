@@ -61,8 +61,8 @@ void JDY_Task_LOOP(JDY_t *self)
     ParserData_LOOP(self->myParser);
 
     // 解析遥感数据
-   ResponseMesh_LOOP(self->myResponse, self->myParser, self->myTransmit);
-   ResponseAT_LOOP(self->myResponse, self->myParser);
+//    ResponseMesh_LOOP(self->myResponse, self->myParser, self->myTransmit);
+//    ResponseAT_LOOP(self->myResponse, self->myParser);
 //    
     // 遇到需要发送数据时，轮询发送（mesh_send_valid），无需关心
     TransmitData_LOOP(self->myTransmit);

@@ -20,6 +20,7 @@ RingByteBuffer ring_rx_DMA_buf;
 RingByteBuffer ring3_rx_DMA_buf;
 RingByteBuffer ring5_rx_DMA_buf;
 
+
 uint8_t Vofa_RxFlag = 0;
 uint8_t Vofa_Buffer[UART_RX_BUFFER_SIZE] = {0};
 HAL_StatusTypeDef u3_ceshi;
@@ -36,9 +37,15 @@ void UART_DMA_Init(enum ForwardData_Key On_Off)
     RingByteBuffer_init(&ringBuffer1, ring_buffer_data_1, RING_BUFFER_SIZE);
     RingByteBuffer_init(&ringBuffer4, ring_buffer_data_4, RING_BUFFER_SIZE);
     RingByteBuffer_init(&ringBuffer_Parser, ring_buffer_data_Parser, RING_BUFFER_SIZE);
+    RingByteBuffer_init(&ring_rx_DMA_buf, u2_ring_DMA_buffer, RXUART2_BUFFER);
+    RingByteBuffer_init(&ring3_rx_DMA_buf, u3_ring_DMA_buffer, RXUART3_BUFFER);
+    RingByteBuffer_init(&ring5_rx_DMA_buf, u5_ring_DMA_buffer, RXUART5_BUFFER);
 
     HAL_UARTEx_ReceiveToIdle_DMA(&huart1, uart1_dma_rx_buffer, UART_RX_BUFFER_SIZE);
     HAL_UARTEx_ReceiveToIdle_DMA(&huart4, uart4_dma_rx_buffer, UART_RX_BUFFER_SIZE);
+    HAL_UARTEx_ReceiveToIdle_DMA(&huart2, usart2_rx_DMA_buffer, RXUART2_BUFFER);
+    HAL_UARTEx_ReceiveToIdle_DMA(&huart3, usart3_rx_DMA_buffer, RXUART3_BUFFER);
+    HAL_UARTEx_ReceiveToIdle_DMA(&huart5, u5_ring_DMA_buffer, RXUART5_BUFFER);
 }
 
 

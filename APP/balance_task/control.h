@@ -7,8 +7,8 @@
 #include <stdbool.h>
 
 //高速挡和低速挡，两�?档位，操控不�?
-#define RC_Velocity_GAOSU 6000.0f
-#define RC_Velocity_DISU  1300.0f
+#define RC_Velocity_GAOSU 1000.0f
+#define RC_Velocity_DISU  500.0f
 
 extern float Velocity_KP, Velocity_KI;
 /************ 小车型号相关变量 **************************/

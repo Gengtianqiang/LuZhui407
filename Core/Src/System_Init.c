@@ -93,9 +93,7 @@ void systemInit(void)
 
     /*************7. NRF24L01 wireless module initialization | NRF24L01无线模块初始化**************/
     NRF24L01_Init();
-    
-    /*************7. JDY28M initialization | JDY28M初始化**************/
-    JDY_Task_Init(&myJDY, ForwardData_On);
+
     /*************8. ICM20948 IMU initialization with retry | ICM20948 IMU初始化（含重试）**************/
     bool is_icm_success = false;
 
@@ -164,7 +162,7 @@ bool uwb_set_state(void)
             uwb_set_t.pdoa_state = true;
             uwb_set_t.twr_state  = true;
         }
-    }
+    }  
 
     /*************3. Return combined ready state | 返回组合就绪状态**************/
     if (uwb_set_t.pdoa_state && uwb_set_t.twr_state) {

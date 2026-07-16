@@ -33,7 +33,6 @@
 #include "NRF24L01.h"
 //******************************** Includes *********************************//
 
-//******************************** Defines **********************************//
 
 /**
  * @brief NRF24L01 application task function | NRF24L01应用任务函数
@@ -43,7 +42,8 @@
  * @note Called periodically from the balance task loop | 由平衡任务循环周期性调用
  */
 uint8_t NRF24L01_TASK(void);
-
+void NRF24L01_Screen_Task(void);
+void NRF24L01_SetAddress(uint8_t *Address, uint8_t Address4);
 //******************************** Defines **********************************//
 
 #endif /* __NRF24L01_APP_H */

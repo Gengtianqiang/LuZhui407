@@ -2,12 +2,12 @@
     "name": "HAL",
     "target": "HAL",
     "toolchain": "AC5",
-    "toolchainLocation": "d:\\Keil_5\\ARM\\ARMCC",
-    "toolchainCfgFile": "c:\\Users\\Yharim\\.vscode\\extensions\\cl.eide-3.27.2\\res\\data\\models/arm.v5.model.json",
+    "toolchainLocation": "C:\\Keil_v5\\ARM\\ARMCC",
+    "toolchainCfgFile": "c:\\Users\\wjq13\\.vscode\\extensions\\cl.eide-3.27.2\\res\\data\\models/arm.v5.model.json",
     "buildMode": "fast|multhread",
     "showRepathOnLog": true,
-    "threadNum": 12,
-    "rootDir": "e:\\workspace\\TH_HAL",
+    "threadNum": 20,
+    "rootDir": "c:\\Users\\wjq13\\Desktop\\TH_HAL",
     "dumpPath": "build\\HAL",
     "outDir": "build\\HAL",
     "ram": 196608,
@@ -57,6 +57,7 @@
     "sourceList": [
         "APP/balance_task/PID.c",
         "APP/balance_task/balance.c",
+        "APP/balance_task/balance_core.c",
         "APP/balance_task/control.c",
         "APP/balance_task/filter.c",
         "APP/balance_task/pdoa_control.c",
@@ -69,6 +70,8 @@
         "BSP/Encoder/Encoder.c",
         "BSP/Motor_GPIO/Motor_GPIO.c",
         "BSP/NRF24L01/NRF24L01.c",
+        "BSP/NRF24L01/NRF24L01.c",
+        "BSP/NRF24L01/NRF24L01_APP.c",
         "BSP/NRF24L01/NRF24L01_APP.c",
         "BSP/VOFA+/Vofa+.c",
         "BSP/VOFA+/Vofa.c",
@@ -163,21 +166,21 @@
             ],
             "output-format": "elf",
             "link-scatter": [
-                "e:/workspace/TH_HAL/build/HAL/HAL.sct"
+                "c:/Users/wjq13/Desktop/TH_HAL/build/HAL/HAL.sct"
             ]
         }
     },
     "env": {
         "KEIL_OUTPUT_DIR": "HAL",
-        "workspaceFolder": "e:\\workspace\\TH_HAL",
+        "workspaceFolder": "c:\\Users\\wjq13\\Desktop\\TH_HAL",
         "workspaceFolderBasename": "TH_HAL",
-        "OutDir": "e:\\workspace\\TH_HAL\\build\\HAL",
+        "OutDir": "c:\\Users\\wjq13\\Desktop\\TH_HAL\\build\\HAL",
         "OutDirRoot": "build",
         "OutDirBase": "build\\HAL",
         "ProjectName": "HAL",
         "ConfigName": "HAL",
-        "ProjectRoot": "e:\\workspace\\TH_HAL",
-        "ExecutableName": "e:\\workspace\\TH_HAL\\build\\HAL\\HAL",
+        "ProjectRoot": "c:\\Users\\wjq13\\Desktop\\TH_HAL",
+        "ExecutableName": "c:\\Users\\wjq13\\Desktop\\TH_HAL\\build\\HAL\\HAL",
         "ChipPackDir": ".pack/Keil/STM32F4xx_DFP.2.17.0",
         "ChipName": "",
         "SYS_Platform": "win32",
@@ -186,11 +189,11 @@
         "SYS_PathSep": ";",
         "SYS_PathSeparator": ";",
         "SYS_EOL": "\r\n",
-        "EIDE_BUILDER_DIR": "c:\\Users\\Yharim\\.vscode\\extensions\\cl.eide-3.27.2\\res\\tools\\win32\\unify_builder",
+        "EIDE_BUILDER_DIR": "c:\\Users\\wjq13\\.vscode\\extensions\\cl.eide-3.27.2\\res\\tools\\win32\\unify_builder",
         "EIDE_BINARIES_VER": "12.1.1",
-        "EIDE_MSYS": "C:\\Users\\Yharim\\.eide\\bin\\builder\\msys\\bin",
-        "EIDE_PY3_CMD": "C:\\Users\\Yharim\\.eide\\bin\\python36\\python3.exe",
-        "ToolchainRoot": "d:\\Keil_5\\ARM\\ARMCC"
+        "EIDE_MSYS": "C:\\Users\\wjq13\\.eide\\bin\\builder\\msys\\bin",
+        "EIDE_PY3_CMD": "C:\\Users\\wjq13\\.eide\\bin\\python36\\python3.exe",
+        "ToolchainRoot": "C:\\Keil_v5\\ARM\\ARMCC"
     },
     "sysPaths": []
 }

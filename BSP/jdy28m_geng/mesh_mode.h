@@ -69,7 +69,7 @@
 #define MESH_NETID "AT+NETID0A19132E,6\r\n"
 
 #ifdef AHAND_CAR
-#define MESH_MADDR "AT+MADDR0001\r\n"
+#define MESH_MADDR "AT+MADDRAAA1\r\n"
 #endif
 
 #ifdef MIDDLE_CAR_FIRST
@@ -77,7 +77,7 @@
 #endif
 
 #ifdef MIDDLE_CAR
-#define MESH_MADDR "AT+MADDR0003\r\n"
+#define MESH_MADDR "AT+MADDRAAA3\r\n"
 #endif
 
 #ifdef BEHIND_CAR

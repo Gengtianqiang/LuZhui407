@@ -1,5 +1,6 @@
 .\build\HAL\.obj\APP\balance_task\PID.o
 .\build\HAL\.obj\APP\balance_task\balance.o
+.\build\HAL\.obj\APP\balance_task\balance_core.o
 .\build\HAL\.obj\APP\balance_task\control.o
 .\build\HAL\.obj\APP\balance_task\filter.o
 .\build\HAL\.obj\APP\balance_task\pdoa_control.o

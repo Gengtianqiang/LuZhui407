@@ -95,7 +95,7 @@ typedef enum {
     MSG_4G_ONEKEY_START  = 0x05,     /* One-key start | 一键出发 */
     MSG_4G_ONEKEY_RETURN = 0x06,     /* One-key return | 一键返回 */
     MSG_4G_SET_XY        = 0x07,     /* Set target XY coordinates | 设置XY坐标目标点 */
-    MSG_4G_BLE           = 0x08,     /* Set target XY coordinates | 切换蓝牙遥控1 */
+    MSG_4G_Mode_CHANGE   = 0x08,     /* Change working mode | 改变工作模式 */
     MSG_4G_NONE          = 0x09,     /* No message pending | 无消息需要处理 */
 } msg_4g_type_t;
 
@@ -153,7 +153,7 @@ struct dtu_s {
 
     uint8_t                    jdy_error_flag;      /* One-key return flag | 一键返回标志 */
 
-    uint8_t                          ble_flag;      /* One-key return flag | 切换蓝牙控制标志 */
+    uint8_t                         mode_flag; 
 
     dtu_time_t*                        p_time;           /* Time interface | 时间接口 */
 

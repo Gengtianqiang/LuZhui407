@@ -12,14 +12,14 @@ void StartUsartTask(void *argument)
 {
 	/* USER CODE BEGIN StartUsartTask */
 	
-    // jdy_inst(&jdy_handle,
-	// 	    &mesh_config,
-	// 		&tx_config,
-	// 		&rx_config,
-	// 		&time_config,
-	// 		&function_config);
+    jdy_inst(&jdy_handle,
+		    &mesh_config,
+			&tx_config,
+			&rx_config,
+			&time_config,
+			&function_config);
 
-	// jdy_handle.p_mesh_submode->mesh_init(&jdy_handle);
+	jdy_handle.p_mesh_submode->mesh_init(&jdy_handle);
 
 
 	dtu_inst(&my_4g_dtu, &dtu_time_config);
@@ -27,7 +27,7 @@ void StartUsartTask(void *argument)
 	/* Infinite loop */
 	for (;;)
 	{
-		osDelay(50);
+		osDelay(24);
 
 
 	
@@ -40,8 +40,6 @@ void StartUsartTask(void *argument)
 #ifdef AHAND_CAR
 
 	my_4g_dtu.parser_fun(&my_4g_dtu,dtu_rx_buffer);
-
-	JDY_Task_LOOP(&myJDY);
 
  	if (ParseTwrProtocol(&ring3_rx_DMA_buf, &bracket_data))
  	{
@@ -57,8 +55,16 @@ void StartUsartTask(void *argument)
 		Protocol_Parse(&ring3_rx_DMA_buf, &retuen_proto_data);
 #endif
 
-	NRF24L01_TASK();
+#ifdef MIDDLE_CAR_2
+		Protocol_Parse(&ring3_rx_DMA_buf, &retuen_proto_data);
+#endif
 
+#ifdef MIDDLE_CAR_3
+		Protocol_Parse(&ring3_rx_DMA_buf, &retuen_proto_data);
+#endif
+
+	NRF24L01_TASK();
+	// NRF24L01_Screen_Task();
  	// if(JDY_OK==jdy_task(&jdy_handle, &my_mesh_send_pkt,&proto_data)) {
 
  	// 	my_mesh_send_pkt.valid = 1;

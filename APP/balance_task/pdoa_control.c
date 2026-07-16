@@ -4,7 +4,7 @@ Control_State Current_State = STATE_Detection_IDLE;
 
 #ifdef AHAND_CAR
 PID_Controller heading_pid = {
-	.kp = 1.8f,	 // 比例增益 - 需要调试
+	.kp = 1.2f,	 // 比例增益 - 需要调试
 	.ki = 0.005f, // 积分增益 - 需要调试
 	.kd = 0.2f,	 // 微分增益 - 需要调试
 	.integral = 0.0f,
@@ -14,7 +14,7 @@ PID_Controller heading_pid = {
 };
 #else
 PID_Controller heading_pid = {
-	.kp = 1.2f,	 // 比例增益 - 需要调试
+	.kp = 0.8f,	 // 比例增益 - 需要调试
 	.ki = 0.01f, // 积分增益 - 需要调试
 	.kd = 0.2f,	 // 微分增益 - 需要调试
 	.integral = 0.0f,
@@ -126,7 +126,7 @@ void pdoa_follow(ProtocolData *pdoa_data)
 
 		case STATE_Turn:
 			/*直接将基站的AOA角度接收作为误差数据偏移*/
-			if (fabs(angle_error) > 15.0f && Horizontal_Distance > distance) /*误差偏移，转向更平滑*/
+			if (fabs(angle_error) > 0.0f && Horizontal_Distance > distance) /*误差偏移，转向更平滑*/
 			{
 				float pid_output = pid_update(&heading_pid, angle_error, 1);
 				if (fabs(pid_output) < 5.0f)
@@ -135,11 +135,12 @@ void pdoa_follow(ProtocolData *pdoa_data)
 					pid_output = 0;
 				}
 				
-				differential_drive_control(pid_output, 100);
+				differential_drive_control(pid_output, 40);
 			}
 			else
 			{
 				Current_State = STATE_Detection_IDLE;
+				Set_Pwm(0, 0, 0, 0);
 				heading_pid.integral = 0; // 积分项归0--防止下次转弯值过大
 			}
 			break;
@@ -226,13 +227,22 @@ void Middle_Car_Loop()
 
 #ifdef MIDDLE_CAR
 	if(g_state_machine.middle_flag!=2)
+	{
+		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_SET);
 		pdoa_follow(&proto_data);
+	}	
 	else
+	{
+		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_RESET);
 		pdoa_follow(&retuen_proto_data);
+	}
+		
 #endif
 
 #ifdef MIDDLE_CAR_FIRST
-	if(g_state_machine.middle_flag == 1)
+	if(g_state_machine.middle_flag == 1 || my_4g_dtu.mode_flag == 0 )
 	{
 		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_RESET);
 		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_SET);

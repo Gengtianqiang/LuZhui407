@@ -9,22 +9,17 @@ uint8_t PID_Control_Time = 0;
 float A_Encoder, B_Encoder, C_Encoder, D_Encoder;
 uint8_t text_buffer[] = {0x01, 0x02, 0x03, 0x04};
 extern mesh_datasend_pkt_t my_mesh_send_pkt;
-
-
+// 0: BLE remote control mode, 1: TWR control mode
 
 void StartBalanceTask(void *argument)
 {
 #ifdef AHAND_CAR
-	JDY_DEBUG_OUT("the ahand car is begin!");
 #endif
 #ifdef BEHIND_CAR
-	JDY_DEBUG_OUT("the behand car is begin!");
 #endif
 #ifdef MIDDLE_CAR
-	JDY_DEBUG_OUT("the middle car is begin!");
 #endif
 #ifdef MIDDLE_CAR_FIRST
-	JDY_DEBUG_OUT("the middle car first is begin!");
 #endif
 
 	for (;;)
@@ -34,16 +29,18 @@ void StartBalanceTask(void *argument)
 		HAL_GPIO_WritePin(DEBUG_IO_GPIO_Port, DEBUG_IO_Pin, GPIO_PIN_SET);
 #endif
 
+
 #ifdef AHAND_CAR
-
-		// if(my_4g_dtu.ble_flag==0)
-		// 	StateMachine_Loop(&g_state_machine, &bracket_data);
-		// else {
-
-		// }
-
-		BLE_control();
-
+		if(!my_4g_dtu.mode_flag )
+		{	
+			BLE_control();
+			Motor_Task_Loop();
+		}
+		else
+		{
+			StateMachine_Loop(&g_state_machine, &bracket_data);
+		
+		}
 		// pdoa_follow(&proto_data);
 #endif
 
@@ -58,6 +55,13 @@ void StartBalanceTask(void *argument)
 		// pdoa_follow(&retuen_proto_data);
 		// pdoa_follow(&proto_data);
 #endif
+
+#ifdef  MIDDLE_CAR
+		 Middle_Car_Loop();
+		// pdoa_follow(&retuen_proto_data);
+		// pdoa_follow(&proto_data);
+#endif
+		
 
 		Motor_Stop_Loop();
 

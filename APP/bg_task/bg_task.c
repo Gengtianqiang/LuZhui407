@@ -3,14 +3,14 @@
 #include "bsp_4g.h"
 #include "NRF24L01.h"
 #include "uart_callback.h"
-
+#include "NRF24L01_APP.h"
 
 uint8_t FLAG;
 void StartLedTask(void *argument)
 {
   /* USER CODE BEGIN StartLedTask */
   /* Infinite loop */
-  
+  NRF24L01_SetAddress(NRF24L01_RxAddress, 0xA1);
   for(;;)
   {
     osDelay(100);
@@ -21,23 +21,20 @@ void StartLedTask(void *argument)
 
     Volt = Get_battery_volt();
     Set_battery_led();
-		
 
-		if(my_4g_dtu.buzzer_flag == 1||my_4g_dtu.imu_error_flag == 1 || FLAG) {
+		if(my_4g_dtu.buzzer_flag == 1||my_4g_dtu.imu_error_flag == 1) {
 
 
       if(1==my_4g_dtu.buzzer_flag)
             Buzzer_Start_Circle(200, 200); 
       else if(1==my_4g_dtu.imu_error_flag){
 
-          Buzzer_Start_Circle(300, 100); 
+          //Buzzer_Start_Circle(300, 100); 
 
       }else {
           Buzzer_Start_Circle(100, 300); 
-
-
       }
-      FLAG = 0;
+      
     } else {
         Buzzer_Stop();
       

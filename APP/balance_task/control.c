@@ -1,6 +1,33 @@
 #include "control.h"
 #include "imu_output.h"
 #include "Vofa.h"
+#include "jdy_driver.h"
+#include "mesh_mode.h"
+#ifndef MESH_KEY_MODE
+#define MESH_KEY_MODE 5U
+#endif
+
+#ifndef MESH_KEY_START
+#define MESH_KEY_START 7U
+#endif
+
+#ifndef MESH_KEY_L1
+#define MESH_KEY_L1 12U
+#endif
+
+#ifndef MESH_FUNC_FIND_NODE
+#define MESH_FUNC_FIND_NODE ((1U << 6) | MESH_KEY_START)
+#endif
+
+#ifndef MESH_FUNC_RREE_CONTROL
+#define MESH_FUNC_RREE_CONTROL ((1U << 5) | MESH_KEY_MODE)
+#endif
+
+
+
+
+
+extern mesh_datasend_pkt_t my_mesh_send_pkt;
 
 float RC_Velocity = RC_Velocity_DISU;
 PID_Para_t PID_Control_Motor_A = {
@@ -142,6 +169,98 @@ void Car_init(void)
     Robot_Init(TOP_4WD_BS_wheelspacing, TOP_4WD_BS_axlespacing, MD60N_47, Photoelectric_500, _4WD_225);
 }
 
+static void BLE_SendMeshAck(uint16_t to_maddr, uint8_t ack_key)
+{
+    if (to_maddr == 0U ||
+        jdy_handle.p_mesh_submode == NULL ||
+        jdy_handle.p_mesh_submode->p_parser == NULL)
+    {
+        return;
+    }
+
+    my_mesh_send_pkt.to_maddr = to_maddr;
+    my_mesh_send_pkt.key = ack_key;
+    my_mesh_send_pkt.L = 0x7F;
+    my_mesh_send_pkt.R = 0x7F;
+    my_mesh_send_pkt.valid = 1;
+
+    jdy_handle.p_mesh_submode->p_parser->pf_mesh_datasend_handler(&jdy_handle, &my_mesh_send_pkt);
+}
+
+static bool BLE_TryReadFromJDY_Geng(uint8_t *L, uint8_t *R, uint8_t *key)
+{
+    static uint8_t ble_locked = 0;
+    static uint16_t master_maddr = 0;
+    static uint8_t find_node_echo_left = 0;
+    static uint32_t find_node_echo_tick = 0;
+
+    if (L == NULL || R == NULL || key == NULL)
+    {
+        return false;
+    }
+
+    if (jdy_handle.init_status != JDY_INIT ||
+        jdy_handle.p_mesh_submode == NULL ||
+        jdy_handle.p_mesh_submode->p_parser == NULL ||
+        jdy_handle.p_mesh_submode->mash_init_flag != JDY_INIT)
+    {
+        return false;
+    }
+
+    if (find_node_echo_left > 0U && (HAL_GetTick() - find_node_echo_tick) >= 50U)
+    {
+        BLE_SendMeshAck(master_maddr, MESH_FUNC_FIND_NODE);
+        find_node_echo_left--;
+        find_node_echo_tick = HAL_GetTick();
+    }
+
+    if (jdy_handle.p_mesh_submode->p_parser->pf_mesh_datarecv_handler(&jdy_handle, &ringBuffer4) != JDY_OK)
+    {
+        return false;
+    }
+
+    mesh_datarecv_pkt_t *pkt = &jdy_handle.p_mesh_submode->p_parser->recv_pkt;
+
+    if (pkt->header != 0xF1DD || pkt->end != 0x0D0A)
+    {
+        return false;
+    }
+
+    if (pkt->key == MESH_KEY_START)
+    {
+        master_maddr = pkt->from_maddr;
+        ble_locked = 1;
+        find_node_echo_left = 10;
+        find_node_echo_tick = 0;
+
+        BLE_SendMeshAck(master_maddr, MESH_FUNC_FIND_NODE);
+        return false;
+    }
+
+    if (pkt->key == MESH_KEY_MODE)
+    {
+        if (ble_locked && pkt->from_maddr == master_maddr)
+        {
+            BLE_SendMeshAck(master_maddr, MESH_FUNC_RREE_CONTROL);
+        }
+
+        ble_locked = 0;
+        master_maddr = 0;
+        find_node_echo_left = 0;
+        return false;
+    }
+
+    if (!ble_locked || pkt->from_maddr != master_maddr)
+    {
+        return false;
+    }
+
+    *L = pkt->L;
+    *R = pkt->R;
+    *key = pkt->key;
+    return true;
+}
+
 void BLE_control(void)
 {
     static bool isCarInited = false;
@@ -151,12 +270,16 @@ void BLE_control(void)
         isCarInited = true;
     }
 
-    if (JDY_isDataReady(&myJDY) == true)
+    uint8_t ble_L = EMA_TARGET;
+    uint8_t ble_R = EMA_TARGET;
+    uint8_t ble_key = KEY_TARGET;
+    
+    if (BLE_TryReadFromJDY_Geng(&ble_L, &ble_R, &ble_key) == true)
     {
-        BleData ble = JDY_GetData(&myJDY);
-        ema_set_new_data(&emaL, ble.L);
-        ema_set_new_data(&emaR, ble.R);
-        key_set_new_data(&emaKey, ble.key);
+        ema_set_new_data(&emaL, ble_L);
+        ema_set_new_data(&emaR, ble_R);
+        key_set_new_data(&emaKey, ble_key);
+   
     }
 
     // 做PS(50Hz)滤波同步，因为控制周期是10ms(100Hz)
@@ -216,7 +339,7 @@ void BLE_control(void)
         else if (RC_Velocity == RC_Velocity_DISU)
         {
             // 低速档情况下，方向效果明显
-            Move_Z = 1.1;
+            Move_Z = 0.8;
         }
         else
         {
@@ -236,7 +359,7 @@ void BLE_control(void)
         else if (RC_Velocity == RC_Velocity_DISU)
         {
             // 低速档情况下，方向效果明显
-            Move_Z = -1.1;
+            Move_Z = -0.8;
         }
         else
         {
@@ -645,6 +768,7 @@ int32_t Incremental_no_PI(char ABCD, float Target)
 入口参数：X和Y，Z轴方向的目标移动速度
 返回  值：无
 **************************************************************************/
+uint32_t time_count = 0;
 void Drive_Motor(float Vx, float Vy, float Vz)
 {
     static float amplitude = 3.5; // 轮子目标速度限制
@@ -661,10 +785,18 @@ void Drive_Motor(float Vx, float Vy, float Vz)
         smooth_control.VZ = Vz;
 
     // // 获取平滑处理后的数据
-    // Vx = smooth_control.VX;
-    // Vy = smooth_control.VY;
-    // Vz = smooth_control.VZ;
+   Vx = smooth_control.VX;
+   Vy = smooth_control.VY;
+   Vz = smooth_control.VZ;
 
+    // time_count++;
+    // if (time_count >= 100)
+    // {
+    //     time_count = 0;
+        
+    //     JDY_DEBUG_OUT("Vx:%.2f, Vy:%.2f, Vz:%.2f\r\n", smooth_control.VX, smooth_control.VY, smooth_control.VZ);
+    // }
+        
     // 运动学逆解
     MOTOR_A.Target = +0 + Vx - Vz * (Wheel_axlespacing + Wheel_spacing);
     MOTOR_B.Target = -0 + Vx - Vz * (Wheel_axlespacing + Wheel_spacing);

@@ -101,13 +101,11 @@ dtu_status_t dtu_ack(DTU_t* const self) {
                   self->point.y);
           self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
         break;
-    case MSG_4G_BLE:                          /* Set XY response | 设置XY坐标信息响应 */
-
-            self->ble_flag = 1;
-          memset(ack_buf, 0, sizeof(ack_buf));
-          sprintf((char*)ack_buf,
-                  "BLE signal received.\n");
-          self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
+    case MSG_4G_Mode_CHANGE:                     /* Change mode response | 改变工作模式信息响应 */
+        self->mode_flag = !self->mode_flag; // Toggle mode flag | 切换模式标志
+        memset(ack_buf, 0, sizeof(ack_buf));
+        sprintf((char*)ack_buf, "Mode changed to %s\n", self->mode_flag ? "TWR control" : "BLE remote control");
+        self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
         break;
     default:
         break;
@@ -232,9 +230,9 @@ uint8_t DTU_ParseFrame(DTU_t* const self,uint8_t *buf,uint16_t len)
 
           break;
       }
-
     case '8':
-        self->state = MSG_4G_BLE;
+        
+        self->state = MSG_4G_Mode_CHANGE;
         break;
     default:
         break;
@@ -467,7 +465,6 @@ dtu_status_t dtu_init(DTU_t* const self)
     self->stop_flag = 0;
     self->start_flag = 0;
     self->return_flag = 0;
-    self->ble_flag = 0;
     
     self->imu_error_flag = 0;
     self->jdy_error_flag = 0;
@@ -475,6 +472,7 @@ dtu_status_t dtu_init(DTU_t* const self)
     self->point.x = 2.0;
     self->point.y = 2.0;
 
+    self->mode_flag = 0;
     return DTU_OK;
 }
 

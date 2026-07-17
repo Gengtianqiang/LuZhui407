@@ -35,8 +35,23 @@ float speed_weight = 10;
 float R_D_ratio = 1.00f;
 extern Control_State Current_State;
 void pdoa_follow(ProtocolData *pdoa_data)
-{
-	if (true == pdoa_data->PdoaisAvailable)
+{	
+	uint32_t current_time = xTaskGetTickCount();
+	if(pdoa_data->PdoaisAvailable == false)
+	{
+		if(current_time - pdoa_data->last_time > 200)
+		{
+			pdoa_data->new_PdoaisValid = false;
+		}
+	}
+	else
+	{
+		pdoa_data->last_time = current_time;
+		pdoa_data->new_PdoaisValid = true;
+	}
+
+
+	if (true == pdoa_data->new_PdoaisValid)
 	{
 		if (pdoa_data->aoa_deg > 60)
 		{

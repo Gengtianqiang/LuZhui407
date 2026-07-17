@@ -147,7 +147,7 @@ static void StateMachine_MoveInitHandler(StateMachine_Handle_t *hsm,BracketConte
     // After 1 second
     } else if(bracket_data.twr_status) {
         Move_X = 0.0f;
-        
+        hsm->ahand_flag = 1;
         // Record coordinates after forward movement
         hsm->coor2.x = res->x;
         hsm->coor2.y = res->y;
@@ -287,7 +287,7 @@ static void StateMachine_LineTrackingHandler(StateMachine_Handle_t *hsm, Bracket
 			Move_Z = 0;
         Move_X = 0;
         hsm->current_state = STATE_FINISHED;
-			hsm->ahand_flag = 1;
+			
 		}
     
 
@@ -296,7 +296,7 @@ static void StateMachine_LineTrackingHandler(StateMachine_Handle_t *hsm, Bracket
         Move_Z = 0;
         Move_X = 0;
         hsm->current_state = STATE_FINISHED;
-        hsm->ahand_flag = 1;
+        // hsm->ahand_flag = 1;
         Buzzer_Start_Once(10);
     }
 }

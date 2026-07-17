@@ -1,272 +1,4 @@
-[2026-07-14 17:10:22]	[info] incremental build: 4 source files changed
-These source files will be recompiled
----
-'c:\Users\wjq13\Desktop\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.h' has been changed.
-'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.h' has been changed.
-'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01.c': source file has been changed.
-'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': source file has been changed.
-
-[2026-07-14 17:10:23]	compilation failed at : "c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c", exit code: 1
-command: 
-  "C:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I. -ICore/Inc -IDrivers/STM32F4xx_HAL_Driver/Inc -IDrivers/STM32F4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32F4xx/Include -IDrivers/CMSIS/Include -IBSP -IMiddlewares/Third_Party/FreeRTOS/Source/include -IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -IMiddlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -IHARDWARE/Encoder -IHARDWARE/Motor_GPIO -IAPP/balance_task -IAPP/bg_task -IAPP/imu_task -IAPP/uart_task -IBSP/battery -IBSP/buzzer -IBSP/Encoder -IBSP/icm20948/app -IBSP/icm20948/lib -IBSP/led -IBSP/motor -IBSP/Motor_GPIO -IBSP/sleep -IBSP/timer -IBSP/util -IBSP/VOFA+ -IBSP/icm20948/lib/include -IBSP/jdy28m_geng -IBSP/jdy28m -I.cmsis/include -IMDK-ARM/RTE/_HAL -IBSP/4G_DTU -IBSP/NRF24L01 -D"USE_HAL_DRIVER" -D"STM32F407xx" --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O0 -Otime --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\HAL\.obj\BSP\NRF24L01\NRF24L01_APP.o --no_depend_system_headers --depend .\build\HAL\.obj\BSP\NRF24L01\NRF24L01_APP.d .\BSP\NRF24L01\NRF24L01_APP.c
-   at unify_builder.Program.Main(String[] args_)
----
-".\BSP\NRF24L01\NRF24L01_APP.c", line 56: Warning:  #9-D: nested comment is not allowed
-  //******************************** Function Implementations ******************//
-   ^
-".\BSP\NRF24L01\NRF24L01_APP.c", line 56: Error:  #169: expected a declaration
-  //******************************** Function Implementations ******************//
-                                                                                 ^
-".\BSP\NRF24L01\NRF24L01_APP.c", line 105: Warning:  #12-D: parsing restarts here after previous syntax error
-              JDY_DEBUG_OUT("Failed to send packet: %02X %02X %02X %02X\r\n",
-              ^
-".\BSP\NRF24L01\NRF24L01_APP.c", line 108: Error:  #169: expected a declaration
-          }
-          ^
-".\BSP\NRF24L01\NRF24L01_APP.c", line 290: Warning:  #12-D: parsing restarts here after previous syntax error
-      return 0;
-              ^
-".\BSP\NRF24L01\NRF24L01_APP.c", line 291: Error:  #169: expected a declaration
-  }
-  ^
-".\BSP\NRF24L01\NRF24L01_APP.c", line 319: Warning:  #12-D: parsing restarts here after previous syntax error
-              Buzzer_Start_Circle(300, 100); 
-                                           ^
-".\BSP\NRF24L01\NRF24L01_APP.c", line 320: Error:  #79: expected a type specifier
-              JDY_DEBUG_OUT("Screen received return signal.\n");
-              ^
-".\BSP\NRF24L01\NRF24L01_APP.c", line 320: Error:  #79: expected a type specifier
-              JDY_DEBUG_OUT("Screen received return signal.\n");
-              ^
-".\BSP\NRF24L01\NRF24L01_APP.c", line 320: Error:  #260-D: explicit type is missing ("int" assumed)
-              JDY_DEBUG_OUT("Screen received return signal.\n");
-              ^
-".\BSP\NRF24L01\NRF24L01_APP.c", line 320: Error:  #147: declaration is incompatible with "void Vofa_Printf(Vofa_HandleTypedef *, const char *, ...)"  (declared at line 48 of "BSP/VOFA+/Vofa.h")
-              JDY_DEBUG_OUT("Screen received return signal.\n");
-              ^
-".\BSP\NRF24L01\NRF24L01_APP.c", line 322: Error:  #169: expected a declaration
-          }
-          ^
-".\BSP\NRF24L01\NRF24L01_APP.c", line 384: Warning: At end of source:  #12-D: parsing restarts here after previous syntax error
-.\BSP\NRF24L01\NRF24L01_APP.c: 5 warnings, 8 errors
-
-[2026-07-14 17:12:32]	[info] incremental build: 5 source files changed
-These source files will be recompiled
----
-'c:\Users\wjq13\Desktop\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01.h' has been changed.
-'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01.h' has been changed.
-'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01.h' has been changed.
-'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': source file has been changed.
-'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01.h' has been changed.
-
-[2026-07-14 17:12:33]	compilation failed at : "c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c", exit code: 1
-command: 
-  "C:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I. -ICore/Inc -IDrivers/STM32F4xx_HAL_Driver/Inc -IDrivers/STM32F4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32F4xx/Include -IDrivers/CMSIS/Include -IBSP -IMiddlewares/Third_Party/FreeRTOS/Source/include -IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -IMiddlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -IHARDWARE/Encoder -IHARDWARE/Motor_GPIO -IAPP/balance_task -IAPP/bg_task -IAPP/imu_task -IAPP/uart_task -IBSP/battery -IBSP/buzzer -IBSP/Encoder -IBSP/icm20948/app -IBSP/icm20948/lib -IBSP/led -IBSP/motor -IBSP/Motor_GPIO -IBSP/sleep -IBSP/timer -IBSP/util -IBSP/VOFA+ -IBSP/icm20948/lib/include -IBSP/jdy28m_geng -IBSP/jdy28m -I.cmsis/include -IMDK-ARM/RTE/_HAL -IBSP/4G_DTU -IBSP/NRF24L01 -D"USE_HAL_DRIVER" -D"STM32F407xx" --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O0 -Otime --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\HAL\.obj\BSP\NRF24L01\NRF24L01_APP.o --no_depend_system_headers --depend .\build\HAL\.obj\BSP\NRF24L01\NRF24L01_APP.d .\BSP\NRF24L01\NRF24L01_APP.c
-   at unify_builder.Program.Main(String[] args_)
----
-".\BSP\NRF24L01\NRF24L01_APP.c", line 56: Warning:  #9-D: nested comment is not allowed
-  //******************************** Function Implementations ******************//
-   ^
-".\BSP\NRF24L01\NRF24L01_APP.c", line 56: Error:  #169: expected a declaration
-  //******************************** Function Implementations ******************//
-                                                                                 ^
-".\BSP\NRF24L01\NRF24L01_APP.c", line 105: Warning:  #12-D: parsing restarts here after previous syntax error
-              JDY_DEBUG_OUT("Failed to send packet: %02X %02X %02X %02X\r\n",
-              ^
-".\BSP\NRF24L01\NRF24L01_APP.c", line 108: Error:  #169: expected a declaration
-          }
-          ^
-".\BSP\NRF24L01\NRF24L01_APP.c", line 204: Error:  #37: the #endif for this directive is missing
-  #ifdef MIDDLE_CAR
-   ^
-".\BSP\NRF24L01\NRF24L01_APP.c", line 383: Warning: At end of source:  #12-D: parsing restarts here after previous syntax error
-.\BSP\NRF24L01\NRF24L01_APP.c: 3 warnings, 3 errors
-
-[2026-07-14 17:13:53]	[info] incremental build: 2 source files changed
-These source files will be recompiled
----
-'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': source file has been changed.
-'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01.h' has been changed.
-
-[2026-07-14 17:13:54]	link failed !, exit code: 1
-   at unify_builder.Program.Main(String[] args_)
----
-Error: L6218E: Undefined symbol NRF24L01_SetAddress1 (referred from NRF24L01_APP.o).
-Not enough information to list image symbols.
-Finished: 1 information, 0 warning and 1 error messages.
-
-
-[2026-07-14 17:14:48]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': source file has been changed.
-
-[2026-07-14 17:14:49]	[done]
-	build successfully !
-
-[2026-07-14 17:53:11]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': source file has been changed.
-
-[2026-07-14 17:53:12]	[done]
-	build successfully !
-
-[2026-07-14 17:59:11]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': source file has been changed.
-
-[2026-07-14 17:59:11]	[done]
-	build successfully !
-
-[2026-07-14 18:05:23]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': source file has been changed.
-
-[2026-07-14 18:05:23]	[done]
-	build successfully !
-
-[2026-07-14 18:07:42]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': source file has been changed.
-
-[2026-07-14 18:07:42]	[done]
-	build successfully !
-
-[2026-07-14 18:13:22]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': source file has been changed.
-
-[2026-07-14 18:13:22]	[done]
-	build successfully !
-
-[2026-07-14 18:14:13]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': source file has been changed.
-
-[2026-07-14 18:14:13]	[done]
-	build successfully !
-
-[2026-07-14 18:19:39]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': source file has been changed.
-
-[2026-07-14 18:19:40]	[done]
-	build successfully !
-
-[2026-07-14 18:50:14]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': source file has been changed.
-
-[2026-07-14 18:50:15]	[done]
-	build successfully !
-
-[2026-07-14 18:57:21]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': source file has been changed.
-
-[2026-07-14 18:57:21]	[done]
-	build successfully !
-
-[2026-07-14 18:58:47]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': source file has been changed.
-
-[2026-07-14 18:58:48]	[done]
-	build successfully !
-
-[2026-07-14 18:59:40]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': source file has been changed.
-
-[2026-07-14 18:59:40]	[done]
-	build successfully !
-
-[2026-07-14 19:00:04]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': source file has been changed.
-
-[2026-07-14 19:00:04]	[done]
-	build successfully !
-
-[2026-07-14 19:01:27]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': source file has been changed.
-
-[2026-07-14 19:01:28]	[done]
-	build successfully !
-
-[2026-07-14 19:01:37]	[done]
-	build successfully !
-
-[2026-07-14 19:02:47]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': source file has been changed.
-
-[2026-07-14 19:02:48]	[done]
-	build successfully !
-
-[2026-07-14 19:02:54]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': source file has been changed.
-
-[2026-07-14 19:02:54]	[done]
-	build successfully !
-
-[2026-07-14 19:31:33]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': source file has been changed.
-
-[2026-07-14 19:31:36]	[done]
-	build successfully !
-
-[2026-07-14 19:33:48]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': source file has been changed.
-
-[2026-07-14 19:33:48]	[done]
-	build successfully !
-
-[2026-07-15 14:42:51]	[done]
-	build successfully !
-
-[2026-07-15 15:57:01]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_task.c': source file has been changed.
-
-[2026-07-15 15:57:03]	[done]
-	build successfully !
-
-[2026-07-15 15:57:19]	[done]
-	build successfully !
-
-[2026-07-15 16:35:58]	[info] incremental build: 2 source files changed
-These source files will be recompiled
----
-'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\balance.c': source file has been changed.
-'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\twr_control.c': source file has been changed.
-
-[2026-07-15 16:35:59]	[done]
-	build successfully !
-
-[2026-07-15 16:36:33]	[info] incremental build: 30 source files changed
+[2026-07-17 11:07:43]	[info] incremental build: 30 source files changed
 These source files will be recompiled
 ---
 'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
@@ -300,26 +32,10 @@ These source files will be recompiled
 'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
 'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
 
-[2026-07-15 16:36:35]	[done]
+[2026-07-17 11:07:45]	[done]
 	build successfully !
 
-[2026-07-15 16:42:17]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\balance.c': source file has been changed.
-
-[2026-07-15 16:42:17]	[done]
-	build successfully !
-
-[2026-07-15 16:45:45]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_task.c': source file has been changed.
-
-[2026-07-15 16:45:45]	[done]
-	build successfully !
-
-[2026-07-15 16:56:30]	[info] incremental build: 30 source files changed
+[2026-07-17 11:08:39]	[info] incremental build: 30 source files changed
 These source files will be recompiled
 ---
 'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
@@ -353,6 +69,628 @@ These source files will be recompiled
 'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
 'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
 
-[2026-07-15 16:56:33]	[done]
+[2026-07-17 11:08:41]	[done]
+	build successfully !
+
+[2026-07-17 11:09:01]	[info] incremental build: 30 source files changed
+These source files will be recompiled
+---
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\twr_control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\led\led.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\main.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+
+[2026-07-17 11:09:03]	[done]
+	build successfully !
+
+[2026-07-17 13:13:59]	[info] incremental build: 33 source files changed
+These source files will be recompiled
+---
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\filter.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\pdoa_control.c': source file has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\twr_control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\jdy28m.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\response.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\led\led.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\main.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.h' has been changed.
+
+[2026-07-17 13:14:02]	[done]
+	build successfully !
+
+[2026-07-17 13:15:47]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\pdoa_control.c': source file has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_task.c': source file has been changed.
+
+[2026-07-17 13:15:48]	[done]
+	build successfully !
+
+[2026-07-17 13:19:08]	[info] incremental build: 30 source files changed
+These source files will be recompiled
+---
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\twr_control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\led\led.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\main.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+
+[2026-07-17 13:19:10]	[done]
+	build successfully !
+
+[2026-07-17 13:19:32]	[info] incremental build: 30 source files changed
+These source files will be recompiled
+---
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\twr_control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\led\led.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\main.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+
+[2026-07-17 13:19:35]	[done]
+	build successfully !
+
+[2026-07-17 13:19:46]	[info] incremental build: 30 source files changed
+These source files will be recompiled
+---
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\twr_control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\led\led.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\main.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+
+[2026-07-17 13:19:48]	[done]
+	build successfully !
+
+[2026-07-17 13:20:07]	[info] incremental build: 30 source files changed
+These source files will be recompiled
+---
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\twr_control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\led\led.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\main.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+
+[2026-07-17 13:20:09]	[done]
+	build successfully !
+
+[2026-07-17 13:20:41]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\pdoa_control.c': source file has been changed.
+
+[2026-07-17 13:20:42]	[done]
+	build successfully !
+
+[2026-07-17 13:21:02]	[info] incremental build: 30 source files changed
+These source files will be recompiled
+---
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\twr_control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\led\led.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\main.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+
+[2026-07-17 13:21:04]	[done]
+	build successfully !
+
+[2026-07-17 13:21:15]	[info] incremental build: 30 source files changed
+These source files will be recompiled
+---
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\twr_control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\led\led.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\main.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+
+[2026-07-17 13:21:17]	[done]
+	build successfully !
+
+[2026-07-17 13:21:30]	[info] incremental build: 30 source files changed
+These source files will be recompiled
+---
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\twr_control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\led\led.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\main.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+
+[2026-07-17 13:21:32]	[done]
+	build successfully !
+
+[2026-07-17 13:26:36]	[info] incremental build: 30 source files changed
+These source files will be recompiled
+---
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\pdoa_control.c': source file has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\twr_control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\led\led.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\main.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+
+[2026-07-17 13:26:36]	compilation failed at : "c:\Users\wjq13\Desktop\TH_HAL\BSP\4G_DTU\bsp_4g.c", exit code: 1
+command: 
+  "C:\Keil_v5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -I. -ICore/Inc -IDrivers/STM32F4xx_HAL_Driver/Inc -IDrivers/STM32F4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32F4xx/Include -IDrivers/CMSIS/Include -IBSP -IMiddlewares/Third_Party/FreeRTOS/Source/include -IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -IMiddlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -IHARDWARE/Encoder -IHARDWARE/Motor_GPIO -IAPP/balance_task -IAPP/bg_task -IAPP/imu_task -IAPP/uart_task -IBSP/battery -IBSP/buzzer -IBSP/Encoder -IBSP/icm20948/app -IBSP/icm20948/lib -IBSP/led -IBSP/motor -IBSP/Motor_GPIO -IBSP/sleep -IBSP/timer -IBSP/util -IBSP/VOFA+ -IBSP/icm20948/lib/include -IBSP/jdy28m_geng -IBSP/jdy28m -I.cmsis/include -IMDK-ARM/RTE/_HAL -IBSP/4G_DTU -IBSP/NRF24L01 -D"USE_HAL_DRIVER" -D"STM32F407xx" --cpu Cortex-M4.fp --li --c99 -D__MICROLIB -O0 -Otime --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o .\build\HAL\.obj\BSP\4G_DTU\bsp_4g.o --no_depend_system_headers --depend .\build\HAL\.obj\BSP\4G_DTU\bsp_4g.d .\BSP\4G_DTU\bsp_4g.c
+   at unify_builder.Program.compileByMulThread(Int32 thrNum, CmdInfo[] cmds_, List`1 errLogs)
+   at unify_builder.Program.Main(String[] args_)
+---
+"Core/Inc/System_Init.h", line 11: Error:  #40: expected an identifier
+  #define 
+          ^
+.\APP\balance_task\PID.c: 0 warnings, 1 error
+"Core/Inc/System_Init.h", line 11: Error:  #40: expected an identifier
+  #define 
+          ^
+.\APP\balance_task\balance.c: 0 warnings, 1 error
+"Core/Inc/System_Init.h", line 11: Error:  #40: expected an identifier
+  #define 
+          ^
+.\APP\balance_task\control.c: 0 warnings, 1 error
+"Core/Inc/System_Init.h", line 11: Error:  #40: expected an identifier
+  #define 
+          ^
+.\APP\balance_task\pdoa_control.c: 0 warnings, 1 error
+"Core/Inc/System_Init.h", line 11: Error:  #40: expected an identifier
+  #define 
+          ^
+.\APP\balance_task\twr_control.c: 0 warnings, 1 error
+"Core/Inc/System_Init.h", line 11: Error:  #40: expected an identifier
+  #define 
+          ^
+.\APP\imu_task\imu_task.c: 0 warnings, 1 error
+"Core/Inc/System_Init.h", line 11: Error:  #40: expected an identifier
+  #define 
+          ^
+.\APP\uart_task\uart_callback.c: 0 warnings, 1 error
+"Core/Inc/System_Init.h", line 11: Error:  #40: expected an identifier
+  #define 
+          ^
+.\APP\bg_task\bg_task.c: 0 warnings, 1 error
+"Core/Inc/System_Init.h", line 11: Error:  #40: expected an identifier
+  #define 
+          ^
+.\APP\uart_task\uart_task.c: 0 warnings, 1 error
+"Core/Inc/System_Init.h", line 11: Error:  #40: expected an identifier
+  #define 
+          ^
+.\BSP\4G_DTU\bsp_4g.c: 0 warnings, 1 error
+
+[2026-07-17 13:26:52]	[info] incremental build: 30 source files changed
+These source files will be recompiled
+---
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\pdoa_control.c': source file has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\twr_control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\led\led.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\main.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+
+[2026-07-17 13:26:54]	[done]
+	build successfully !
+
+[2026-07-17 13:27:47]	[info] incremental build: 30 source files changed
+These source files will be recompiled
+---
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\twr_control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\led\led.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\main.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+
+[2026-07-17 13:27:50]	[done]
+	build successfully !
+
+[2026-07-17 13:28:09]	[info] incremental build: 30 source files changed
+These source files will be recompiled
+---
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\twr_control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\led\led.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\main.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+
+[2026-07-17 13:28:11]	[done]
+	build successfully !
+
+[2026-07-17 13:28:24]	[info] incremental build: 30 source files changed
+These source files will be recompiled
+---
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\twr_control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\led\led.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\main.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+
+[2026-07-17 13:28:27]	[done]
+	build successfully !
+
+[2026-07-17 13:28:44]	[info] incremental build: 30 source files changed
+These source files will be recompiled
+---
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\twr_control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\led\led.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\main.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+
+[2026-07-17 13:28:46]	[done]
+	build successfully !
+
+[2026-07-17 13:39:28]	[done]
 	build successfully !
 

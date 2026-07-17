@@ -27,7 +27,7 @@ void StartUsartTask(void *argument)
 	/* Infinite loop */
 	for (;;)
 	{
-		osDelay(24);
+		osDelay(50);
 
 
 	

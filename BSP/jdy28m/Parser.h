@@ -41,6 +41,9 @@ typedef struct {
     float aoa_deg_A1;         // 到A1的AOA角度(°)（可选，浮点）
     bool has_aoa_A1;          // 标记是否存在aoa_deg_A1字段
 	bool PdoaisAvailable;
+
+    bool new_PdoaisValid;              // 数据是否有效的标志
+    uint32_t last_time;                      // 上次接收数据的时间戳
 } ProtocolData;
 extern ProtocolData proto_data;
 extern ProtocolData retuen_proto_data;

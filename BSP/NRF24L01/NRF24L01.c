@@ -155,6 +155,20 @@ void NRF24L01_GPIO_Init(void)
   * 参    数：Byte 要发送的一个字节数据，范围：0x00~0xFF
   * 返 回 值：接收得到的一个字节数据，范围：0x00~0xFF
   */
+/*通信协议*********************/
+
+/**
+  * 函    数：SPI交换一个字节
+  * 参    数：Byte 要发送的一个字节数据，范围：0x00~0xFF
+  * 返 回 值：接收得到的一个字节数据，范围：0x00~0xFF
+  */
+/*通信协议*********************/
+
+/**
+  * 函    数：SPI交换一个字节
+  * 参    数：Byte 要发送的一个字节数据，范围：0x00~0xFF
+  * 返 回 值：接收得到的一个字节数据，范围：0x00~0xFF
+  */
 uint8_t NRF24L01_SPI_SwapByte(uint8_t Byte)
 {
 	uint8_t i;
@@ -511,10 +525,10 @@ void NRF24L01_Init(void)
 	/*初始化配置一系列寄存器，寄存器值的意义需参考手册中的寄存器描述*/
 	/*以下配置通信双方必须保持一致，否则无法进行通信*/
 	NRF24L01_WriteReg(NRF24L01_CONFIG, 0x08);		//配置寄存器，不屏蔽中断，使能CRC，CRC为1字节，PWR_UP = 0，PRIM_RX = 0
-	NRF24L01_WriteReg(NRF24L01_EN_AA, 0x00);		//关闭自动应答，广播控制时避免多车同时ACK冲突
+	NRF24L01_WriteReg(NRF24L01_EN_AA, 0x3F);		//使能自动应答，开启接收通道0~通道5的自动应答
 	NRF24L01_WriteReg(NRF24L01_EN_RXADDR, 0x01);	//使能接收通道，只开启接收通道0
 	NRF24L01_WriteReg(NRF24L01_SETUP_AW, 0x03);		//设置地址宽度，地址宽度为5字节
-	NRF24L01_WriteReg(NRF24L01_SETUP_RETR, 0x00);	//关闭自动重传，由主机应用层重复广播提高可靠性
+	NRF24L01_WriteReg(NRF24L01_SETUP_RETR, 0x03);	//设置自动重传，间隔250us，重传3次
 	NRF24L01_WriteReg(NRF24L01_RF_CH, 0x02);		//射频通道，频率为(2400 + 2)MHz = 2.402GHz
 	NRF24L01_WriteReg(NRF24L01_RF_SETUP, 0x0E);		//射频设置，通信速率为2Mbps，发射功率为0dBm
 	
@@ -620,66 +634,6 @@ uint8_t NRF24L01_Send(void)
 	return SendFlag;
 }
 
-uint8_t NRF24L01_SendBroadcast(void)
-{
-	uint8_t Status;
-	uint32_t Timeout;
-	
-	NRF24L01_WriteRegs(NRF24L01_TX_ADDR, NRF24L01_TxAddress, 5);
-	NRF24L01_WriteTxPayload(NRF24L01_TxPacket, NRF24L01_TX_PACKET_WIDTH);
-	NRF24L01_Tx();
-	
-	Timeout = 10000;
-	while (Timeout --)
-	{
-		Status = NRF24L01_ReadStatus();
-		
-		if ((Status & 0x20) == 0x20)
-		{
-			NRF24L01_WriteReg(NRF24L01_STATUS, 0x20);
-			NRF24L01_FlushTx();
-			NRF24L01_Rx();
-			return 1;
-		}
-		
-		if ((Status & 0x10) == 0x10)
-		{
-			NRF24L01_WriteReg(NRF24L01_STATUS, 0x10);
-			NRF24L01_FlushTx();
-			NRF24L01_Rx();
-			return 2;
-		}
-	}
-	
-	NRF24L01_WriteReg(NRF24L01_STATUS, 0x30);
-	NRF24L01_FlushTx();
-	NRF24L01_Rx();
-	return 4;
-}
-
-uint8_t NRF24L01_SendBroadcastRepeat(uint8_t Repeat)
-{
-	uint8_t i;
-	uint8_t Result;
-	
-	if (Repeat == 0)
-	{
-		Repeat = 1;
-	}
-	
-	for (i = 0; i < Repeat; i ++)
-	{
-		Result = NRF24L01_SendBroadcast();
-		if (Result != 1)
-		{
-			return Result;
-		}
-	}
-	
-	return 1;
-}
-
-
 /**
   * 函    数：NRF24L01接收数据包
   * 参    数：无
@@ -748,3 +702,8 @@ void NRF24L01_UpdateRxAddress(void)
 }
 
 /*********************功能函数*/
+
+
+/*****************江协科技|版权所有****************/
+/*****************jiangxiekeji.com*****************/
+

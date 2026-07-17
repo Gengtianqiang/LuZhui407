@@ -63,14 +63,14 @@ void pdoa_follow(ProtocolData *pdoa_data)
 		}
 		int pn = 0;
 #ifdef AHAND_CAR
-		pn = -1;
+		
 
 		if ( 0== my_4g_dtu.return_flag ) {
 			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_RESET);
-			
+			pn = 1;
 		}else{
 			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_SET);
-
+			pn = -1;
 		}
 
 
@@ -150,7 +150,7 @@ void pdoa_follow(ProtocolData *pdoa_data)
 					pid_output = 0;
 				}
 				
-				differential_drive_control(pid_output, 40);
+				differential_drive_control(pid_output, 40*pn);
 			}
 			else
 			{
@@ -257,7 +257,7 @@ void Middle_Car_Loop()
 #endif
 
 #ifdef MIDDLE_CAR_FIRST
-	if(g_state_machine.middle_flag == 1 || my_4g_dtu.mode_flag == 0 )
+	if(g_state_machine.middle_flag == 1)
 	{
 		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_RESET);
 		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_SET);

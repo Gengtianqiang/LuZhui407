@@ -95,22 +95,22 @@ static void StateMachine_IdleHandler(StateMachine_Handle_t *hsm,BracketContent *
     begin_timecounter ++;
     if(begin_timecounter>1000) {
         // Check trigger signal, TWR data valid
-        if(my_4g_dtu.start_flag && bracket_data.twr_status) {
-        // if(my_4g_dtu.start_flag) {
+        // if(my_4g_dtu.start_flag && bracket_data.twr_status) {
+        if(my_4g_dtu.start_flag) {
             // Switch to peripheral check state
 
             //unit test
-            // hsm->current_state = STATE_FINISHED;
-            // hsm->ahand_flag = 1;
+            hsm->current_state = STATE_FINISHED;
+            hsm->ahand_flag = 1;
 
             //op
-            hsm->current_state = STATE_PERIPHERAL_CHECK;
-            hsm->coor3.x = my_4g_dtu.point.x;
-            hsm->coor3.y = my_4g_dtu.point.y;
+            // hsm->current_state = STATE_PERIPHERAL_CHECK;
+            // hsm->coor3.x = my_4g_dtu.point.x;
+            // hsm->coor3.y = my_4g_dtu.point.y;
             
-            // Record the first coordinate point
-            hsm->coor1.x = res->x;
-            hsm->coor1.y = res->y;
+            // // Record the first coordinate point
+            // hsm->coor1.x = res->x;
+            // hsm->coor1.y = res->y;
         }
     }
 }
@@ -147,7 +147,7 @@ static void StateMachine_MoveInitHandler(StateMachine_Handle_t *hsm,BracketConte
     // After 1 second
     } else if(bracket_data.twr_status) {
         Move_X = 0.0f;
-        hsm->ahand_flag = 1;
+        hsm->ahand_flag = 1;  
         // Record coordinates after forward movement
         hsm->coor2.x = res->x;
         hsm->coor2.y = res->y;

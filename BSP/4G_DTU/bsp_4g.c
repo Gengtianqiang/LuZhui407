@@ -104,7 +104,7 @@ dtu_status_t dtu_ack(DTU_t* const self) {
     case MSG_4G_Mode_CHANGE:                     /* Change mode response | 改变工作模式信息响应 */
         self->mode_flag = !self->mode_flag; // Toggle mode flag | 切换模式标志
         memset(ack_buf, 0, sizeof(ack_buf));
-        sprintf((char*)ack_buf, "Mode changed to %s\n", self->mode_flag ? "TWR control" : "BLE remote control");
+        sprintf((char*)ack_buf, "Mode changed to %s\n", self->mode_flag ?  "BLE remote control" :"TWR control");
         self->send_fun((uint8_t*)ack_buf, strlen((char*)ack_buf));
         break;
     default:

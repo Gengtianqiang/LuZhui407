@@ -148,72 +148,7 @@
           <Name></Name>
         </SetRegEntry>
       </TargetDriverDllRegistry>
-      <Breakpoint>
-        <Bp>
-          <Number>0</Number>
-          <Type>0</Type>
-          <LineNumber>368</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134271282</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>..\BSP\NRF24L01\NRF24L01_APP.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\HAL\../BSP/NRF24L01/NRF24L01_APP.c\368</Expression>
-        </Bp>
-        <Bp>
-          <Number>1</Number>
-          <Type>0</Type>
-          <LineNumber>352</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134271214</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>..\BSP\NRF24L01\NRF24L01_APP.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\HAL\../BSP/NRF24L01/NRF24L01_APP.c\352</Expression>
-        </Bp>
-        <Bp>
-          <Number>2</Number>
-          <Type>0</Type>
-          <LineNumber>380</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134271330</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>..\BSP\NRF24L01\NRF24L01_APP.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\HAL\../BSP/NRF24L01/NRF24L01_APP.c\380</Expression>
-        </Bp>
-        <Bp>
-          <Number>3</Number>
-          <Type>0</Type>
-          <LineNumber>359</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134271248</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>..\BSP\NRF24L01\NRF24L01_APP.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\HAL\../BSP/NRF24L01/NRF24L01_APP.c\359</Expression>
-        </Bp>
-      </Breakpoint>
+      <Breakpoint/>
       <WatchWindow1>
         <Ww>
           <count>0</count>

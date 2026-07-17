@@ -367,7 +367,7 @@ void Set_Pwm(int motor_a, int motor_b, int motor_c, int motor_d)
     __HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, myabs(motor_d));
 }
 
-void differential_drive_control(float pid_output, float base_speed) 
+void differential_drive_control(float pid_output, float base_speed  ) 
 {
     float left_speed, right_speed;
     

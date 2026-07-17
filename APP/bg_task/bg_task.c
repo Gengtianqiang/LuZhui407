@@ -10,7 +10,6 @@ void StartLedTask(void *argument)
 {
   /* USER CODE BEGIN StartLedTask */
   /* Infinite loop */
-  NRF24L01_SetAddress(NRF24L01_RxAddress, 0xA1);
   for(;;)
   {
     osDelay(100);

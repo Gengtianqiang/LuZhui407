@@ -31,13 +31,24 @@ void StartBalanceTask(void *argument)
 
 
 #ifdef AHAND_CAR
-		if(!my_4g_dtu.mode_flag )
+		if(my_4g_dtu.mode_flag)
 		{	
-			BLE_control();
-			Motor_Task_Loop();
+			if(0==my_4g_dtu.return_flag) {
+				BLE_control();
+				Motor_Task_Loop();
+			    g_state_machine.ahand_flag = 1;
+
+			}else {
+				//收到返回指令
+				g_state_machine.ahand_flag = 3;
+				HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_SET);
+				pdoa_follow(&proto_data);
+			}
+
 		}
 		else
 		{
+
 			StateMachine_Loop(&g_state_machine, &bracket_data);
 		
 		}

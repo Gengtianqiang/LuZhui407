@@ -1,11 +1,9 @@
 #ifndef __NRF24L01_H
 #define __NRF24L01_H
 
-
-#include "stm32f4xx_hal.h"
 #include "NRF24L01_Define.h"
+#include "stm32f4xx_hal.h"
 #include "main.h"
-
 /*外部可调用全局数组***********/
 
 extern uint8_t NRF24L01_TxAddress[];

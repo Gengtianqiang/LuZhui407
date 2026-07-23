@@ -13,5 +13,6 @@ extern Forward myForward;
 
 
 void MY_UART_Init(void);
+void App_ProcessUsart1OtaCommand(void);
 
 #endif /* UART_CALLBACK_H */

@@ -1,5 +1,7 @@
 #include "uart_task.h"
 #include "NRF24L01_APP.h"
+#include "uart_callback.h"
+#include "OTA/ab_confirm.h"
 
 uint8_t dma_buffer_receive_usart1[RECEIVE_USART1_BUFFER] = {0};
 uint8_t dma_buffer_Transmit_usart1[Transmit_USART1_BUFFER] = {0};
@@ -24,9 +26,18 @@ void StartUsartTask(void *argument)
 
 	dtu_inst(&my_4g_dtu, &dtu_time_config);
 
+	/* 关键初始化完成后确认当前 APP，结束 Bootloader 的试运行状态。 */
+	(void)app_boot_confirm();
+
 	/* Infinite loop */
 	for (;;)
 	{
+		/*
+		 * UART DMA 回调只记录命令；在任务上下文中写 SRAM 请求并复位，
+		 * 避免在中断中重置 DMA/HAL 状态机。
+		 */
+		App_ProcessUsart1OtaCommand();
+
 		osDelay(50);
 
 

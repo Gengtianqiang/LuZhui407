@@ -4,7 +4,7 @@ Control_State Current_State = STATE_Detection_IDLE;
 
 #ifdef AHAND_CAR
 PID_Controller heading_pid = {
-	.kp = 1.2f,	 // 比例增益 - 需要调试
+	.kp = 0.8f,	 // 比例增益 - 需要调试
 	.ki = 0.005f, // 积分增益 - 需要调试
 	.kd = 0.2f,	 // 微分增益 - 需要调试
 	.integral = 0.0f,

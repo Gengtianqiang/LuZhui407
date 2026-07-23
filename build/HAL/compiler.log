@@ -3,9 +3,9 @@
 Compiler Full Name: Component: ARM Compiler 5.06 update 7 (build 960)
 Compiler Version: 5.06
 Builder Mode: Incremental
-The amount of C files: 30
+The amount of C files: 75
 The amount of C++ files: 0
-The amount of Asm files: 0
+The amount of Asm files: 1
 
 >>> prebuild
 
@@ -13,14 +13,13 @@ The amount of Asm files: 0
 
 >>> cc
 
-".\APP\balance_task\balance.c", line 65: Warning:  #223-D: function "Middle_Car_Loop" declared implicitly
-  		 Middle_Car_Loop();
-  		 ^
-.\APP\balance_task\balance.c: 1 warning, 0 errors
+
 
 >>> ld
 
-Program Size: Code=75340 RO-data=15488 RW-data=1064 ZI-data=27960  
+Error: L6218E: Undefined symbol app_boot_confirm (referred from uart_task.o).
+Not enough information to list image symbols.
+Finished: 1 information, 0 warning and 1 error messages.
 
 
 >>> postbuild

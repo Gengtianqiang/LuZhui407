@@ -486,3 +486,169 @@ These source files will be recompiled
 [2026-07-17 18:43:57]	[done]
 	build successfully !
 
+[2026-07-17 19:53:29]	[info] incremental build: 31 source files changed
+These source files will be recompiled
+---
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\pdoa_control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\twr_control.c': source file has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\bg_task\bg_task.c': source file has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\led\led.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\main.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Middlewares\Third_Party\FreeRTOS\Source\tasks.c': source file has been changed.
+
+[2026-07-17 19:53:34]	[done]
+	build successfully !
+
+[2026-07-17 19:55:58]	[done]
+	build successfully !
+
+[2026-07-17 20:00:17]	[info] incremental build: 30 source files changed
+These source files will be recompiled
+---
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\pdoa_control.c': source file has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\balance_task\twr_control.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_callback.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\APP\uart_task\uart_task.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\led\led.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\main.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\wjq13\Desktop\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\wjq13\Desktop\TH_HAL\Core\Inc\System_Init.h' has been changed.
+
+[2026-07-17 20:00:18]	[done]
+	build successfully !
+
+[2026-07-22 18:21:06]	[info] incremental build: 76 source files changed
+These source files will be recompiled
+---
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\APP\balance_task\PID.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\APP\balance_task\balance.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\APP\balance_task\balance_core.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\APP\balance_task\control.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\APP\balance_task\filter.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\APP\balance_task\pdoa_control.c': source file has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\APP\balance_task\twr_control.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\APP\bg_task\bg_task.c': source file has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\APP\imu_task\imu_task.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\APP\uart_task\uart_callback.c': source file has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\APP\uart_task\uart_task.c': source file has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\BSP\4G_DTU\bsp_4g.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\BSP\Encoder\Encoder.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\BSP\Motor_GPIO\Motor_GPIO.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\BSP\NRF24L01\NRF24L01.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\BSP\NRF24L01\NRF24L01_APP.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\BSP\VOFA+\Vofa+.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\BSP\VOFA+\Vofa.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\BSP\VOFA+\Vofa_if.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\BSP\battery\battery.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\BSP\buzzer\buzzer.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\BSP\icm20948\app\icm20948_app.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\BSP\icm20948\app\imu_output.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\BSP\icm20948\lib\ICM_20948_CONTROL.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\BSP\icm20948\lib\icm20948.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\BSP\jdy28m\Parser.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\BSP\jdy28m\forward.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\BSP\jdy28m\jdy28m.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\BSP\jdy28m\response.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\BSP\jdy28m\transmit.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\BSP\jdy28m_geng\jdy_driver.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\BSP\jdy28m_geng\mesh_mode.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\BSP\led\led.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\BSP\motor\motor.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\BSP\sleep\sleep.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\BSP\timer\tim.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\BSP\util\RingByteBuffer.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Core\Src\System_Init.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Core\Src\freertos.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Core\Src\main.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Core\Src\stm32f4xx_hal_msp.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Core\Src\stm32f4xx_hal_timebase_tim.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Core\Src\stm32f4xx_it.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Core\Src\system_stm32f4xx.c': source file has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_adc.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_adc_ex.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c_ex.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_adc.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\MDK-ARM\startup_stm32f407xx.s': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2\cmsis_os2.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Middlewares\Third_Party\FreeRTOS\Source\croutine.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Middlewares\Third_Party\FreeRTOS\Source\event_groups.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Middlewares\Third_Party\FreeRTOS\Source\list.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Middlewares\Third_Party\FreeRTOS\Source\portable\MemMang\heap_4.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Middlewares\Third_Party\FreeRTOS\Source\portable\RVDS\ARM_CM4F\port.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Middlewares\Third_Party\FreeRTOS\Source\queue.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Middlewares\Third_Party\FreeRTOS\Source\stream_buffer.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Middlewares\Third_Party\FreeRTOS\Source\tasks.c': compiler options has been changed.
+'c:\Users\33481\Desktop\workspace\TH_OTA\TH_HAL_A\Middlewares\Third_Party\FreeRTOS\Source\timers.c': compiler options has been changed.
+
+[2026-07-22 18:21:09]	link failed !, exit code: 1
+   at unify_builder.Program.Main(String[] args_)
+---
+Error: L6218E: Undefined symbol app_boot_confirm (referred from uart_task.o).
+Not enough information to list image symbols.
+Finished: 1 information, 0 warning and 1 error messages.
+
+

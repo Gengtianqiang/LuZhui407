@@ -2,12 +2,12 @@
     "name": "HAL",
     "target": "HAL",
     "toolchain": "AC5",
-    "toolchainLocation": "C:\\Keil_v5\\ARM\\ARMCC",
-    "toolchainCfgFile": "c:\\Users\\wjq13\\.vscode\\extensions\\cl.eide-3.27.2\\res\\data\\models/arm.v5.model.json",
+    "toolchainLocation": "D:\\Software\\keil5MDK\\keil_main\\ARM\\ARMCC",
+    "toolchainCfgFile": "c:\\Users\\33481\\.vscode\\extensions\\cl.eide-3.27.2\\res\\data\\models/arm.v5.model.json",
     "buildMode": "fast|multhread",
     "showRepathOnLog": true,
     "threadNum": 20,
-    "rootDir": "c:\\Users\\wjq13\\Desktop\\TH_HAL",
+    "rootDir": "c:\\Users\\33481\\Desktop\\workspace\\TH_OTA\\TH_HAL_A",
     "dumpPath": "build\\HAL",
     "outDir": "build\\HAL",
     "ram": 196608,
@@ -166,21 +166,21 @@
             ],
             "output-format": "elf",
             "link-scatter": [
-                "c:/Users/wjq13/Desktop/TH_HAL/build/HAL/HAL.sct"
+                "c:/Users/33481/Desktop/workspace/TH_OTA/TH_HAL_A/build/HAL/HAL.sct"
             ]
         }
     },
     "env": {
         "KEIL_OUTPUT_DIR": "HAL",
-        "workspaceFolder": "c:\\Users\\wjq13\\Desktop\\TH_HAL",
-        "workspaceFolderBasename": "TH_HAL",
-        "OutDir": "c:\\Users\\wjq13\\Desktop\\TH_HAL\\build\\HAL",
+        "workspaceFolder": "c:\\Users\\33481\\Desktop\\workspace\\TH_OTA\\TH_HAL_A",
+        "workspaceFolderBasename": "TH_HAL_A",
+        "OutDir": "c:\\Users\\33481\\Desktop\\workspace\\TH_OTA\\TH_HAL_A\\build\\HAL",
         "OutDirRoot": "build",
         "OutDirBase": "build\\HAL",
         "ProjectName": "HAL",
         "ConfigName": "HAL",
-        "ProjectRoot": "c:\\Users\\wjq13\\Desktop\\TH_HAL",
-        "ExecutableName": "c:\\Users\\wjq13\\Desktop\\TH_HAL\\build\\HAL\\HAL",
+        "ProjectRoot": "c:\\Users\\33481\\Desktop\\workspace\\TH_OTA\\TH_HAL_A",
+        "ExecutableName": "c:\\Users\\33481\\Desktop\\workspace\\TH_OTA\\TH_HAL_A\\build\\HAL\\HAL",
         "ChipPackDir": ".pack/Keil/STM32F4xx_DFP.2.17.0",
         "ChipName": "",
         "SYS_Platform": "win32",
@@ -189,11 +189,11 @@
         "SYS_PathSep": ";",
         "SYS_PathSeparator": ";",
         "SYS_EOL": "\r\n",
-        "EIDE_BUILDER_DIR": "c:\\Users\\wjq13\\.vscode\\extensions\\cl.eide-3.27.2\\res\\tools\\win32\\unify_builder",
+        "EIDE_BUILDER_DIR": "c:\\Users\\33481\\.vscode\\extensions\\cl.eide-3.27.2\\res\\tools\\win32\\unify_builder",
         "EIDE_BINARIES_VER": "12.1.1",
-        "EIDE_MSYS": "C:\\Users\\wjq13\\.eide\\bin\\builder\\msys\\bin",
-        "EIDE_PY3_CMD": "C:\\Users\\wjq13\\.eide\\bin\\python36\\python3.exe",
-        "ToolchainRoot": "C:\\Keil_v5\\ARM\\ARMCC"
+        "EIDE_MSYS": "C:\\Users\\33481\\.eide\\bin\\builder\\msys\\bin",
+        "EIDE_PY3_CMD": "C:\\Users\\33481\\.eide\\bin\\python36\\python3.exe",
+        "ToolchainRoot": "D:\\Software\\keil5MDK\\keil_main\\ARM\\ARMCC"
     },
     "sysPaths": []
 }

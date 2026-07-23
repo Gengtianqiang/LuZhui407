@@ -839,3 +839,35 @@ These source files will be recompiled
 [2026-07-23 16:53:57]	[done]
 	build successfully !
 
+[2026-07-23 17:07:20]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\33481\Desktop\workspace\TH_HAL\APP\uart_task\uart_callback.c': source file has been changed.
+
+[2026-07-23 17:07:20]	[done]
+	build successfully !
+
+[2026-07-23 17:09:19]	[done]
+	build successfully !
+
+[2026-07-23 17:13:31]	[done]
+	build successfully !
+
+[2026-07-23 17:18:59]	[done]
+	build successfully !
+
+[2026-07-23 17:19:37]	[done]
+	build successfully !
+
+[2026-07-23 18:02:43]	[done]
+	build successfully !
+
+[2026-07-23 18:02:55]	[done]
+	build successfully !
+
+[2026-07-23 18:19:49]	[done]
+	build successfully !
+
+[2026-07-23 18:23:56]	[done]
+	build successfully !
+

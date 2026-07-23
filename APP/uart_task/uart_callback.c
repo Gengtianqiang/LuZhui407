@@ -235,6 +235,15 @@ void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
     (void)dr;
 		HAL_UARTEx_ReceiveToIdle_DMA(&huart4, uart4_dma_rx_buffer, UART_RX_BUFFER_SIZE);
 	}
+
+    if(huart->Instance == UART5) {
+		    // 清除错误标志
+    uint32_t sr = huart->Instance->SR;
+    uint8_t dr = huart->Instance->DR;
+    (void)sr;
+    (void)dr;
+		HAL_UARTEx_ReceiveToIdle_DMA(&huart5, u5_ring_DMA_buffer, RXUART5_BUFFER);
+	}
 }
 
 

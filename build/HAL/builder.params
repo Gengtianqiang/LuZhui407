@@ -162,7 +162,7 @@
         },
         "linker": {
             "$outputTaskExcludes": [
-                ".bin"
+                ""
             ],
             "output-format": "elf",
             "link-scatter": [

@@ -72,6 +72,7 @@
         "BSP/NRF24L01/NRF24L01.c",
         "BSP/NRF24L01/NRF24L01_APP.c",
         "BSP/OTA/ab_confirm.c",
+        "BSP/OTA/app_otaset.c",
         "BSP/OTA/app_update_request.c",
         "BSP/VOFA+/Vofa+.c",
         "BSP/VOFA+/Vofa.c",

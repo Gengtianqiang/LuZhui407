@@ -14,6 +14,7 @@
 .\build\HAL\.obj\BSP\NRF24L01\NRF24L01.o
 .\build\HAL\.obj\BSP\NRF24L01\NRF24L01_APP.o
 .\build\HAL\.obj\BSP\OTA\ab_confirm.o
+.\build\HAL\.obj\BSP\OTA\app_otaset.o
 .\build\HAL\.obj\BSP\OTA\app_update_request.o
 .\build\HAL\.obj\BSP\VOFA+\Vofa+.o
 .\build\HAL\.obj\BSP\VOFA+\Vofa.o

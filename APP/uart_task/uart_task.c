@@ -26,36 +26,26 @@ void StartUsartTask(void *argument)
 
 	dtu_inst(&my_4g_dtu, &dtu_time_config);
 
-	/* 关键初始化完成后确认当前 APP，结束 Bootloader 的试运行状态。 */
-	(void)app_boot_confirm();
+	app_boot_confirm();
 
 	/* Infinite loop */
 	for (;;)
 	{
-		/*
-		 * UART DMA 回调只记录命令；在任务上下文中写 SRAM 请求并复位，
-		 * 避免在中断中重置 DMA/HAL 状态机。
-		 */
-		App_ProcessUsart1OtaCommand();
-
 		osDelay(50);
 
-
-	
-
-
-	Protocol_Parse(&ring_rx_DMA_buf, &proto_data);
-
-
+		Protocol_Parse(&ring_rx_DMA_buf, &proto_data);
 
 #ifdef AHAND_CAR
 
-	my_4g_dtu.parser_fun(&my_4g_dtu,dtu_rx_buffer);
+		App_ProcessUsart1OtaCommand();
 
- 	if (ParseTwrProtocol(&ring3_rx_DMA_buf, &bracket_data))
- 	{
- 			bracket_data.twr_status = (ParseBracketContentToFloats(&bracket_data));
- 	}
+		my_4g_dtu.parser_fun(&my_4g_dtu,dtu_rx_buffer);
+
+		if (ParseTwrProtocol(&ring3_rx_DMA_buf, &bracket_data))
+		{
+				bracket_data.twr_status = (ParseBracketContentToFloats(&bracket_data));
+		}
+
 #endif
 
 #ifdef BEHIND_CAR
@@ -74,8 +64,8 @@ void StartUsartTask(void *argument)
 		Protocol_Parse(&ring3_rx_DMA_buf, &retuen_proto_data);
 #endif
 
-	NRF24L01_TASK();
-	// NRF24L01_Screen_Task();
+		NRF24L01_TASK();
+
  	// if(JDY_OK==jdy_task(&jdy_handle, &my_mesh_send_pkt,&proto_data)) {
 
  	// 	my_mesh_send_pkt.valid = 1;

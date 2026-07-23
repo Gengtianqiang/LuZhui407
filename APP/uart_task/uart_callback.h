@@ -3,6 +3,8 @@
 
 
 #include "forward.h"
+#include "app_otaset.h"
+
 extern uint8_t rx_flag;
 
 typedef struct Forward

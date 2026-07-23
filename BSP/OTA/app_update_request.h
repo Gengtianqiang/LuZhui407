@@ -3,6 +3,8 @@
 
 #include <stdbool.h>
 
+
+
 /* Replace this weak hook in application code to return the real update flag. */
 bool App_IsUpdateRequested(void);
 

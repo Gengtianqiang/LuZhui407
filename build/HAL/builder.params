@@ -7,11 +7,11 @@
     "buildMode": "fast|multhread",
     "showRepathOnLog": true,
     "threadNum": 20,
-    "rootDir": "c:\\Users\\33481\\Desktop\\workspace\\TH_OTA\\TH_HAL_A",
+    "rootDir": "c:\\Users\\33481\\Desktop\\workspace\\TH_HAL",
     "dumpPath": "build\\HAL",
     "outDir": "build\\HAL",
-    "ram": 196608,
-    "rom": 524288,
+    "ram": 131056,
+    "rom": 229376,
     "incDirs": [
         ".",
         "Core/Inc",
@@ -47,7 +47,8 @@
         ".cmsis/include",
         "MDK-ARM/RTE/_HAL",
         "BSP/4G_DTU",
-        "BSP/NRF24L01"
+        "BSP/NRF24L01",
+        "BSP/OTA"
     ],
     "libDirs": [],
     "defines": [
@@ -57,7 +58,6 @@
     "sourceList": [
         "APP/balance_task/PID.c",
         "APP/balance_task/balance.c",
-        "APP/balance_task/balance_core.c",
         "APP/balance_task/control.c",
         "APP/balance_task/filter.c",
         "APP/balance_task/pdoa_control.c",
@@ -70,9 +70,9 @@
         "BSP/Encoder/Encoder.c",
         "BSP/Motor_GPIO/Motor_GPIO.c",
         "BSP/NRF24L01/NRF24L01.c",
-        "BSP/NRF24L01/NRF24L01.c",
         "BSP/NRF24L01/NRF24L01_APP.c",
-        "BSP/NRF24L01/NRF24L01_APP.c",
+        "BSP/OTA/ab_confirm.c",
+        "BSP/OTA/app_update_request.c",
         "BSP/VOFA+/Vofa+.c",
         "BSP/VOFA+/Vofa.c",
         "BSP/VOFA+/Vofa_if.c",
@@ -166,21 +166,21 @@
             ],
             "output-format": "elf",
             "link-scatter": [
-                "c:/Users/33481/Desktop/workspace/TH_OTA/TH_HAL_A/build/HAL/HAL.sct"
+                "c:/Users/33481/Desktop/workspace/TH_HAL/build/HAL/HAL.sct"
             ]
         }
     },
     "env": {
         "KEIL_OUTPUT_DIR": "HAL",
-        "workspaceFolder": "c:\\Users\\33481\\Desktop\\workspace\\TH_OTA\\TH_HAL_A",
-        "workspaceFolderBasename": "TH_HAL_A",
-        "OutDir": "c:\\Users\\33481\\Desktop\\workspace\\TH_OTA\\TH_HAL_A\\build\\HAL",
+        "workspaceFolder": "c:\\Users\\33481\\Desktop\\workspace\\TH_HAL",
+        "workspaceFolderBasename": "TH_HAL",
+        "OutDir": "c:\\Users\\33481\\Desktop\\workspace\\TH_HAL\\build\\HAL",
         "OutDirRoot": "build",
         "OutDirBase": "build\\HAL",
         "ProjectName": "HAL",
         "ConfigName": "HAL",
-        "ProjectRoot": "c:\\Users\\33481\\Desktop\\workspace\\TH_OTA\\TH_HAL_A",
-        "ExecutableName": "c:\\Users\\33481\\Desktop\\workspace\\TH_OTA\\TH_HAL_A\\build\\HAL\\HAL",
+        "ProjectRoot": "c:\\Users\\33481\\Desktop\\workspace\\TH_HAL",
+        "ExecutableName": "c:\\Users\\33481\\Desktop\\workspace\\TH_HAL\\build\\HAL\\HAL",
         "ChipPackDir": ".pack/Keil/STM32F4xx_DFP.2.17.0",
         "ChipName": "",
         "SYS_Platform": "win32",

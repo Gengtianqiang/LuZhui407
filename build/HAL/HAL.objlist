@@ -1,6 +1,5 @@
 .\build\HAL\.obj\APP\balance_task\PID.o
 .\build\HAL\.obj\APP\balance_task\balance.o
-.\build\HAL\.obj\APP\balance_task\balance_core.o
 .\build\HAL\.obj\APP\balance_task\control.o
 .\build\HAL\.obj\APP\balance_task\filter.o
 .\build\HAL\.obj\APP\balance_task\pdoa_control.o
@@ -14,6 +13,8 @@
 .\build\HAL\.obj\BSP\Motor_GPIO\Motor_GPIO.o
 .\build\HAL\.obj\BSP\NRF24L01\NRF24L01.o
 .\build\HAL\.obj\BSP\NRF24L01\NRF24L01_APP.o
+.\build\HAL\.obj\BSP\OTA\ab_confirm.o
+.\build\HAL\.obj\BSP\OTA\app_update_request.o
 .\build\HAL\.obj\BSP\VOFA+\Vofa+.o
 .\build\HAL\.obj\BSP\VOFA+\Vofa.o
 .\build\HAL\.obj\BSP\VOFA+\Vofa_if.o

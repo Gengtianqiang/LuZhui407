@@ -3,9 +3,9 @@
 Compiler Full Name: Component: ARM Compiler 5.06 update 7 (build 960)
 Compiler Version: 5.06
 Builder Mode: Incremental
-The amount of C files: 75
+The amount of C files: 0
 The amount of C++ files: 0
-The amount of Asm files: 1
+The amount of Asm files: 0
 
 >>> prebuild
 
@@ -17,9 +17,7 @@ The amount of Asm files: 1
 
 >>> ld
 
-Error: L6218E: Undefined symbol app_boot_confirm (referred from uart_task.o).
-Not enough information to list image symbols.
-Finished: 1 information, 0 warning and 1 error messages.
+Program Size: Code=86140 RO-data=15648 RW-data=1292 ZI-data=27956  
 
 
 >>> postbuild

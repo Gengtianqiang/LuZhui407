@@ -91,3 +91,42 @@ These source files will be recompiled
 [2026-07-23 18:56:10]	[done]
 	build successfully !
 
+[2026-07-26 15:21:02]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\33481\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.c': source file has been changed.
+
+[2026-07-26 15:21:05]	[done]
+	build successfully !
+
+[2026-07-26 15:25:09]	[done]
+	build successfully !
+
+[2026-07-26 15:27:13]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Src\system_stm32f4xx.c': source file has been changed.
+
+[2026-07-26 15:27:14]	[done]
+	build successfully !
+
+[2026-07-26 15:33:37]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Src\system_stm32f4xx.c': source file has been changed.
+
+[2026-07-26 15:33:38]	[done]
+	build successfully !
+
+[2026-07-26 15:36:49]	[done]
+	build successfully !
+
+[2026-07-26 16:24:31]	[done]
+	build successfully !
+
+[2026-07-26 16:31:16]	[done]
+	build successfully !
+
+[2026-07-26 16:43:31]	[done]
+	build successfully !
+

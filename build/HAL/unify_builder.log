@@ -130,3 +130,140 @@ These source files will be recompiled
 [2026-07-26 16:43:31]	[done]
 	build successfully !
 
+[2026-07-26 18:05:37]	[info] incremental build: 35 source files changed
+These source files will be recompiled
+---
+'c:\Users\33481\Desktop\workspace\TH_HAL\APP\balance_task\PID.c': dependence 'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\APP\balance_task\balance.c': dependence 'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\APP\balance_task\control.c': dependence 'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\APP\balance_task\pdoa_control.c': source file has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.c': source file has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\APP\bg_task\bg_task.c': dependence 'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\APP\imu_task\imu_task.c': dependence 'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\APP\uart_task\uart_callback.c': source file has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\APP\uart_task\uart_task.c': source file has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\BSP\4G_DTU\bsp_4g.c': dependence 'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\BSP\Encoder\Encoder.c': dependence 'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\BSP\Motor_GPIO\Motor_GPIO.c': dependence 'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\BSP\NRF24L01\NRF24L01.c': dependence 'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\BSP\NRF24L01\NRF24L01_APP.c': dependence 'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\BSP\OTA\ab_confirm.c': source file has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\BSP\OTA\app_otaset.c': source file has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\BSP\OTA\app_update_request.c': source file has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\BSP\VOFA+\Vofa+.c': dependence 'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\BSP\VOFA+\Vofa_if.c': dependence 'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\BSP\battery\battery.c': dependence 'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\BSP\icm20948\app\icm20948_app.c': dependence 'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\BSP\icm20948\lib\ICM_20948_CONTROL.c': dependence 'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\BSP\jdy28m\Parser.c': dependence 'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\BSP\jdy28m\forward.c': dependence 'c:\Users\33481\Desktop\workspace\TH_HAL\APP\uart_task\uart_callback.h' has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\jdy_driver.c': dependence 'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\BSP\jdy28m_geng\mesh_mode.c': dependence 'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\BSP\led\led.c': dependence 'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\BSP\motor\motor.c': dependence 'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\BSP\timer\tim.c': dependence 'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Src\System_Init.c': dependence 'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Src\freertos.c': dependence 'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Src\main.c': dependence 'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Inc\System_Init.h' has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Src\system_stm32f4xx.c': source file has been changed.
+
+[2026-07-26 18:05:41]	[done]
+	build successfully !
+
+[2026-07-26 18:32:20]	[done]
+	build successfully !
+
+[2026-07-26 19:15:14]	[done]
+	build successfully !
+
+[2026-07-26 19:15:25]	[done]
+	build successfully !
+
+[2026-07-26 21:29:53]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\33481\Desktop\workspace\TH_HAL\APP\balance_task\balance.c': source file has been changed.
+
+[2026-07-26 21:29:54]	[done]
+	build successfully !
+
+[2026-07-26 22:15:10]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\33481\Desktop\workspace\TH_HAL\APP\balance_task\balance.c': source file has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.c': source file has been changed.
+
+[2026-07-26 22:15:12]	[done]
+	build successfully !
+
+[2026-07-26 22:22:11]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\33481\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.c': source file has been changed.
+
+[2026-07-26 22:22:12]	[done]
+	build successfully !
+
+[2026-07-26 22:22:52]	[done]
+	build successfully !
+
+[2026-07-26 22:23:00]	[done]
+	build successfully !
+
+[2026-07-26 22:37:20]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\33481\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.c': source file has been changed.
+
+[2026-07-26 22:37:21]	[done]
+	build successfully !
+
+[2026-07-26 22:37:47]	[done]
+	build successfully !
+
+[2026-07-26 22:50:23]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\33481\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.c': source file has been changed.
+'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Src\system_stm32f4xx.c': source file has been changed.
+
+[2026-07-26 22:50:24]	[done]
+	build successfully !
+
+[2026-07-26 22:57:23]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\33481\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.c': source file has been changed.
+
+[2026-07-26 22:57:24]	[done]
+	build successfully !
+
+[2026-07-26 23:01:09]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\33481\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.c': source file has been changed.
+
+[2026-07-26 23:01:10]	[done]
+	build successfully !
+
+[2026-07-26 23:03:27]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\33481\Desktop\workspace\TH_HAL\APP\balance_task\twr_control.c': source file has been changed.
+
+[2026-07-26 23:03:28]	[done]
+	build successfully !
+
+[2026-07-26 23:05:21]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\33481\Desktop\workspace\TH_HAL\Core\Src\system_stm32f4xx.c': source file has been changed.
+
+[2026-07-26 23:05:22]	[done]
+	build successfully !
+
+[2026-07-26 23:06:41]	[done]
+	build successfully !
+

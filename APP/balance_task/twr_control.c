@@ -262,7 +262,7 @@ static void StateMachine_RotateFixedHandler(StateMachine_Handle_t *hsm,BracketCo
 static void StateMachine_LineTrackingHandler(StateMachine_Handle_t *hsm, BracketContent *res, LineParam_t *ref_line)
 {
     // Fixed forward speed
-    Move_X = -0.2f;
+    Move_X = -0.5f;
     // PD control: fusion of line tracking and yaw control
         Move_Z = Line_Track_PD_Ctrl(ref_line, res->x, res->y) * 0.6f
                 + Yaw_PD_Ctrl(myimu.euler_yaw_Cali, hsm->coor2.angle) * 0.4f;
@@ -283,12 +283,11 @@ static void StateMachine_LineTrackingHandler(StateMachine_Handle_t *hsm, Bracket
         now_dist   = dist_to_target;
     }
 
-		if(now_dist>last_dist) {
-			Move_Z = 0;
+    if(now_dist>last_dist) {
+        Move_Z = 0;
         Move_X = 0;
         hsm->current_state = STATE_FINISHED;
-			
-		}
+    }
     
 
     if(dist_to_target < 0.5f)
@@ -321,11 +320,12 @@ static void StateMachine_LineTrackingHandler(StateMachine_Handle_t *hsm, Bracket
 static void StateMachine_FinishedHandler(StateMachine_Handle_t *hsm,BracketContent *res)
 {
     Move_X = 0.0;
+    
     // static uint16_t finish_time = 0;
     // finish_time ++;
 	// Buzzer_Start_Once(10);
     
-
+    Move_Z = 0;
 //    //测试
 //    osSemaphoreAcquire (hsm->uart_sem,0);
     //准备与串口任务通信：向后车和中间车发送返回信号
@@ -569,7 +569,7 @@ void StateMachine_Loop(StateMachine_Handle_t *hsm ,BracketContent *result)
             hsm->current_state = STATE_ERROR;
             break;
     }
-    if(STATE_PDOA!=hsm->current_state) {
+    if(1!=my_4g_dtu.return_flag) {
         Drive_Motor(Move_X,0.0f,Move_Z);
         Motor_Task_Loop();
     }

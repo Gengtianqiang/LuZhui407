@@ -232,7 +232,7 @@ uint8_t NRF24L01_TASK(void)
             JDY_DEBUG_OUT("Middle Car 2 received return signal.\n");
 
             /*************4. Forward return command to car 5 (behind car) | 转发返回指令给四号车**************/
-            NRF24L01_SetAddress(NRF24L01_TxAddress, 0xA4);
+            NRF24L01_SetAddress(NRF24L01_TxAddress, 0xA5);
             NRF24L01_TxPacket[0] = 0x00;
             NRF24L01_TxPacket[1] = 0x00;
             NRF24L01_TxPacket[2] = 0x00;

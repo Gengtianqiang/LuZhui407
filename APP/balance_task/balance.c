@@ -62,15 +62,33 @@ void StartBalanceTask(void *argument)
 #endif
 
 #ifdef  MIDDLE_CAR_FIRST
-		 Middle_Car_Loop();
+		//  Middle_Car_Loop();
 		// pdoa_follow(&retuen_proto_data);
 		// pdoa_follow(&proto_data);
+		static uint16_t cnt = 0;
+		uint16_t pwm;
+
+		// 10s = 1000个10ms节拍
+		if(cnt < 1000)
+		{
+			pwm = (uint16_t)((uint32_t)16799 * cnt / 1000U);
+			Set_Pwm(pwm, pwm, pwm, pwm);
+			cnt++;
+		}
+		else
+		{
+			Set_Pwm(0,0,0,0);
+			cnt = 0; // 打开这句就循环，注释只跑一次
+		}
 #endif
 
 #ifdef  MIDDLE_CAR
 		 Middle_Car_Loop();
 		// pdoa_follow(&retuen_proto_data);
 		// pdoa_follow(&proto_data);
+
+
+
 #endif
 		
 

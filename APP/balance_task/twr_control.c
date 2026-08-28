@@ -209,7 +209,7 @@ static void StateMachine_RotateFixedHandler(StateMachine_Handle_t *hsm,BracketCo
     }
     
     Move_X = 0;
-    Move_Z = pid_output/10;
+    Move_Z = pid_output/6.0f;
 
     if(fabs(angle_error) < 10.0f)
     {
@@ -262,7 +262,7 @@ static void StateMachine_RotateFixedHandler(StateMachine_Handle_t *hsm,BracketCo
 static void StateMachine_LineTrackingHandler(StateMachine_Handle_t *hsm, BracketContent *res, LineParam_t *ref_line)
 {
     // Fixed forward speed
-    Move_X = -0.5f;
+    Move_X = -0.4f;
     // PD control: fusion of line tracking and yaw control
         Move_Z = Line_Track_PD_Ctrl(ref_line, res->x, res->y) * 0.6f
                 + Yaw_PD_Ctrl(myimu.euler_yaw_Cali, hsm->coor2.angle) * 0.4f;
